@@ -1,0 +1,12 @@
+
+{% if user.is_authenticated %}
+    <h1> {{ message }}  <i> {{ user.first_name }} {{ user.last_name }} </i></h1>
+    <hr/>
+    <br/> <br/>
+
+    <br/>
+    <a href="/accounts/signup/">Add User</a>
+    <br/>
+    <a href="/accounts/logout/">Logout</a>
+
+{% endif %}
