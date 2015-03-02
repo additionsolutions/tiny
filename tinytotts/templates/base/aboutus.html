@@ -1,4 +1,5 @@
 <!doctype html>
+
 <!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
 <!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
@@ -33,7 +34,11 @@
 
         <section id="support" class="doublediagonal">
             <div class="container">
+                    {% block mainbody_block %}
                     <H1> About Us </H1>
+                    <br/>
+                    <a href="/base/register/">Register Here</a>
+                    {% endblock %}
             </div>
         </section>
     </div>

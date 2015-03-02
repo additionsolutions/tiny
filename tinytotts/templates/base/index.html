@@ -72,7 +72,12 @@
                             </li>
                             <li><a href="#demo">Know More</a>
                             </li>
-                            <li><a class="getApp" href="{% static "#getApp" %}">Login</a>
+                            <li>
+                            {% if user.is_authenticated %}
+                                <a class="getApp" href="/base/logout">Logout</a>
+                            {% else %}
+                                <a class="getApp" href="/base/login">Login</a>
+                            {% endif %}
                             </li>
                             <li><a href="#support">Contact</a>
                             </li>
@@ -127,10 +132,10 @@
                         </div>
 
                         <div class="tp-caption sfb hidden-xs" data-x="550" data-y="center" data-hoffset="0" data-voffset="85" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
-                            <a href="#about" class="btn btn-primary inverse btn-lg">LEARN MORE</a>
+                            <a href="/aboutus" class="btn btn-primary inverse btn-lg">LEARN MORE</a>
                         </div>
                         <div class="tp-caption sfr hidden-xs" data-x="730" data-y="center" data-hoffset="0" data-voffset="85" data-speed="1500" data-start="1900" data-easing="Power4.easeOut">
-                            <a href="#getApp" class="btn btn-default btn-lg">Login</a>
+                            <a href="/base/login" class="btn btn-default btn-lg">Login</a>
                         </div>
 
                     </li>
@@ -481,7 +486,7 @@
                             <img src="{% static "img/freeze/freeze-angled2.png" %}" alt="">
                         </div>
                         <div class="platforms">
-                            <a href="#" class="btn btn-primary inverse scrollpoint sp-effect1">
+                            <a href="/base/login/" class="btn btn-primary inverse scrollpoint sp-effect1">
                                 <i class="fa fa-android fa-3x pull-left"></i>
                                 <span>Click for</span><br>
                                 <b>Login</b>

@@ -60,6 +60,7 @@ ROOT_URLCONF = 'tinytotts.urls'
 
 WSGI_APPLICATION = 'tinytotts.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -104,7 +105,8 @@ TEMPLATE_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
-#ACCOUNT_SIGNUP_FORM_CLASS = os.path.join(BASE_DIR, 'forms\SignupForm')
-#ACCOUNT_SIGNUP_FORM_CLASS = ('base.forms.SignupForm')
 
-
+PASSWORD_HASHERS = (
+'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)

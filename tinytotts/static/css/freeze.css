@@ -1106,5 +1106,6 @@ form .form-control:focus {
 }
 
 menu {
-  padding: 55px 0;
+      height: 120px;
+      padding: 20px, 0;
 }
