@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^addsol/', include(admin.site.urls)),
+    url(r'^aboutus/', views.aboutus, name='aboutus'),
+    url(r'^base/', include('base.urls')),
     url(r'^$', include('base.urls')),
-    url(r'^accounts/', include('allauth.urls')),
-    url(r'^accounts/profile/', views.profile, name='profile'),
 )

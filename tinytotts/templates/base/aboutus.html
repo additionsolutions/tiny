@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block base_block %}
+            {% include 'base/base.html' %}
+    {% endblock %}
+    
+</head>
+
+<body>
+   
+    <header>
+
+        {% block navbar_block %}
+            {% include 'base/navbar.html' %}
+        {% endblock %}
+        <div class="container">
+        <menu>
+            
+        </menu>
+        </div>
+    </header>
+
+
+    <div class="wrapper">
+
+        <section id="support" class="doublediagonal">
+            <div class="container">
+                    <H1> About Us </H1>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        {% block footer_block %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+    </footer>
+
+    {% block basefoot_block %}
+        {% include 'base/basefoot.html' %}
+    {% endblock %}
+
+</body>
+
+</html>

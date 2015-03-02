@@ -238,7 +238,7 @@ section#features .media.media-left .media-body {
   text-align: right;
 }
 section#features .media.feature {
-  margin-top: 25px;
+  margin-top: 45px;
 }
 section#features .media.feature:first-child {
   margin-top: 0;
@@ -1103,4 +1103,8 @@ form .form-control:focus {
 }
 .pre-loader {
   background: #336799;
+}
+
+menu {
+  padding: 55px 0;
 }
