@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^addsol/', include(admin.site.urls)),
     url(r'^aboutus/', views.aboutus, name='aboutus'),
     url(r'^tinytotts/', views.tinytotts, name='tinytotts'),
+    url(r'^c/', include('contents.urls')),
     url(r'^base/', include('base.urls')),
     url(r'^$', include('base.urls')),
 )
