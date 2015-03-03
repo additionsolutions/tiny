@@ -74,6 +74,7 @@ def register(request):
             'base/register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
     
+    
 def user_login(request):
 
     # If the request is a HTTP POST, try to pull out the relevant information.
@@ -115,6 +116,7 @@ def user_login(request):
         # blank dictionary object...
         return render(request, 'base/login.html', {})
         
+        
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required
 def user_logout(request):
@@ -123,3 +125,13 @@ def user_logout(request):
 
     # Take the user back to the homepage.
     return HttpResponseRedirect('/base/')
+    
+    
+    
+def tinytotts(request):
+    context = RequestContext(request)
+    context_dict = {'message': 'Tiny Totts'}
+    if request.user.is_authenticated():
+        return render_to_response('base/tinytotts.html', context_dict, context)
+    else:
+        return render_to_response('base/tinytottsguest.html', context_dict, context)
