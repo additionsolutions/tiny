@@ -1,22 +1,26 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User, Group, Permission
 from base.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.views.generic.list import ListView
+
 
 def index(request):
     context = RequestContext(request)
     context_dict = {'message': 'Hello Rahul Shinde'}
     return render_to_response('base/index.html', context_dict, context)
-    
+
+
 def aboutus(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "This page is about us"}
     return render_to_response('base/aboutus.html', context_dict, context)
-    
+
+
 def register(request):
 
     # A boolean value for telling the template whether the registration was successful.
@@ -100,7 +104,8 @@ def user_login(request):
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/base/')
+                request.session['user'] = request.user.username
+                return HttpResponseRedirect('/base/profile/')
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your Tiny Totts account is disabled.")
@@ -126,7 +131,20 @@ def user_logout(request):
     # Take the user back to the homepage.
     return HttpResponseRedirect('/base/')
     
-    
+
+def profile(request):
+    context = RequestContext(request)
+    flag = False
+    group = Group.objects.get(name='site_admin')
+    users = group.user_set.all()
+    for muser in users:
+        if muser == request.user:
+            flag = True
+    context_dict = {'user': request.user, 'admin': flag}
+    if flag:
+        return render_to_response('base/profile_admin.html', context_dict, context)
+    else:
+        return render_to_response('base/profile.html', context_dict, context)
     
 def tinytotts(request):
     context = RequestContext(request)
@@ -135,3 +153,14 @@ def tinytotts(request):
         return render_to_response('base/tinytotts.html', context_dict, context)
     else:
         return render_to_response('base/tinytottsguest.html', context_dict, context)
+
+
+
+class UserListView(ListView):
+
+    model = User
+    template_name = 'base\user_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(UserListView, self).get_context_data(**kwargs)
+        return context
