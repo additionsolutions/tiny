@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'base',
     'contents',
 )
@@ -62,6 +63,7 @@ ROOT_URLCONF = 'tinytotts.urls'
 WSGI_APPLICATION = 'tinytotts.wsgi.application'
 
 SITE_ID = 1
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

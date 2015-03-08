@@ -1,26 +1,65 @@
-from django.shortcuts import render
-from contents.forms import ContentTypeForm
+#from contents.forms import ContentTypeForm
+from django.shortcuts import render, redirect, get_object_or_404
+from django.forms import ModelForm
+from contents.models import Content, ContentType
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit, Layout, Field, Button
+from crispy_forms.bootstrap import (PrependedText,  PrependedAppendedText, FormActions, StrictButton)
 
-def add_contenttype(request):
-    # A HTTP POST?
-    if request.method == 'POST':
-        form = ContentTypeForm(request.POST)
 
-        # Have we been provided with a valid form?
-        if form.is_valid():
-            # Save the new category to the database.
-            form.save(commit=True)
+class ContentTypeForm(ModelForm):
+    class Meta:
+        model = ContentType
 
-            # Now call the index() view.
-            # The user will be shown the homepage.
-            return render(request, 'base/index.html')
-        else:
-            # The supplied form contained errors - just print them to the terminal.
-            print form.errors
-    else:
-        # If the request was not a POST, display the form to enter details.
-        form = ContentTypeForm()
+def contenttype_list(request, template_name='contents/contenttype_list.html'):
+    contenttype = ContentType.objects.all()
+    data = {}
+    data['object_list'] = contenttype
+    return render(request, template_name, data)
 
-    # Bad form (or form details), no form supplied...
-    # Render the form with error messages (if any).
-    return render(request, 'contents/add_contenttype.html', {'form': form})
+def contenttype_create(request, template_name='contents/contenttype_form.html'):
+    form = ContentTypeForm(request.POST or None)
+    form.helper = FormHelper()
+    form.helper.form_method = 'POST'
+    form.helper.form_class = 'form-horizontal'
+    form.helper.label_class = 'col-sm-2'
+    form.helper.field_class = 'col-sm-6'
+    form.helper.layout = Layout(
+        Field('name', css_class='input-sm'),
+        Field('description', css_class='input-sm'),
+        FormActions(Submit('contenttype_list', 'Submit', css_class='btn btn-info'))
+    )
+
+    if form.is_valid():
+        form.save()
+        return redirect('contenttype_list')
+    return render(request, template_name, {'form':form})
+
+
+def contenttype_update(request, pk, template_name='contents/contenttype_form.html'):
+    contenttype = get_object_or_404(ContentType, pk=pk)
+    form = ContentTypeForm(request.POST or None, instance=contenttype)
+    form.helper = FormHelper()
+    form.helper.form_method = 'POST'
+    form.helper.form_class = 'form-horizontal'
+    form.helper.label_class = 'col-sm-2'
+    form.helper.field_class = 'col-sm-6'
+    form.helper.layout = Layout(
+        Field('name', css_class='input-sm'),
+        Field('description', css_class='input-sm'),
+        FormActions(Submit('contenttype_list', 'Submit', css_class='btn btn-info'))
+    )
+
+    if form.is_valid():
+        form.save()
+        return redirect('contenttype_list')
+    return render(request, template_name, {'form':form})
+
+
+def contenttype_delete(request, pk, template_name='contents/contenttype_confirm_delete.html'):
+    contenttype = get_object_or_404(ContentType, pk=pk)
+    if request.method=='POST':
+        contenttype.delete()
+        return redirect('contenttype_list')
+    return render(request, template_name, {'object':contenttype})
+
