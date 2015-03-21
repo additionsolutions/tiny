@@ -55,7 +55,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="fa fa-bars fa-lg"></span>
                         </button>
-                        <a class="navbar-brand" href="{% static "index.html" %}">
+                        <a class="navbar-brand" href="/">
                             <img src="{% static "img/freeze/logo.png" %}" alt="" class="logo">
                         </a>
                     </div>
@@ -76,7 +76,7 @@
                             {% if user.is_authenticated %}
                                 <a class="getApp" href="/base/logout">Logout</a>
                             {% else %}
-                                <a class="getApp" href="/base/login">Login</a>
+                                <a class="getApp" href="#getApp">Login</a>
                             {% endif %}
                             </li>
                             <li><a href="#support">Contact</a>
@@ -122,13 +122,13 @@
                         </div>
 
                         <div class="tp-caption large_white_bold sft" data-x="550" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1200" data-easing="Power4.easeOut">
-                            Pai's 
+                            Excelencia
                         </div>
-                        <div class="tp-caption large_white_light sfr" data-x="770" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1400" data-easing="Power4.easeOut">
-                            Tiny Totts
+                        <div class="tp-caption large_white_light sfr" data-x="900" data-y="center" data-hoffset="0" data-voffset="-80" data-speed="500" data-start="1400" data-easing="Power4.easeOut">
+
                         </div>
                         <div class="tp-caption large_white_light sfb" data-x="550" data-y="center" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1500" data-easing="Power4.easeOut">
-                            Making future of India
+                            Skills Development Center
                         </div>
 
                         <div class="tp-caption sfb hidden-xs" data-x="550" data-y="center" data-hoffset="0" data-voffset="85" data-speed="1000" data-start="1700" data-easing="Power4.easeOut">
@@ -158,7 +158,7 @@
 
                         
                         <div class="tp-caption large_white_light sft" data-x="center" data-y="250" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1400" data-easing="Power4.easeOut">
-                            Every Child <i class="fa fa-heart"></i>
+
                         </div>
                         
                         
@@ -202,10 +202,10 @@
 
                         
                         <div class="tp-caption mediumlarge_light_white sfl hidden-xs" data-x="left" data-y="center" data-hoffset="0" data-voffset="-50" data-speed="1000" data-start="1000" data-easing="Power4.easeOut">
-                           Tiny Totts
+                           Excelencia
                         </div>
                         <div class="tp-caption mediumlarge_light_white sft hidden-xs" data-x="left" data-y="center" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1200" data-easing="Power4.easeOut">
-                           Aim - Objective
+                           Aim
                         </div>
                         <div class="tp-caption small_light_white sfb hidden-xs" data-x="left" data-y="center" data-hoffset="0" data-voffset="80" data-speed="1000" data-start="1600" data-easing="Power4.easeOut">
                            <p>This is our aim - line 1 <br> A successful academic journey with excellence attitude. <br>Some people call it an objective but aim is also used. Its upto you what you want to use.</p>
@@ -233,7 +233,7 @@
                 <div class="section-heading scrollpoint sp-effect3">
                     <h1>Programs</h1>
                     <div class="divider"></div>
-                    <p>Learn more about our programs and activites</p>
+                    <p>Learn more about us</p>
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-4 scrollpoint sp-effect1">
@@ -242,7 +242,7 @@
                                 <i class="fa fa-cogs fa-2x"></i>
                             </a>
                             <div class="media-body">
-                                <h3 class="media-heading">Tint Totts</h3>
+                                <h3 class="media-heading">Excelencia</h3>
                                 Lorem ipsum dolor sit amet.
                             </div>
                         </div>
@@ -251,7 +251,7 @@
                                 <i class="fa fa-envelope fa-2x"></i>
                             </a>
                             <div class="media-body">
-                                <h3 class="media-heading">Reader Club</h3>
+                                <h3 class="media-heading">Victory</h3>
                                 Lorem ipsum dolor sit amet.
                             </div>
                         </div>
@@ -322,9 +322,9 @@
         <section id="reviews">
             <div class="container">
                 <div class="section-heading inverse scrollpoint sp-effect3">
-                    <h1>Reviews</h1>
+                    <h1>Feedback</h1>
                     <div class="divider"></div>
-                    <p>Read What's The Parents Are Saying About Us</p>
+                    <p>Parent's Opinion !</p>
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
@@ -413,38 +413,38 @@
                 <div class="section-heading scrollpoint sp-effect3">
                     <h1>Photographs</h1>
                     <div class="divider"></div>
-                    <p>See what’s included in the Activities/p>
+                    <p></p>
                 </div>
 
                 <div class="filter scrollpoint sp-effect3">
-                    <a href="{% static "javascript:void(0)" class="button js-filter-all active" %}">All Photos</a>
-                    <a href="{% static "javascript:void(0)" class="button js-filter-one" %}">Birthdays</a>
-                    <a href="{% static "javascript:void(0)" class="button js-filter-two" %}">Annual Day</a>
-                    <a href="{% static "javascript:void(0)" class="button js-filter-three" %}">Outdoor</a>
+                    <a href="javascript:void(0)" class="button js-filter-all active">All Photos</a>
+                    <a href="javascript:void(0)" class="button js-filter-one">Birthdays</a>
+                    <a href="javascript:void(0)" class="button js-filter-two">Annual Day</a>
+                    <a href="javascript:void(0)" class="button js-filter-three">Outdoor</a>
                 </div>
                 <div class="slider filtering scrollpoint sp-effect5" >
                     <div class="one">
-                        <img src="{% static "img/freeze/screens/profile.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/1.jpg" %}" alt="">
                         <h4>Profile Page</h4>
                     </div>
                     <div class="two">
-                        <img src="{% static "img/freeze/screens/menu.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/2.jpg" %}" alt="">
                         <h4>Toggel Menu</h4>
                     </div>
                     <div class="three">
-                        <img src="{% static "img/freeze/screens/weather.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/3.jpg" %}" alt="">
                         <h4>Weather Forcast</h4>
                     </div>
                     <div class="one">
-                        <img src="{% static "img/freeze/screens/signup.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/4.jpg" %}" alt="">
                         <h4>Sign Up</h4>
                     </div>
                     <div class="one">
-                        <img src="{% static "img/freeze/screens/calendar.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/5.jpg" %}" alt="">
                         <h4>Event Calendar</h4>
                     </div>
                     <div class="two">
-                        <img src="{% static "img/freeze/screens/options.jpg" %}" alt="">
+                        <img src="{% static "img/freeze/screens/6.jpg" %}" alt="">
                         <h4>Some Options</h4>
                     </div>
                     <div class="three">
@@ -465,7 +465,8 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 scrollpoint sp-effect2">
                         <div class="video-container" >
-                            <iframe src="http://player.vimeo.com/video/70984663"></iframe>
+                           <iframe width="420" height="315" src="https://www.youtube.com/embed/ZudWnnQigvo" frameborder="0" allowfullscreen></iframe>
+
                         </div>
                     </div>
                 </div>
@@ -542,7 +543,7 @@
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-                                            <a href="mailto:support@oleose.com">mrspurnima_pai@yahoo.co.in</a>
+                                            <a href="mailto:support@oleose.com">purnimapai.pp@gmail.com</a>
                                         </h4>
                                     </div>
                                 </div>

@@ -4,8 +4,8 @@ from base.views import UserListView
 
 urlpatterns = patterns('',
         url(r'^register/$', views.register, name='register'),
-        #url(r'^userupdate/(\d+)/$', views.userupdate, name='edit'),
-        url(r'^userdelete/(\d+)/$', views.userdelete, name='delete'),
+        url(r'^users/userupdate/(\d+)/$', views.userupdate, name='edit'),
+        url(r'^users/userdelete/(\d+)/$', views.userdelete, name='delete'),
         url(r'^login/$', views.user_login, name='login'),
         url(r'^index/', views.index, name='index'),
         url(r'^profile/$', views.profile, name='profile'),

@@ -24,7 +24,6 @@ class CurrentAcademicDuration(models.Model):
 class ContentType(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
     description = models.CharField(max_length=250, blank=True)
-
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
         return self.name

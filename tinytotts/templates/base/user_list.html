@@ -49,10 +49,10 @@
                                     <td>{{ user.last_name }}</td>
                                     <td>{{ user.email }}</td>
                                     <td>
-                                        <a href="/base/userupdate/{{ user.id }}" class="btn btn-primary inverse btn-sm">
+                                        <a href="userupdate/{{ user.id }}" class="btn btn-primary inverse btn-sm">
                                             <img src="{% static "img/edit.png" %}" height="15" width="15" alt="Edit"></a>
                                     </td>
-                                    <td><a href="/base/userdelete/{{ user.id }}" class="btn btn-primary inverse btn-sm">
+                                    <td><a href="userdelete/{{ user.id }}" class="btn btn-primary inverse btn-sm">
                                             <img src="{% static "img/delete.png" %}" height="15" width="15" alt="Delete"></a></td>
                                 {% endif %}
                               {% empty %}

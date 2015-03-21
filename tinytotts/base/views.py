@@ -145,3 +145,8 @@ def userdelete(request, id):
    usr = User.objects.get(pk = id)
    usr.delete()
    return HttpResponse('deleted')
+
+def userupdate(request, id):
+   usr = User.objects.get(pk = id)
+   usr.save()
+   return HttpResponse('Updated')

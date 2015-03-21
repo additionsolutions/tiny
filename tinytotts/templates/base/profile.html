@@ -1,26 +1,118 @@
 <!doctype html>
 {% extends "base/aboutus.html" %}
-
+{% load staticfiles %}
 <html>
     <head>
+
         <title>Tiny Totts</title>
+
     </head>
 
 
     <body>
         {% block mainbody_block %}
             {% if user.is_authenticated %}
-                <H3> Welcome <i>{{ user.first_name }} {{ user.last_name }} </i></H3>
-                <br/><br/>
-                <a href="/base/register/">Register Here</a>
-                <br/><br/>
-                <a href="/c/add_contenttype/">Add a New Content Type</a><br />
+                <H3> Welcome to Excelencia: <i>{{ user.first_name }} {{ user.last_name }} </i></H3>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-8 ">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                            <h3 class="panel-title">Photographs</h3>
+                          </div>
+                        <div class="panel-body">
+                            {% include 'base/sliderbox.html' %}
+                          </div>
+                      </div>
+
+
+                    <div class="col-sm-4 ">
+                        <div class="panel panel-default panel-primary">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Notice Board</h3>
+                          </div>
+                          <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"> Notice 1 :<br/> This is to inform you that ...... blah blah blah blah ....</li>
+                                <li class="list-group-item"> Notice 2</li>
+                                <li class="list-group-item"> Notice 3</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="panel panel-default panel-info">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Portion Paper</h3>
+                          </div>
+                          <div class="panel-body">
+                            Notices 1
+                          </div>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                        <div class="col-sm-12">
+                          <section id="about">
+                            <div class="container">
+
+                                <div class="section-heading scrollpoint sp-effect3">
+                                    <h1>About Us</h1>
+                                    <div class="divider"></div>
+                                    <p>Oleose Beautiful App Landing Page</p>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-xs-6">
+                                        <div class="about-item scrollpoint sp-effect2">
+                                            <i class="fa fa-download fa-2x"></i>
+                                            <h3>Easy setup</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                                        <div class="about-item scrollpoint sp-effect5">
+                                            <i class="fa fa-mobile fa-2x"></i>
+                                            <h3>On-the-go</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                                        <div class="about-item scrollpoint sp-effect5">
+                                            <i class="fa fa-users fa-2x"></i>
+                                            <h3>Social connect</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                                        <div class="about-item scrollpoint sp-effect1">
+                                            <i class="fa fa-sliders fa-2x"></i>
+                                            <h3>Dedicated support</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                              </div>
+                        </section>
+                      </div>
+                    </div>
+
+
+
+                </div>
+
             {% else %}
-                    <br/><br/>
-                    You are not autheticated to view this page. <br/><br/>
-                    Please login.
+                <br/><br/>
+                You are not autheticated to view this page. <br/><br/>
+                Please login.
+
             {% endif %}
         {% endblock %}
+
     </body>
 
 </html>
