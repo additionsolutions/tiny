@@ -121,7 +121,37 @@ def profile(request):
         return render_to_response('base/profile_admin.html', context_dict, context)
     else:
         return render_to_response('base/profile.html', context_dict, context)
+
+def phonetics(request):
+    context = RequestContext(request)
+    flag = False
+    group = Group.objects.get(name='site_admin')
+    users = group.user_set.all()
+    for muser in users:
+        if muser == request.user:
+            flag = True
+    context_dict = {'user': request.user, 'admin': flag}
+    if flag:
+        return render_to_response('base/profile_admin.html', context_dict, context)
+    else:
+        return render_to_response('base/phonetics.html', context_dict, context)        
     
+
+def english(request):
+    context = RequestContext(request)
+    flag = False
+    group = Group.objects.get(name='site_admin')
+    users = group.user_set.all()
+    for muser in users:
+        if muser == request.user:
+            flag = True
+    context_dict = {'user': request.user, 'admin': flag}
+    if flag:
+        return render_to_response('base/profile_admin.html', context_dict, context)
+    else:
+        return render_to_response('base/english_test.html', context_dict, context) 
+        
+        
 def tinytotts(request):
     context = RequestContext(request)
     context_dict = {'message': 'Tiny Totts'}
