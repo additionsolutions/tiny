@@ -13,23 +13,14 @@
             </div>
         {% endblock %}
         {% include "base/admin_menu.html" %}
-
-        {% load crispy_forms_tags %}
-
+        
         <div id="asection">
-        <a class="btn btn-primary" href="{% url "content_list" %}">Back to Content</a>
+            <a class="btn btn-primary" href="{% url "content_list" %}">Back to Content</a>
                       <br><br>
-            <div class="container">
-                  <div class="row">
-                    <div class="col-md-8">
-
-                            {% csrf_token %}
-
-                            {%  crispy form %}
-
-                    </div>
-                  </div>
-            </div>
+            
+        {% include "contents/form_snippet.html" %}
+            
+            
         </div>
     {% endblock %}
     </body>

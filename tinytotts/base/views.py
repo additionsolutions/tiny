@@ -19,7 +19,11 @@ def aboutus(request):
     context = RequestContext(request)
     context_dict = {'boldmessage': "This page is about us"}
     return render_to_response('base/aboutus.html', context_dict, context)
-
+    
+def excelencia(request):
+    context = RequestContext(request)
+    context_dict = {'boldmessage': "This page is about Excelcia"}
+    return render_to_response('base/excelencia.html', context_dict, context)
 
 def register(request):
     redirect_url = request.GET.get('next')
@@ -150,6 +154,20 @@ def english(request):
         return render_to_response('base/profile_admin.html', context_dict, context)
     else:
         return render_to_response('base/english_test.html', context_dict, context) 
+        
+def englishtest2(request):
+    context = RequestContext(request)
+    flag = False
+    group = Group.objects.get(name='site_admin')
+    users = group.user_set.all()
+    for muser in users:
+        if muser == request.user:
+            flag = True
+    context_dict = {'user': request.user, 'admin': flag}
+    if flag:
+        return render_to_response('base/profile_admin.html', context_dict, context)
+    else:
+        return render_to_response('base/english_test2.html', context_dict, context) 
         
         
 def tinytotts(request):

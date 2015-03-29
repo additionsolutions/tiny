@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url (r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^addsol/', include(admin.site.urls)),
     url(r'^aboutus/', views.aboutus, name='aboutus'),
+    url(r'^excelencia/', views.excelencia, name='excelencia'),
     url(r'^tinytotts/', views.tinytotts, name='tinytotts'),
     url(r'^c/', include('contents.urls')),
     url(r'^base/', include('base.urls')),
