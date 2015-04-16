@@ -10,7 +10,14 @@
 
         {% block test_body %}
         <div id="test_area">
-        {% include 'etests/english_q1.html' %}
+        
+        <h2>Test Name : {{ testset }} <br/><br/>
+        Test Description : {{ testset.description }} <br/><br/>
+        Start Date : {{ testset.startdate }} <br/><br/>
+        End Date : {{ testset.enddate }} <br/><br/>
+        <br/> </h2>
+        <h3>Click 'Next' button to start the test: </h3><br/><br/>
+        
         </div>
          <button id="prev" test-action="1" class="btn btn-large btn-primary" type="button">Previous</button>
          <button id="next" test-action="2" class="btn btn-large btn-primary" type="button">Next</button>

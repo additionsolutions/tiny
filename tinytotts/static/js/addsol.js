@@ -3,24 +3,37 @@ $(document).ready(function(){
                $('#notice').html(data);
            });
            
+    $.get('/t/etest/testlist', function(data){
+               $('#tests').html(data);
+           });
+           
     $('#prev').click(function(){
-        alert('Hello dude prev');
         var test_action;
-        test_action = $(this).attr("test-action");
-        alert(test_action);
-        $.get('/t/etests/etest/', {category_id: catid}, function(data){
-                   $('#like_count').html(data);
-                   $('#likes').hide();
+        action = $(this).attr("test-action");
+        $.get('/t/etest/sr/' + action, function(data){
+                   // alert(data);
+                   $('#test_area').html(data);
                });
     });
     
     $('#next').click(function(){
-        $.get('/t/etest/sr/2', function(data){
+        var test_action;
+        action = $(this).attr("test-action");
+        $.get('/t/etest/sr/' + action, function(data){
                    // alert(data);
                    $('#test_area').html(data);
-                   $('#subm').hide();
                });
     });
+    
+    $('[name=ans]').click(function(){
+        var ans_action;
+        ans = $(this).attr("ans-action");
+        $.get('/t/etest/ans/' + ans, function(data){
+                   // alert(data);
+                   $('#ans_area').html(data);
+               });
+    });
+
        
 });
 
