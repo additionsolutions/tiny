@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block base_block %}
+            {% include 'base/base.html' %}
+    {% endblock %}
+    
+    <script>
+        function showText(id,delay){
+        var elem=document.getElementById(id);
+        setTimeout(function(){elem.style.visibility='visible';},delay*500)
+        }
+        window.onload=function(){
+        showText('delayedText0',2);
+        showText('delayedText1',3);
+        showText('delayedText2',4);
+        showText('delayedText3',5);
+        
+        showText('delayedText10',2);
+        showText('delayedText11',3);
+        showText('delayedText12',4);
+        showText('delayedText13',5);
+        
+        showText('delayedText20',2);
+        showText('delayedText21',3);
+        showText('delayedText22',4);
+        showText('delayedText23',5);
+        }
+        
+        function myCorrectClick() {
+            var msg=document.getElementById("ans");
+            msg.innerHTML = "<img src={% static "img/tick.gif" %} width=50px height=50px/>";
+        }    
+        
+        function myWrongClick() {
+            var msg=document.getElementById("ans");
+            msg.innerHTML = "<img src={% static "img/cross.gif" %} width=50px height=50px/>";
+        }          
+
+        function PlaySound(soundobj) {
+              var thissound=document.getElementById(soundobj);
+              thissound.play();
+        }
+        
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        
+
+    </script>   
+   
+<style>   
+    .circle {
+        cursor:url({% static "img/blue_circle.png" %}), auto;
+    }
+    
+    #div1 {width:80px;height:80px;border:1px solid #aaaaaa; background-color:white; } 
+    
+    #box {position: relative;
+       margin-left: auto;
+       margin-right: auto;
+       align:center;
+       left: 0;
+       right: 0;
+       width: 90px;
+       height: 90px;
+       
+       border: 1px solid black; } 
+    
+</style>
+</head>
+
+<body >
+   
+    <header>
+
+        {% block navbar_block %}
+            <p2 style="color:white"><a href="/base/profile"><p2 style="color:white">Prosperidad</p2></a> : English Test </p2>
+        {% endblock %}
+
+    </header>
+    
+    <audio id="success" src="{% static "audio/applause.mp3" %}" preload="auto" autobuffer>
+    </audio>
+    <audio id="wrong" src="{% static "audio/error.mp3" %}" preload="auto" autobuffer>
+    </audio>
+    
+    
+    <div style="background-image: url({% static "img/bg_english.png" %}); height: 620px; width: 1348px; border: 1px solid black;" >   
+        <div class="rows">
+            <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
+            <div class="col-sm-4" ><p1 style="font-size:40px; color:purple;">Missing Alphabet</p1></div>
+            <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
+            <div class="col-sm-12" ><hr/></div>
+
+            <div class="col-sm-2" ><p1 style="font-size:30px; color:red;"></div>
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/hut.jpg" %} width=150px height=120px/></div> 
+            <div id="box" class="col-sm-1" ondrop="drop(event)" ondragover="allowDrop(event)" > </div>
+            <div class="col-sm-1"><text1 style="font-size:50px; color:transparent;">. </text1> 
+            <text1 style="font-size:75px; color:red;">u </text1></div>
+            <div class="col-sm-1"><text1 style="font-size:75px; color:red;">t </text1>
+            </div>
+            <div class="col-sm-2"><text1 style="font-size:75px; color:black;">(</text1>
+            <text1 style="font-size:50px; color:transparent;">. </text1> 
+            <text1 id="drag1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">h</text1>
+            </div>
+            <div class="col-sm-1">
+            <p id="drag2" class="col-sm-1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">t</p>
+            </div>
+            <div class="col-sm-1">
+            <p id="drag3" class="col-sm-1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">f</p>
+            </div>
+            <div class="col-sm-1"><text1 style="font-size:75px; color:black;">) </text1>
+            </div>
+            
+            
+            <div class="col-sm-3" ><p1 style="font-size:30px; color:red;"></div>
+            <div id="delayedText10" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/bus.jpg" %} width=180px height=120px/></div>
+            <div class="col-sm-11" ></div>
+            
+           
+            <div id="delayedText20" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/sun.jpg" %} width=150px height=150px/></div>
+            
+        </div>    
+            
+        </div>
+    </div>
+        
+    <footer>
+        {% block footer_block %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+    </footer>
+
+    {% block basefoot_block %}
+        {% include 'base/basefoot.html' %}
+    {% endblock %}
+
+</body>
+
+</html>

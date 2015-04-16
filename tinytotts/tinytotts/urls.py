@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^excelencia/', views.excelencia, name='excelencia'),
     url(r'^tinytotts/', views.tinytotts, name='tinytotts'),
     url(r'^c/', include('contents.urls')),
+    url(r'^t/', include('etests.urls')),
     url(r'^base/', include('base.urls')),
     url(r'^$', include('base.urls')),
 )

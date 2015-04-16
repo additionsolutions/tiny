@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'base',
     'contents',
+    'etests',
 )
 
 
@@ -97,7 +98,7 @@ STATIC_URL = '/static/'
 ## Commented for Grappelli
 #
 STATICFILES_DIRS = (
-     STATIC_PATH,
+    STATIC_PATH,
 )
 
 

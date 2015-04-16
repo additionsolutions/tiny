@@ -38,6 +38,7 @@ class Content(models.Model):
     picture = models.ImageField(upload_to='profile_images', blank=True)
     video = models.URLField(blank=True)
     contenttype = models.ForeignKey(ContentType)
+    groups = models.ManyToManyField(Group)
 
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):

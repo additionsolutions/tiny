@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, RequestContext, render_to_response
 from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from contents.models import User, Content, ContentType
+from django.http import HttpResponse, HttpResponseRedirect
 
 ######################################
 # Content Type
@@ -92,6 +93,15 @@ def content_delete(request, pk, template_name='contents/content_confirm_delete.h
 
 
 ######################################
-# Content In line form
+# Content Notice
 ######################################
 
+def notice(request):
+    context = RequestContext(request)
+    notices = []
+    if request.method == 'GET':
+        notices = Content.objects.filter(groups=request.user.groups.all())
+        
+    return render_to_response('contents/notice.html', {'notices': notices }, context)
+
+    

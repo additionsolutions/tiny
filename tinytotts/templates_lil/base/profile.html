@@ -4,25 +4,12 @@
 <html>
     <head>
 
-        <title>Tiny Totts</title>
+        <title>Lil Lilliputs</title>
 
     </head>
 
 
     <body>
-    
-    <script>
-        function notice(kind) {
-          alert("Was successful?: ");
-          });
-        }
-        function addClickHandlers() {
-          $("#upvote").click( alert("Was successful?: ");)
-        }
-        $(document).ready(addClickHandlers);
-    </script>
-        
-    
         {% block mainbody_block %}
             {% if user.is_authenticated %}
                 <H3> Welcome to Excelencia: <i>{{ user.first_name }} {{ user.last_name }} </i></H3>
@@ -31,7 +18,7 @@
                     <div class="col-sm-8 ">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                            <h3 id="noticewq" class="panel-title">Photographs</h3>
+                            <h3 class="panel-title">Photographs</h3>
                           </div>
                         <div class="panel-body">
                             {% include 'base/sliderbox.html' %}
@@ -44,10 +31,12 @@
                           <div class="panel-heading">
                             <h3 class="panel-title">Notice Board</h3>
                           </div>
-                          <div class="panel-body">                  
-                                <ul id="notice" class="list-group">
-                                    No notices
-                                </ul>
+                          <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"> Notice 1 :<br/> This is to inform you that School will remain close on the occasion of Mahatma Gandhi Jayanti</li>
+                                <li class="list-group-item"> Notice 2 : <br/> Please note that every student must wear a identity card.</li>
+                                <li class="list-group-item"> Notice 3</li>
+                            </ul>
                           </div>
                         </div>
 
