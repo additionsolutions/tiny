@@ -9,22 +9,7 @@
 
 <head>
     {% load staticfiles %}
-
     
-    <script>
-        function myClick(qans) {
-            var msg=document.getElementById("ans");
-            var yessound=document.getElementById("success");
-            var nosound=document.getElementById("wrong");
-            if (qans == 'right')
-                {msg.innerHTML = "<img src={% static "img/tick.gif" %} width=50px height=50px/>";
-                yessound.play();}
-            else
-                {msg.innerHTML = "<img src={% static "img/cross.gif" %} width=50px height=50px/>";
-                nosound.play();}
-        }   
-
-    </script>   
    
 <style>   
     .circle {

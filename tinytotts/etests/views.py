@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, RequestContext, render_to_response
-from etests.models import TestSet, TestSetLine
-from django.db.models import Q
+from etests.models import TestSet, TestSetLine, Answer
+from django.db.models import Q, Max, Min
+from contents.models import User
 
 
 ######################################
@@ -31,6 +32,14 @@ def etestsr(request, action):
             action = int(action)
         except ValueError:
             raise Http404()
+            
+    record = "normal"   
+    # # Find a First and Last questions
+    Record_obj = TestSetLine.objects.filter(testset=request.session['testno'])
+    # # Calculates the maximum and minimum out of the already-retrieved objects
+    last = Record_obj.aggregate(Max('srno'))
+    first = Record_obj.aggregate(Min('srno'))   
+            
     if action == 2: # Next
         sr = request.session['qno'] + 1
     if action == 1: # Previous
@@ -38,7 +47,15 @@ def etestsr(request, action):
         
     testsetline = "etests/" + str(TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno'])))
     request.session['qno'] = sr
-    return render(request, 'etests/test_area.html', { 'testsetline': testsetline })
+    
+    # find out if first or last record
+    if sr == last['srno__max']:
+        record = "last"
+        
+    if sr == first['srno__min']:
+        record = "first"
+
+    return render(request, 'etests/test_area.html', { 'testsetline': testsetline,'record': record})
 
 
 ## Evaluate and give marks
@@ -48,7 +65,19 @@ def etestans(request, ans):
             ans = int(ans)
         except ValueError:
             raise Http404()
+            
+    q = TestSetLine.objects.get(Q(srno=request.session['qno']), Q(testset=request.session['testno']))
+
+    try:
+        ansr = Answer.objects.get(question=q)
+    except Answer.DoesNotExist:
+        ansr = Answer.objects.create(marks=ans, question=q, user=request.user)
+    else:
+        ansr.marks = ans
+        ansr.user = request.user
+
+    ansr.save()
+    # Answer.objects.all().delete()            
     
-    testsetline = request.session['qno']
-    
-    return render(request)
+    answer = "Answer recorded"
+    return render(request, 'etests/ans_area.html', { 'answer': answer })

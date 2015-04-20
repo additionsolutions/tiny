@@ -3,28 +3,29 @@
 
 <head>
     {% load staticfiles %}
-
     
 </head>
 
 <body >
        
     {% block circle_test %}
-            
             <div class="col-sm-3">
             <img src={% static "img/fish.jpg" %} width=250px height=240px/></div>
             
             <div class="circle col-sm-3" >
-            <button name="ans" ans-action="0" class="circle";>dish</button></div>
-            
+            <button class="circle" onclick="marks(0)";>dish</button></div>
             <div class="circle col-sm-3" >
-            <button name="ans" ans-action="1" class="circle";>fish</button></div>
+            <button class="circle" onclick="marks(1)";>fish</button></div>
+            <div class="circle col-sm-3">
+            <button class="circle" onclick="marks(0)";>wish</button></div>
             
-            <div class="circle col-sm-2">
-            <button name="ans" ans-action="0" class="circle";>wish</button></div>
-            
-            <div id="ans_area" class="col-sm-3">
+            <div class="col-sm-12" >.</div>
+            <div class="col-sm-12" >.</div>
+            <div class="col-sm-3" ></div>
+            <div id="ans_area" class="col-sm-3" h3>
+
             </div>
+            
     {% endblock %}
 
 </body>

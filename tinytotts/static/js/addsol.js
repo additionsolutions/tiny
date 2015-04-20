@@ -6,34 +6,44 @@ $(document).ready(function(){
     $.get('/t/etest/testlist', function(data){
                $('#tests').html(data);
            });
-           
-    $('#prev').click(function(){
+    
+    $('#start').click(function(){
         var test_action;
         action = $(this).attr("test-action");
         $.get('/t/etest/sr/' + action, function(data){
                    // alert(data);
                    $('#test_area').html(data);
-               });
-    });
-    
-    $('#next').click(function(){
-        var test_action;
-        action = $(this).attr("test-action");
-        $.get('/t/etest/sr/' + action, function(data){
-                   // alert(data);
-                   $('#test_area').html(data);
-               });
-    });
-    
-    $('[name=ans]').click(function(){
-        var ans_action;
-        ans = $(this).attr("ans-action");
-        $.get('/t/etest/ans/' + ans, function(data){
-                   // alert(data);
-                   $('#ans_area').html(data);
+                   $('#start').hide();
                });
     });
 
-       
 });
+
+
+function navigate(test_action)
+{
+    var scriptUrl = "/t/etest/sr/" + test_action;
+    var msg=getURL(scriptUrl);
+    $('#test_area').html(msg);
+}
+
+
+// Record Marks
+function marks( ans )
+{
+    //example use
+    var scriptUrl = "/t/etest/ans/" + ans;
+    var msg=getURL(scriptUrl);
+    $('#ans_area').html(msg);
+}
+
+function getURL(url){
+    return $.ajax({
+        type: "GET",
+        url: url,
+        cache: false,
+        async: false
+    }).responseText;
+}
+
 

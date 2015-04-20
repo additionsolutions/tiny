@@ -13,83 +13,102 @@
             {% include 'base/base.html' %}
     {% endblock %}
     
+    <style>
+        #ztext {
+          font-size: 700%;
+        }
+        
+        #ztext_right {
+          font-size: 700%;
+          text-align: right;
+        }
+        
+        .zblank {
+          font-size: 700%;
+          float: left;
+          width: 120px;
+          height: 110px;
+          padding: 10px;
+          padding-top: 2px;
+          padding-bottom: 0;
+          border: 2px dashed #333;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          margin: 0 0 0 0;
+          background: #fff;
+        }
+        
+        .hovered {
+          background: #aaa;
+        }
+        
+        .zans {
+          font-size: 700%;
+          text-align : center;
+          vertical-align: middle;
+          color : blue;
+          float: left;
+          width: 120px;
+          height: 110px;
+          padding: 1px;
+          padding-top: 2px;
+          padding-bottom: 0;
+          border: 2px solid #333;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          margin: 0 0 0 2px;
+          background: #ccc;
+        }
+        
+        .zans p {
+            margin-top: -15px;
+        }
+        
+    </style>
+    
     <script>
-        function showText(id,delay){
-        var elem=document.getElementById(id);
-        setTimeout(function(){elem.style.visibility='visible';},delay*500)
+        $( init );
+ 
+        function init() {
+          $('#zans1').draggable({
+            containment: '#testarea',
+            stack: '#zans1',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans2').draggable({
+            containment: '#testarea',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          
+          $('#zblank1').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans1, #zans2',
+            drop: handleAnsDrop
+            });
+          
         }
-        window.onload=function(){
-        showText('delayedText0',2);
-        showText('delayedText1',3);
-        showText('delayedText2',4);
-        showText('delayedText3',5);
-        
-        showText('delayedText10',2);
-        showText('delayedText11',3);
-        showText('delayedText12',4);
-        showText('delayedText13',5);
-        
-        showText('delayedText20',2);
-        showText('delayedText21',3);
-        showText('delayedText22',4);
-        showText('delayedText23',5);
+     
+        function handleAnsDrop( event, ui ) {
+            // write some logic here
+            ui.draggable.draggable( 'disable' );
+            $(this).droppable( 'disable' );
+            ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+            ui.draggable.draggable( 'option', 'revert', false );
         }
         
-        function myCorrectClick() {
-            var msg=document.getElementById("ans");
-            msg.innerHTML = "<img src={% static "img/tick.gif" %} width=50px height=50px/>";
-        }    
-        
-        function myWrongClick() {
-            var msg=document.getElementById("ans");
-            msg.innerHTML = "<img src={% static "img/cross.gif" %} width=50px height=50px/>";
-        }          
+    </script>
 
-        function PlaySound(soundobj) {
-              var thissound=document.getElementById(soundobj);
-              thissound.play();
-        }
-        
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-        
-
-    </script>   
-   
-<style>   
-    .circle {
-        cursor:url({% static "img/blue_circle.png" %}), auto;
-    }
-    
-    #div1 {width:80px;height:80px;border:1px solid #aaaaaa; background-color:white; } 
-    
-    #box {position: relative;
-       margin-left: auto;
-       margin-right: auto;
-       align:center;
-       left: 0;
-       right: 0;
-       width: 90px;
-       height: 90px;
-       
-       border: 1px solid black; } 
-    
-</style>
 </head>
 
 <body >
-   
+  
     <header>
 
         {% block navbar_block %}
@@ -97,51 +116,43 @@
         {% endblock %}
 
     </header>
-    
-    <audio id="success" src="{% static "audio/applause.mp3" %}" preload="auto" autobuffer>
-    </audio>
-    <audio id="wrong" src="{% static "audio/error.mp3" %}" preload="auto" autobuffer>
-    </audio>
-    
-    
-    <div style="background-image: url({% static "img/bg_english.png" %}); height: 620px; width: 1348px; border: 1px solid black;" >   
+
+    <div id="testarea" style="background-image: url({% static "img/bg_english.png" %}); height: 620px; width: 1348px; border: 1px solid black;" >   
         <div class="rows">
             <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
             <div class="col-sm-4" ><p1 style="font-size:40px; color:purple;">Missing Alphabet</p1></div>
             <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
             <div class="col-sm-12" ><hr/></div>
+        </div>  
+        
+        <div class="rows">
+            <div id="img" class="col-sm-1">.</div>
+            <div id="img" class="col-sm-1">
+                image
+            </div>
+            <div id="ztext_right" class="col-sm-4">
+                A hen is
+            </div>
+            <div id="zblank1" class="zblank col-sm-2">
+              
+            </div>
+            <div id="ztext" class="col-sm-4">
+                the hut
+            </div>
+        </div> 
+        <div class="col-sm-12" ><hr/></div>
+        <div class="rows">       
+            <div id="img" class="col-sm-4">.</div>
+            <div id="zans1" class="zans col-sm-2">
+              <p>on<p>
+            </div>
+            <div id="ztext_right" class="col-sm-1">/</div>
+            
+            <div id="zans2" class="zans col-sm-2">
+              <p>in</p>
+            </div>
+        </div>  
 
-            <div class="col-sm-2" ><p1 style="font-size:30px; color:red;"></div>
-            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/hut.jpg" %} width=150px height=120px/></div> 
-            <div id="box" class="col-sm-1" ondrop="drop(event)" ondragover="allowDrop(event)" > </div>
-            <div class="col-sm-1"><text1 style="font-size:50px; color:transparent;">. </text1> 
-            <text1 style="font-size:75px; color:red;">u </text1></div>
-            <div class="col-sm-1"><text1 style="font-size:75px; color:red;">t </text1>
-            </div>
-            <div class="col-sm-2"><text1 style="font-size:75px; color:black;">(</text1>
-            <text1 style="font-size:50px; color:transparent;">. </text1> 
-            <text1 id="drag1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">h</text1>
-            </div>
-            <div class="col-sm-1">
-            <p id="drag2" class="col-sm-1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">t</p>
-            </div>
-            <div class="col-sm-1">
-            <p id="drag3" class="col-sm-1" style="font-size:75px; color:red" draggable="true" ondragstart="drag(event)">f</p>
-            </div>
-            <div class="col-sm-1"><text1 style="font-size:75px; color:black;">) </text1>
-            </div>
-            
-            
-            <div class="col-sm-3" ><p1 style="font-size:30px; color:red;"></div>
-            <div id="delayedText10" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/bus.jpg" %} width=180px height=120px/></div>
-            <div class="col-sm-11" ></div>
-            
-           
-            <div id="delayedText20" style="visibility:hidden" class="col-sm-2" ><img src={% static "img/sun.jpg" %} width=150px height=150px/></div>
-            
-        </div>    
-            
-        </div>
     </div>
         
     <footer>

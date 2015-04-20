@@ -14,13 +14,20 @@
             <img src={% static "img/hot.jpg" %} width=250px height=240px/></div>
             
             <div class="circle col-sm-3" >
-            <button class="circle"; onclick="myClick('right')">hot</button></div>
+            <button class="circle" onclick="marks(1)";>hot</button></div>
             
             <div class="circle col-sm-3" >
-            <button class="circle"; onclick="myClick('wrong')">pot</button></div>
+            <button class="circle" onclick="marks(0)";>pot</button></div>
             
-            <div class="circle col-sm-2">
-            <button class="circle"; onclick="myClick('wrong')">tot</button></div>
+            <div class="circle col-sm-3">
+            <button class="circle" onclick="marks(0)";>tot</button></div>
+                        
+            <div class="col-sm-12" >.</div>
+            <div class="col-sm-12" >.</div>
+            <div class="col-sm-3" ></div>
+            <div id="ans_area" class="col-sm-3" h3>
+
+            </div>
 
     {% endblock %}
 

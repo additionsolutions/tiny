@@ -14,5 +14,6 @@ urlpatterns = patterns('',
         url(r'^englishtest2/$', views.englishtest2, name='englishtest2'),
         url(r'^logout/$', views.user_logout, name='logout'),
         url(r'^users/$', UserListView.as_view(), name='user-list'),
+        url(r'^cardgame/$', views.cardgame, name='cardgame'),
         url(r'^$', views.index, name='index'),
         )
