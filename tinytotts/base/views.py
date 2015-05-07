@@ -126,6 +126,7 @@ def profile(request):
     else:
         return render_to_response('base/profile.html', context_dict, context)
 
+        
 def phonetics(request):
     context = RequestContext(request)
     flag = False
