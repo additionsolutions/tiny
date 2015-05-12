@@ -6,6 +6,7 @@ class TestSet(models.Model):
     code = models.CharField(max_length=100, unique=True, blank=False, null=False)
     testname = models.CharField(max_length=100, blank=False, null=False)
     description = models.CharField(max_length=300, blank=True, null=True)
+    no_ans = models.IntegerField(default=1, blank=False, null=False)
     startdate = models.DateField()
     enddate = models.DateField()
     groups = models.ManyToManyField(Group)

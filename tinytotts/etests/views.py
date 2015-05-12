@@ -40,11 +40,26 @@ def testset_delete(request, pk, template_name='etests/testset_confirm_delete.htm
  
     
     
-def testq(request, template_name='etests/testset_list.html'):
-    testset = TestSet.objects.all()
+def testq(request, template_name='etests/testquestion_list.html'):
+    testsetline = TestSetLine.objects.all()
     data = {}
-    data['object_list'] = testset
+    data['object_list'] = testsetline
     return render(request, template_name, data)
+
+def testsetline_update(request, pk, template_name='etests/testset_form.html'):
+    testsetline = get_object_or_404(TestSet, pk=pk)
+    form = TestSetLineForm(request.POST or None, instance=testsetline)
+    if form.is_valid():
+        form.save()
+        return redirect('testquestion_list')
+    return render(request, template_name, {'form':form})
+
+def testsetline_delete(request, pk, template_name='etests/testset_confirm_delete.html'):
+    testsetline = get_object_or_404(TestSet, pk=pk)
+    if request.method=='POST':
+        testsetline.delete()
+        return redirect('testquestion_list')
+    return render(request, template_name, {'object':testsetline})
 
 ######################################
 # Test List for selected group
@@ -63,7 +78,7 @@ def etest(request, testset):
     testset_obj = TestSet.objects.get(id=testset)
     request.session['testno'] = testset
     request.session['qno'] = 0
-    
+    request.session['no_ans'] = testset_obj.no_ans
     return render(request, 'etests/etest.html', { 'testset': testset_obj })
     
     
@@ -84,8 +99,10 @@ def etestsr(request, action):
             
     if action == 2: # Next
         sr = request.session['qno'] + 1
+	request.session['no_ans'] = 3
     if action == 1: # Previous
         sr = request.session['qno'] - 1
+	request.session['no_ans'] = 3
         
     testsetline = "etests/" + str(TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno'])))
     request.session['qno'] = sr
@@ -110,18 +127,29 @@ def etestans(request, ans):
             
     q = TestSetLine.objects.get(Q(srno=request.session['qno']), Q(testset=request.session['testno']))
 
-    try:
-        ansr = Answer.objects.get(question=q)
-    except Answer.DoesNotExist:
-        ansr = Answer.objects.create(marks=ans, question=q, user=request.user)
-    else:
-        ansr.marks = ans
-        ansr.user = request.user
+    #print '-----no_ans-----',request.session['no_ans']
 
-    ansr.save()
-    # Answer.objects.all().delete()            
-    
-    answer = "Answer recorded"
+    request.session['no_ans'] = request.session['no_ans']-1
+    #print '-----after decrement-----',request.session['no_ans']   
+
+    if request.session['no_ans'] == 0:
+
+	    try:
+		ansr = Answer.objects.get(question=q)
+		#print '------if block------',ansr
+	    except Answer.DoesNotExist:
+		ansr = Answer.objects.create(marks=ans, question=q, user=request.user)
+	    else:
+		ansr.marks = ans
+		ansr.user = request.user
+
+	    ansr.save()
+	    # Answer.objects.all().delete()            
+	    
+	    answer = "Answer recorded"
+    else:
+            answer = "Answer is not complete"
+    	    
     return render(request, 'etests/ans_area.html', { 'answer': answer })
     
 ######################################

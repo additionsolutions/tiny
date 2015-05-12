@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "base/aboutus.html" %}
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Tiny Totts</title>
+    </head>
+
+    <body>
+        {% block mainbody_block %}
+            <h1>Login to Tiny Totts</h1>
+
+            <form id="login_form" method="post" action="/base/login/">
+                {% csrf_token %}
+                Username: <input type="text" name="username" value="" size="50" />
+                <br /><br />
+                Password: <input type="password" name="password" value="" size="50" />
+                <br /><br />
+
+                <input type="submit" value="Submit" />
+            </form>
+        {% endblock %}
+    </body>
+</html>

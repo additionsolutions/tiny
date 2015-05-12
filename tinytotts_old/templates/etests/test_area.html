@@ -1,0 +1,25 @@
+{% include testsetline %}
+
+<div class="container">
+<div class="rows">
+    <div class="col-sm-12">.</div>
+</div>
+<div class="rows">
+{% if record == 'last' %}
+      <button id="prev" onclick="navigate(1)" class="col-sm-3 btn btn-large btn-primary" type="button">Previous</button>
+      <button class="col-sm-3 btn btn-large btn-primary" type="button" style="visibility:hidden">hide_me</button>
+      <button id="submit" onclick="navigate(0)" class="col-sm-3 btn btn-large btn-primary" type="button">Submit</button>
+{% endif %}
+
+{% if record == 'first' %}
+    <button class="col-sm-3 btn btn-large btn-primary" type="button" style="visibility:hidden">hide_me</button>
+    <button id="next" onclick="navigate(2)" class="col-sm-3 btn btn-large btn-primary" type="button">Next</button>
+    <button class="col-sm-3 btn btn-large btn-primary" type="button" style="visibility:hidden">hide_me</button>
+{% endif %}
+
+{% if record == 'normal' %}
+  <button id="prev" onclick="navigate(1)" class="col-sm-3 btn btn-large btn-primary" type="button">Previous</button>
+  <button id="next" onclick="navigate(2)" class="col-sm-3 btn btn-large btn-primary" type="button">Next</button>
+{% endif %}
+</div>
+</div>

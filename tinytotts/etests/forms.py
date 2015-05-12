@@ -17,15 +17,41 @@ class TestSetForm(forms.ModelForm):
         Field('description', css_class='input-sm'),
         Field('startdate', css_class='input-sm'),
         Field('enddate', css_class='datepicker'),
-        FormActions(Submit('/base/registration', 'Add User', css_class='btn-primary'))
+        FormActions(Submit('/base/registration', 'Submit', css_class='btn-primary'))
     )
 
     class Meta:
         model = TestSet
+	#exclude = ('testset',)
+	fields = ('code',
+                  'testname',
+		  'description',
+		  'startdate',
+                  'enddate',
+		  'groups', )
     
     
 
 class TestSetLineForm(forms.ModelForm):
+    helper = FormHelper()
+    helper.form_tag = True
+    helper.form_method = 'POST'
+    helper.form_class = 'form-horizontal'
+    helper.label_class = 'col-sm-4'
+    helper.field_class = 'col-sm-8'
+    helper.layout = Layout(
+        Field('filename', ),
+        Field('testset', ),
+        Field('srno', ),
+	Field('name', ),
+        Field('description', ),     
+        FormActions(Submit('/base/registration', 'Submit', css_class='btn-primary'))
+
+    )
     class Meta:
         model = TestSetLine
-        exclude = ('testset',)
+        fields = ('filename',
+                  'testset',
+		  'srno',
+		  'name',
+                  'description', )

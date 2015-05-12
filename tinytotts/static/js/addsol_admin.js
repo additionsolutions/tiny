@@ -25,7 +25,6 @@ function admin_nav(action)
     alert(action);
 }
 
-
 // Record Marks
 function marks( ans )
 {
