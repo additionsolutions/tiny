@@ -205,3 +205,9 @@ def cardgame(request):
     context = RequestContext(request)
     context_dict = {'message': 'Card Game by Rahul Shinde developed with the help of : "http://www.elated.com/articles/drag-and-drop-with-jquery-your-essential-guide/"'}
     return render_to_response('base/cardgame.html', context_dict, context)
+
+def submit_click(request):
+    context = RequestContext(request)
+    context_dict = {'message': 'move to homepage'}
+    print '----in base view-----'
+    return render_to_response('base/profile.html', context_dict, context)

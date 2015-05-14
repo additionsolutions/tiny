@@ -9,19 +9,45 @@
 
 <head>
     {% load staticfiles %}
-    {% block proper_word_test_header %}
-                        
-              Proper word test header
-                        
-    {% endblock %}
     <script>
         $( init );
  
         function init() {
+	  $('#zans4').draggable({
+            containment: '#testarea',
+            stack: '#zans4',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans4').data( 'number', 1 )
 
-	  var pos1= localStorage.getItem("pos1");
-	  var pos2= localStorage.getItem("pos2");
-         
+	  $('#zans3').draggable({
+            containment: '#testarea',
+            stack: '#zans3',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans3').data( 'number', 1 )
+
+	  $('#zans2').draggable({
+            containment: '#testarea',
+            stack: '#zans2',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans2').data( 'number', 1 )
+          
+          $('#zans1').draggable({
+            containment: '#testarea',
+            stack: '#zans1',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans1').data( 'number', 1 )
           
           $('#zans0').draggable({
             containment: '#testarea',
@@ -29,89 +55,72 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans0').data( 'number', 1 )
-
-	  $('#zans1').draggable({
-            containment: '#testarea',
-            stack: '#zans1',
-            cursor: 'move',
-            helper: 'clone',
-            revert: true
-            });
-          $('#zans1').data( 'number', 2 )
-
-	  $('#zans2').draggable({
-            containment: '#testarea',
-            stack: '#zans1',
-            cursor: 'move',
-            helper: 'clone',
-            revert: true
-            });
-          $('#zans2').data( 'number', 3 )
+          $('#zans0').data( 'number', 0 )
           
-          $('#zans3').draggable({
-            containment: '#testarea',
-            cursor: 'move',
-            helper: 'clone',
-            revert: true
-            });
-          $('#zans3').data( 'number', 4 )
-          
-	  $('#zblank1').droppable({
+          $('#zblank1').droppable({
             tolerance: "touch",
             hoverClass: "hovered",
-            accept: '#zans1, #zans0',
+            accept: '#zans0,#zans1,#zans2,#zans3,#zans4',
             drop: handleAnsDrop
             });
-	  $('#zblank1').data( 'blank_number', pos1 )
 
-
-          $('#zblank2').droppable({
+	  $('#zblank2').droppable({
             tolerance: "touch",
             hoverClass: "hovered",
-            accept: '#zans2, #zans3',
+            accept: '#zans0,#zans1,#zans2,#zans3,#zans4',
             drop: handleAnsDrop
             });
-          $('#zblank2').data( 'blank_number', pos2 )
 
+	  $('#zblank3').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans0,#zans1,#zans2,#zans3,#zans4',
+            drop: handleAnsDrop
+            });
+
+	  $('#zblank4').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans0,#zans1,#zans2,#zans3,#zans4',
+            drop: handleAnsDrop
+            });
+          
+	  $('#zblank5').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans0,#zans1,#zans2,#zans3,#zans4',
+            drop: handleAnsDrop
+            });
         }
      
         function handleAnsDrop( event, ui ) {
             var ansMarks = ui.draggable.data( 'number' );
-	    var ansBlank = $(this).data('blank_number');
             ui.draggable.draggable( 'disable' );
             $(this).droppable( 'disable' );
             ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
             ui.draggable.draggable( 'option', 'revert', false );
-            if( ansMarks == ansBlank)
-	    {	  
-		var flag=1
-            	marks(flag);
-	    }
-	    else
-	    {
-		var flag=0
-		marks(flag);
-	    }
+            marks(ansMarks);
         }
         
     </script> 
     
     <style>   
         #ztext {
-          font-size: 600%;
+          font-size: 700%;
         }
         
         #ztext_right {
-          font-size: 600%;
-          text-align: center;
+            font-size: 500%;
+	    text-align: left;
+	    width: 3%;
         }
         
+	
         .zblank {
           font-size: 600%;
           float: left;
-          width: 180px;
-          height: 110px;
+          width: 150px;
+          height: 93px;
           padding: 10px;
           padding-top: 2px;
           padding-bottom: 0;
@@ -133,10 +142,10 @@
           vertical-align: middle;
           color : blue;
           float: left;
-          width: 180px;
-          height: 110px;
+          width: 150px;
+          height: 93px;
           padding: 1px;
-          padding-top: 2px;
+          padding-top: 0px;
           padding-bottom: 0;
           border: 2px solid #333;
           -moz-border-radius: 10px;
@@ -147,7 +156,7 @@
         }
         
         .zans p {
-            margin-top: -15px;
+            margin-top: -22px;
         }         
         
         .parent{
@@ -177,19 +186,17 @@
 <body >   
     
     <div id="testarea" class="parent">  
-	   
+
             <div class="child rows">
-		    
-                    <div class="col-sm-4" ><p1 style="font-size:30px; color:red;">
-		    </div>
-                    <div class="col-sm-4" ><p1 style="font-size:40px; color:purple;">Use Proper Word </p1></div>
+                    <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
+                    <div class="col-sm-4" ><p1 style="font-size:40px; color:purple;">Match Following</p1></div>
                     <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
                     <div class="col-sm-12" ><hr/></div>
-                    <div class="col-sm-12" ><p1>.</p1></div>
                     
-                    {% block proper_word_test %}
+                    
+                    {% block match_following_test %}
                         
-                            Proper Word test
+                             Match Following test
                         
                     {% endblock %}
                    

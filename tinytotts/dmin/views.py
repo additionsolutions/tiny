@@ -13,6 +13,7 @@ from contents.models import Content, ContentType
 from etests.models import TestSet, TestSetLine, Answer
 from django.views.generic.list import ListView
 from .forms import GroupForm, TestSetForm, TestSetLineForm, AnswerForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm
+from django.db.models import ProtectedError
 
 
 # Create your views here.
@@ -214,7 +215,10 @@ def contenttype_update(request, pk, template_name='dmin/contenttype_form.html'):
 def contenttype_delete(request, pk, template_name='dmin/contenttype_form_delete.html'):
     contenttype = get_object_or_404(ContentType, pk=pk)
     if request.method=='POST':
-        contenttype.delete()
+        try:
+            contenttype.delete()
+        except ProtectedError:
+            raise Exception("Field can not be deleted")
         return redirect('contenttype_list')
     return render(request, template_name, {'object':contenttype})
 
@@ -254,8 +258,8 @@ def content_update(request, pk, template_name='dmin/content_form.html'):
 
 def content_delete(request, pk, template_name='dmin/content_form_delete.html'):
     content = get_object_or_404(Content, pk=pk)
-    if request.method=='POST':
-        content.delete()
+    if request.method=='POST':        
+	content.delete()
         return redirect('cont_list')
     return render(request, template_name, {'object':content})
 

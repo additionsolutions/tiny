@@ -168,6 +168,7 @@ class ContentForm(forms.ModelForm):
 	helper.layout = Layout(
        			Field('name', ),
        			Field('data', ), 
+			Field('createdby',),
 			Field('startdate',),
 			Field('enddate',),
 			Field('picture', ),
@@ -180,6 +181,7 @@ class ContentForm(forms.ModelForm):
         	model = Content
 		fields = ('name',
           		'data',
+			'createdby',
 			'startdate',
 			'enddate',
 			'picture',

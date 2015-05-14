@@ -16,4 +16,5 @@ urlpatterns = patterns('',
         url(r'^users/$', views.UserListView.as_view(), name='user-list'),
         url(r'^cardgame/$', views.cardgame, name='cardgame'),
         url(r'^$', views.index, name='index'),
+	url(r'^submit/$', views.submit_click, name='submit'),
         )

@@ -4,6 +4,7 @@ from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from django.db.models import Q, Max, Min
 from contents.models import User
 from .forms import TestSetForm, TestSetLineForm
+from datetime import date
 
 ######################################
 # Test Set for Admin
@@ -67,6 +68,8 @@ def testsetline_delete(request, pk, template_name='etests/testset_confirm_delete
 def testlist(request):
     context = RequestContext(request)
     testlist = []
+    
+    #current_date = date.today()
     if request.method == 'GET':
         testlist = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False)
         
@@ -102,6 +105,7 @@ def etestsr(request, action):
     if action == 2: # Next
         sr = request.session['qno'] + 1
 	request.session['no_ans'] = obj_testset.no_ans
+	
     if action == 1: # Previous
         sr = request.session['qno'] - 1
 	request.session['no_ans'] = obj_testset.no_ans
@@ -111,7 +115,8 @@ def etestsr(request, action):
 	#print '---default flag----',obj_testset.submit_flag
 	obj_testset.submit_flag = True
 	obj_testset.save()
-	return render(request,'base/profile.html')
+        return redirect('submit')
+	#return render(request,'base/profile.html')
 	
         
     testsetline = "etests/" + str(TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno'])))
@@ -123,7 +128,7 @@ def etestsr(request, action):
         
     if sr == first['srno__min']:
         record = "first"
-
+    
     return render(request, 'etests/test_area.html', { 'testsetline': testsetline,'record': record})
 
 

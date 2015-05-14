@@ -18,7 +18,7 @@ class TestSet(models.Model):
 # Defines Test Sets Lines => filename for the test
 class TestSetLine(models.Model):
     filename = models.CharField(max_length=250, blank=False, null=False)
-    testset = models.ForeignKey(TestSet)
+    testset = models.ForeignKey(TestSet, on_delete=models.PROTECT)
     srno = models.IntegerField()
     name = models.CharField(max_length=50, blank=True, null=True)
     description = models.CharField(max_length=200, blank=True, null=True)
@@ -33,8 +33,8 @@ class TestSetLine(models.Model):
 # Records answers to Questions in Test Sets Lines
 class Answer(models.Model):
     marks = models.IntegerField()
-    question = models.ForeignKey(TestSetLine)
-    user = models.ForeignKey(User)
+    question = models.ForeignKey(TestSetLine, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __unicode__(self):
         return unicode(self.question)
