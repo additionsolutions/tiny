@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 function navigate(test_action)
 {
+    
     var scriptUrl = "/t/etest/sr/" + test_action;
     var msg=getURL(scriptUrl);
     $('#test_area').html(msg);

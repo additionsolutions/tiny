@@ -3,15 +3,7 @@
 
 <head>
     {% load staticfiles %}
-    {% block jumble_words_test_header %}  
-	    <script type="text/javascript">
-		 
-		 localStorage.setItem("pos1",3);
-		 localStorage.setItem("pos2",1);
-		 localStorage.setItem("pos3",2);
-
-	      </script>
-    {% endblock %}
+    
 </head>
 
 <body >
@@ -41,5 +33,14 @@
     {% endblock %}
 
 </body>
+    {% block jumble_words_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",3);
+		 localStorage.setItem("pos2",1);
+		 localStorage.setItem("pos3",2);
+
+	      </script>
+    {% endblock %}
 
 </html>

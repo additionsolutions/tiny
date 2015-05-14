@@ -15,7 +15,7 @@ class GroupForm(forms.ModelForm):
 	helper.form_method = 'POST'
 	helper.form_class = 'form-horizontal'
 	helper.label_class = 'col-sm-2'
-	helper.field_class = 'col-sm-4'
+	helper.field_class = 'col-sm-6'
 	helper.layout = Layout(
 			Field('name',),
 			Field('permissions',),
@@ -30,9 +30,9 @@ class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
 	confirm_password = forms.CharField(widget=forms.PasswordInput())
 	helper = FormHelper()
-	helper.form_tag = False
-	#helper.form_method = 'POST'
-	#helper.form_class = 'form-horizontal'
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
 	helper.label_class = 'col-sm-2'
 	helper.field_class = 'col-sm-4'
 	helper.layout = Layout(
@@ -42,7 +42,7 @@ class UserForm(forms.ModelForm):
 			Field('email', css_class='input-sm'),
 			Field('password', css_class='password'),
 			Field('confirm_password', css_class='password'),
-			#FormActions(Submit('/base/registration', 'Add User', css_class='btn-primary'))
+			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
 			)
 	class Meta:
 		model = User
@@ -62,9 +62,9 @@ class UserForm(forms.ModelForm):
 
 class UserProfileForm(forms.ModelForm):
 	helper = FormHelper()
-	helper.form_tag = False
-	#helper.form_method = 'POST'
-	#helper.form_class = 'form-horizontal'
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
 	helper.label_class = 'col-sm-2'
 	helper.field_class = 'col-sm-4'
 	helper.layout = Layout(
@@ -168,6 +168,8 @@ class ContentForm(forms.ModelForm):
 	helper.layout = Layout(
        			Field('name', ),
        			Field('data', ), 
+			Field('startdate',),
+			Field('enddate',),
 			Field('picture', ),
        			Field('contenttype', ), 
 			Field('groups', ),
@@ -176,4 +178,10 @@ class ContentForm(forms.ModelForm):
     			)
     	class Meta:
         	model = Content
-		exclude = ('video',)
+		fields = ('name',
+          		'data',
+			'startdate',
+			'enddate',
+			'picture',
+			'contenttype',
+			'groups',)

@@ -26,14 +26,26 @@
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans1" class="zans col-sm-2"><p>hat</p></div>
 	    <div class="col-sm-1"></div>
-            <div id="zans2" class="zans col-sm-2"><p>mat<p></div>
+            <div id="zans2" class="zans col-sm-2"><p>mat</p></div>
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans3" class="zans col-sm-2"><p>fat</p></div>
 
-            <div id="ans_area" class="col-sm-3" h3></div>
+            <div id="ans_area" class="col-sm-1" h3></div>
             
     {% endblock %}
 
 </body>
+	{% block proper_word_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",1);
+		 localStorage.setItem("pos2",2);
+		 localStorage.setItem("p1",1);
+		 localStorage.setItem("p2",0);
+		 localStorage.setItem("p3",2);
+		 localStorage.setItem("p4",0);
+
+	      </script>
+    	{% endblock %}
 
 </html>

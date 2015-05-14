@@ -17,11 +17,11 @@
             <div id="ztext" class="col-sm-4">in the tub</div>
             <div class="col-sm-12" >.</div>
 
-            <div class="col-sm-2" ></div>
-            <div class="col-sm-9" ><hr/></div>
+            
+            <div class="col-sm-12" ><hr/></div>
            
-            <div class="col-sm-4" ></div>
-            <div id="zans0" class="zans col-sm-3"><p>is<p></div>
+            
+            <div id="zans0" class="zans col-sm-3"><p>is</p></div>
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans1" class="zans col-sm-3"><p>are</p></div>
 
@@ -30,5 +30,12 @@
     {% endblock %}
 
 </body>
+	{% block is_are_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",1);
+		 
+	      </script>
+        {% endblock %}
 
 </html>

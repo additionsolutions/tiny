@@ -37,7 +37,7 @@
         </div>
         <div class="col-sm-4" style="text-align:right; padding:10px; ">
             {% if user.is_authenticated %}
-             	<H3> Welcome Admin : <i>{{ user.first_name }} </i></H3><a class="getApp" href="/a/dmin/logout">Logout</a>
+             	<H5> Welcome Admin : <i>{{ user.first_name }} </i></H5><a class="getApp" href="/a/dmin/logout">Logout</a>
             {% else %}
              	<a class="getApp" href="dmin/login">Login</a>
             {% endif %}

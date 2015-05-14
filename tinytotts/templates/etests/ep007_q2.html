@@ -14,7 +14,7 @@
             
             <div id="ztext_right" class="col-sm-2">j</div>	    
             <div id="zblank1" class="zblank col-sm-2"></div>
-            <div id="ztext" class="col-sm-4">g</div>
+            <div id="ztext" class="col-sm-1">g</div>
             
             <div class="col-sm-12" >.</div>
 
@@ -22,7 +22,7 @@
             <div class="col-sm-12" ><hr/></div>
            
             
-            <div id="zans0" class="zans col-sm-2"><p>a<p></div>
+            <div id="zans0" class="zans col-sm-2"><p>a</p></div>
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans1" class="zans col-sm-2"><p>u</p></div>
 	    <div id="ztext_right" class="col-sm-1">/</div>
@@ -33,5 +33,12 @@
     {% endblock %}
 
 </body>
+	{% block missing_alphabets_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",2);
+		 
+	      </script>
+        {% endblock %}
 
 </html>

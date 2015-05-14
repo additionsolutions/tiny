@@ -9,10 +9,18 @@
 
 <head>
     {% load staticfiles %}
+    {% block singular_plural_test_header %}  
+	 
+	Singular Plural test header
+	    
+    {% endblock %}
     <script>
         $( init );
  
         function init() {
+ 
+	  var pos1= localStorage.getItem("pos1");
+		
           $('#zans1').draggable({
             containment: '#testarea',
             stack: '#zans1',
@@ -20,7 +28,7 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans1').data( 'number', 1 )
+          $('#zans1').data( 'number', 2 )
           
           $('#zans0').draggable({
             containment: '#testarea',
@@ -28,7 +36,7 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans0').data( 'number', 0 )
+          $('#zans0').data( 'number', 1 )
           
           $('#zblank1').droppable({
             tolerance: "touch",
@@ -36,16 +44,27 @@
             accept: '#zans1, #zans0',
             drop: handleAnsDrop
             });
+	  $('#zblank1').data( 'blank_number', pos1 )
           
         }
      
         function handleAnsDrop( event, ui ) {
             var ansMarks = ui.draggable.data( 'number' );
+	    var ansBlank = $(this).data('blank_number');
             ui.draggable.draggable( 'disable' );
             $(this).droppable( 'disable' );
             ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
             ui.draggable.draggable( 'option', 'revert', false );
-            marks(ansMarks);
+            if( ansMarks == ansBlank)
+	    {	  
+		var flag =1;
+            	marks(flag);
+	    }
+	    else
+	    {
+		var flag =0;
+		marks(flag);
+	    }
         }
         
     </script> 
@@ -58,12 +77,13 @@
         #ztext_right {
           font-size: 700%;
           text-align: right;
+	  margin-top: -20px;
         }
         
         .zblank {
           font-size: 700%;
           float: left;
-          width: 190px;
+          width: 210px;
           height: 110px;
           padding: 10px;
           padding-top: 2px;
@@ -86,7 +106,7 @@
           vertical-align: middle;
           color : blue;
           float: left;
-          width: 190px;
+          width: 210px;
           height: 110px;
           padding: 1px;
           padding-top: 2px;
@@ -100,7 +120,7 @@
         }
         
         .zans p {
-            margin-top: -15px;
+            margin-top: -30px;
         }         
         
         .parent{

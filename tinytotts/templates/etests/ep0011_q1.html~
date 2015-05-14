@@ -22,7 +22,7 @@
             <div class="col-sm-12" ><hr/></div>
            
             
-            <div id="zans0" class="zans col-sm-2"><p>box<p></div>
+            <div id="zans0" class="zans col-sm-2"><p>box</p></div>
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans1" class="zans col-sm-2"><p>tox</p></div>
 	    <div class="col-sm-1"></div>
@@ -30,10 +30,19 @@
             <div id="ztext_right" class="col-sm-1">/</div>
             <div id="zans3" class="zans col-sm-2"><p>bar</p></div>
 
-            <div id="ans_area" class="col-sm-3" h3></div>
+            <div id="ans_area" class="col-sm-1" h3></div>
             
     {% endblock %}
 
 </body>
+	{% block proper_word_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",1);
+		 localStorage.setItem("pos2",3);
+
+	      </script>
+    	{% endblock %}
+
 
 </html>

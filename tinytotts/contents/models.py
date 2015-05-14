@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User, Group
+#from datetime import datetime
+#from django.utils import timezone
+
 
 # Academic duration defines the academic year or semester
 class AcademicDuration(models.Model):
@@ -35,6 +38,8 @@ class Content(models.Model):
     created = models.DateTimeField(auto_now=True)
     createdby = models.ForeignKey(User)
     data = models.TextField(blank=True)
+    startdate = models.DateField( blank=False, null=False)
+    enddate = models.DateField( blank=False, null=False)
     picture = models.ImageField(upload_to='profile_images', blank=True)
     video = models.URLField(blank=True)
     contenttype = models.ForeignKey(ContentType)

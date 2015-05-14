@@ -9,10 +9,19 @@
 
 <head>
     {% load staticfiles %}
+    {% block this_that_test_header %}  
+	                                    
+	This that test header
+	    
+    {% endblock %}       
+
     <script>
         $( init );
  
         function init() {
+
+	  var pos1= localStorage.getItem("pos1");
+
           $('#zans1').draggable({
             containment: '#testarea',
             stack: '#zans1',
@@ -20,7 +29,7 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans1').data( 'number', 1 )
+          $('#zans1').data( 'number', 2 )
           
           $('#zans0').draggable({
             containment: '#testarea',
@@ -28,7 +37,7 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans0').data( 'number', 0 )
+          $('#zans0').data( 'number', 1 )
           
           $('#zblank1').droppable({
             tolerance: "touch",
@@ -36,16 +45,27 @@
             accept: '#zans1, #zans0',
             drop: handleAnsDrop
             });
+	  $('#zblank1').data( 'blank_number', pos1 )
           
         }
      
         function handleAnsDrop( event, ui ) {
             var ansMarks = ui.draggable.data( 'number' );
+	    var ansBlank = $(this).data('blank_number');
             ui.draggable.draggable( 'disable' );
             $(this).droppable( 'disable' );
             ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
             ui.draggable.draggable( 'option', 'revert', false );
-            marks(ansMarks);
+            if( ansMarks == ansBlank)
+	    {	  
+		var flag =1;
+            	marks(flag);
+	    }
+	    else
+	    {
+		var flag =0;
+		marks(flag);
+	    }
         }
         
     </script> 

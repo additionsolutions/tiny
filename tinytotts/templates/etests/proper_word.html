@@ -9,18 +9,19 @@
 
 <head>
     {% load staticfiles %}
+    {% block proper_word_test_header %}
+                        
+              Proper word test header
+                        
+    {% endblock %}
     <script>
         $( init );
  
         function init() {
-          $('#zans1').draggable({
-            containment: '#testarea',
-            stack: '#zans1',
-            cursor: 'move',
-            helper: 'clone',
-            revert: true
-            });
-          $('#zans1').data( 'number', 1 )
+
+	  var pos1= localStorage.getItem("pos1");
+	  var pos2= localStorage.getItem("pos2");
+         
           
           $('#zans0').draggable({
             containment: '#testarea',
@@ -28,14 +29,16 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans0').data( 'number', 0 )
-          
-          $('#zblank1').droppable({
-            tolerance: "touch",
-            hoverClass: "hovered",
-            accept: '#zans1, #zans0',
-            drop: handleAnsDrop
+          $('#zans0').data( 'number', 1 )
+
+	  $('#zans1').draggable({
+            containment: '#testarea',
+            stack: '#zans1',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
             });
+          $('#zans1').data( 'number', 2 )
 
 	  $('#zans2').draggable({
             containment: '#testarea',
@@ -44,7 +47,7 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans2').data( 'number', 1 )
+          $('#zans2').data( 'number', 3 )
           
           $('#zans3').draggable({
             containment: '#testarea',
@@ -52,24 +55,44 @@
             helper: 'clone',
             revert: true
             });
-          $('#zans3').data( 'number', 0 )
+          $('#zans3').data( 'number', 4 )
           
+	  $('#zblank1').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans1, #zans0',
+            drop: handleAnsDrop
+            });
+	  $('#zblank1').data( 'blank_number', pos1 )
+
+
           $('#zblank2').droppable({
             tolerance: "touch",
             hoverClass: "hovered",
             accept: '#zans2, #zans3',
             drop: handleAnsDrop
             });
-          
+          $('#zblank2').data( 'blank_number', pos2 )
+
         }
      
         function handleAnsDrop( event, ui ) {
             var ansMarks = ui.draggable.data( 'number' );
+	    var ansBlank = $(this).data('blank_number');
             ui.draggable.draggable( 'disable' );
             $(this).droppable( 'disable' );
             ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
             ui.draggable.draggable( 'option', 'revert', false );
-            marks(ansMarks);
+            if( ansMarks == ansBlank)
+	    {	  
+		var flag=1
+            	marks(flag);
+	    }
+	    else
+	    {
+		var flag=0
+		marks(flag);
+	    }
         }
         
     </script> 

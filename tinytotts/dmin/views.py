@@ -14,6 +14,7 @@ from etests.models import TestSet, TestSetLine, Answer
 from django.views.generic.list import ListView
 from .forms import GroupForm, TestSetForm, TestSetLineForm, AnswerForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm
 
+
 # Create your views here.
 
 def basic(request, template_name='dmin/basic.html'):
@@ -28,23 +29,18 @@ def register(request):
     registered = False
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
-        if user_form.is_valid() and profile_form.is_valid():
+        #profile_form = UserProfileForm(data=request.POST)
+        if user_form.is_valid():
              user = user_form.save()
              user.set_password(user.password)
-             user.save()
-             profile = profile_form.save(commit=False)
-             profile.user = user
-             if 'picture' in request.FILES:
-                 profile.picture = request.FILES['picture']
-             profile.save()
+             user.save()         
              registered = True
         else:
-             print user_form.errors, profile_form.errors
+             print user_form.errors
     else:
         user_form = UserForm()
 
-        profile_form = UserProfileForm()
+        #profile_form = UserProfileForm()
 #     return render(request,
 #             'base/register.html',
 #             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
@@ -53,7 +49,7 @@ def register(request):
     if redirect_url is not None:
         user_form.helper.form_action = reversed('submit_survey') + '?next=' + redirect_url
 
-    return render_to_response('dmin/register.html', {'user_form': user_form, 'profile_form': profile_form,
+    return render_to_response('dmin/register.html', {'user_form': user_form, 
                                                      'registered': registered}, context_instance=RequestContext(request))
 
 
@@ -66,15 +62,21 @@ class UserListView(ListView):
         context = super(UserListView, self).get_context_data(**kwargs)
         return context
 
-def userdelete(request, id):
-   usr = User.objects.get(pk = id)
-   usr.delete()
-   return HttpResponse('deleted')
+def user_update(request, pk, template_name='dmin/user_form.html'):
+    usr = get_object_or_404(User, pk=pk)
+    form = UserForm(request.POST or None, instance=usr)
+    #profile_form = UserProfileForm(data=request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('userlist')
+    return render(request, template_name, {'form':form})
 
-def userupdate(request, id):
-   usr = User.objects.get(pk = id)
-   usr.save()
-   return HttpResponse('Updated')
+def user_delete(request, pk, template_name='dmin/user_form_delete.html'):
+    usr = get_object_or_404(User, pk=pk)
+    if request.method=='POST':
+        usr.delete()
+        return redirect('userlist')
+    return render(request, template_name, {'object':usr})
 
 def user_login(request):
 
@@ -146,9 +148,9 @@ def profile(request):
 
 
 def group_list(request, template_name='dmin/group_list.html'):
-    grouplist = Group.objects.all()
+    grouplist = Group.objects.all()   
     data = {}
-    data['object_list'] = grouplist
+    data['object_list'] = grouplist    
     return render(request, template_name, data)
 
 def group_create(request, template_name='dmin/group_form.html'):
@@ -291,7 +293,8 @@ def testset_delete(request, pk, template_name='dmin/testset_form_delete.html'):
 
     
 def testq(request, template_name='dmin/testquestion_list.html'):
-    testsetline = TestSetLine.objects.all()
+    testset_obj = TestSet.objects.all()
+    testsetline = TestSetLine.objects.filter(testset=testset_obj)
     data = {}
     data['object_list'] = testsetline
     return render(request, template_name, data)
@@ -309,31 +312,32 @@ def report_marks(request, template_name='dmin/mark_list.html'):
     data['object_list'] = answer
     return render(request, template_name, data)
 
-#def report_userwisemarks(request, template_name='dmin/user_report.html'):
+def report_userwisemarks(request, template_name='dmin/user_report.html'):
     #contenttype = ContentType.objects.all()
-    #form = AnswerForm(request.POST or None)
-    #if form.is_valid():
-	#form.save();
-	#return redirect()
-    #data = {}
-    #data['object_list'] = " " 
-    #return render(request, template_name, {'form':form})
+    usr = User.objects.all()
+    test_set = TestSet.objects.all()
+    data = {}
+    data['object_list'] = usr
+    data['test_object_list'] = test_set
+    
+    return render(request, template_name, data)
 
-def report_userwisemarks(request):
-    # if this is a POST request we need to process the form data
+def pageObjects(request):
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = AnswerForm(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/a/dmin/markreport/')
-
-    # if a GET (or any other method) we'll create a blank form
+	name = request.POST.get('userSelect')
+	t_set = request.POST.get('testsetSelect')
+	#print '--name--',name
+	#print '--t_set--',t_set
+	
+	testsetline_obj = TestSetLine.objects.filter(testset=t_set)
+	marks_obj = Answer.objects.filter(user=name,question=testsetline_obj)
+	#testsetline_obj = TestSetLine.objects.filter(filename=f_name,testset=t_set)	
+	#print '-----mark object------',marks_obj
+	#print '-----mark object------',testsetline_obj
+	return render(request, 'dmin/user_report.html', {'object':marks_obj})
     else:
-        form = AnswerForm()
+	form = AnswerForm()
 
-    return render(request, 'dmin/user_report.html', {'form': form})
+    return render(request, 'dmin/user_report.html',{'form':form})
+
 

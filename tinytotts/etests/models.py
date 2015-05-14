@@ -10,6 +10,7 @@ class TestSet(models.Model):
     startdate = models.DateField()
     enddate = models.DateField()
     groups = models.ManyToManyField(Group)
+    submit_flag = models.BooleanField(default=False, blank=False, null=False)
 
     def __unicode__(self):
         return self.code + " - " + self.testname

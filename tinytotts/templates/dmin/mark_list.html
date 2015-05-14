@@ -18,7 +18,7 @@
 
         {% load staticfiles %}
 	<div class="col-sm-10">
-                {% include 'dmin/toolbar.html' %}
+               
                 <div id="resultsarea" class =col-sm-10">
 			<div id="asection">
 			    <div class="container">
@@ -49,8 +49,7 @@
 						    <td>{{ answer.marks }} </td>
 				                    
 				                    
-				                    {% empty %}
-				                        No Test Set yet
+				                    
 				            {% endfor %}
 				            </tr>
 				            </tbody>

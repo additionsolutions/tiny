@@ -68,7 +68,7 @@ def testlist(request):
     context = RequestContext(request)
     testlist = []
     if request.method == 'GET':
-        testlist = TestSet.objects.filter(groups=request.user.groups.all())
+        testlist = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False)
         
     return render_to_response('etests/testlist.html', {'testlist': testlist }, context)
 
@@ -96,13 +96,23 @@ def etestsr(request, action):
     # # Calculates the maximum and minimum out of the already-retrieved objects
     last = Record_obj.aggregate(Max('srno'))
     first = Record_obj.aggregate(Min('srno'))   
-            
+	
+    obj_testset = TestSet.objects.get(id=request.session['testno'])           
+ 
     if action == 2: # Next
         sr = request.session['qno'] + 1
-	request.session['no_ans'] = 3
+	request.session['no_ans'] = obj_testset.no_ans
     if action == 1: # Previous
         sr = request.session['qno'] - 1
-	request.session['no_ans'] = 3
+	request.session['no_ans'] = obj_testset.no_ans
+    if action == 0: # Submit
+	#print '----inside submit condition----'
+	obj_testset = TestSet.objects.get(id=request.session['testno'])
+	#print '---default flag----',obj_testset.submit_flag
+	obj_testset.submit_flag = True
+	obj_testset.save()
+	return render(request,'base/profile.html')
+	
         
     testsetline = "etests/" + str(TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno'])))
     request.session['qno'] = sr
@@ -149,6 +159,7 @@ def etestans(request, ans):
 	    answer = "Answer recorded"
     else:
             answer = "Answer is not complete"
+	    #print '-----else part-----',request.session['no_ans']
     	    
     return render(request, 'etests/ans_area.html', { 'answer': answer })
     
