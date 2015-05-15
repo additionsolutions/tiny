@@ -32,6 +32,13 @@ function navigate(test_action)
     $('#test_area').html(msg);
 }
 
+function getResult()
+{
+	var usr = documet.getElementById("usrSelect").value;
+	var test = document.getElementById("testSelect").value;
+	alert (usr);
+	alert (test);
+}
 
 // Record Marks
 function marks( ans )

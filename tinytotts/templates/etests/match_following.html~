@@ -51,6 +51,7 @@
           
           $('#zans0').draggable({
             containment: '#testarea',
+	    stack: '#zans0,#zans1',
             cursor: 'move',
             helper: 'clone',
             revert: true

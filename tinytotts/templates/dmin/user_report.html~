@@ -18,14 +18,14 @@
         </div>
         <div class="col-sm-10">
                 
-                <div id="resultsarea" class ="col-sm-10">
-			<div id="asection" class ="col-sm-6">
+                <div id="resultsarea" class ="col-sm-12">
+			<div id="asection" class ="col-sm-5">
 			   
 			    <h2> </h2>
-			   <form action="PageObjects" method="post">
+			   
     				{% csrf_token %}
 				<label for="User">User </label>
-				<select name="userSelect" >
+				<select id="usrSelect" class="select form-control">
 				{% for user in object_list %}	
 					{% if user.first_name != 'Rahul' %}
 						<option value="{{user.id}}">{{user}}</option>
@@ -34,7 +34,7 @@
 				</select>
 				<br/><br/>
 				<label for="TestSet">TestSet </label>
-				<select name="testsetSelect">
+				<select id="testSelect" class="select form-control" onchange="getResult()">
 				{% for testset in test_object_list %}	
 					
 					<option value="{{testset.id}}">{{testset.testname}}</option>
@@ -42,43 +42,12 @@
 				{% endfor %}
 				</select>
     				<br/><br/>
-    				<input type="submit" value="Submit" />
-			   </form>
-			    
+    							    
 			    
 			</div>
-			<div id="userreport" class ="col-sm-6">
+			<div id="userreport" class ="col-sm-7">
 			    
-			    <h2> Marks of selected user</h2>
 			    
-				<table  class="table table-hover" >
-				<tbody>
-				    <colgroup>
-					<col class="col-md-2">
-					<col class="col-md-2">
-					<col class="col-md-2">
-		
-				    </colgroup>
-				  <tr class="info">
-				    <th>User</th>
-				    <th>Question</th>
-				    <th>Marks</th>
-
-				  </tr>
-				    {% for marks_obj in object %}
-					{% if marks_obj.user != 0 %}
-					  <tr>
-					    <td>{{ marks_obj.user }}</td>
-					    <td>{{ marks_obj.question }}</td>
-					    <td>{{ marks_obj.marks }}</td>
-					{% endif %}
-				      {% empty %}
-					<td>No users selected yet</td>
-				      </tr>
-				    {% endfor %}
-				</tbody>
-				</table>
-							    
 			    
 			</div>
 		</div>

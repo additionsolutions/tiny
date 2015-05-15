@@ -25,6 +25,38 @@ function admin_nav(action)
     alert(action);
 }
 
+
+function getResult()
+{
+	var usrid = document.getElementById("usrSelect").value;
+	var testid = document.getElementById("testSelect").value;
+	//alert (usrid);
+	//alert (testid);
+	$.get('/a/dmin/scorecard/' + usrid + '/' + testid, function(data){
+               $('#userreport').html(data);
+           });
+}
+
+function gettestsetLine()
+{
+	var testid = document.getElementById("testSelect").value;
+	
+	$.get('/a/dmin/testsetlinedisplay/' + testid, function(data){
+               $('#testsetlinearea').html(data);
+           });
+}
+
+function getContentlist()
+{
+	var ctype_id = document.getElementById("contentTypeSelect").value;
+	alert(ctype_id);
+	
+	$.get('/a/dmin/contentdisplay/' + ctype_id, function(data){
+               $('#contentarea').html(data);
+           });
+}
+
+
 // Record Marks
 function marks( ans )
 {

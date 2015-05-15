@@ -209,5 +209,5 @@ def cardgame(request):
 def submit_click(request):
     context = RequestContext(request)
     context_dict = {'message': 'move to homepage'}
-    print '----in base view-----'
+    #print '----in base view-----'
     return render_to_response('base/profile.html', context_dict, context)

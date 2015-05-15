@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static "css/demo.css" %}" >
     
     <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
-
+    <script src="{% static "js/addsol_admin.js" %}"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -76,7 +76,7 @@
 
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/jquery-ui.min.js" %}"></script>
-    <script src="{% static "js/addsol_admin.js" %}"></script>
+    
     <script src="{% static "js/vertical-responsive-menu.min.js" %}"></script>
 
 

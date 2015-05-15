@@ -1,0 +1,29 @@
+<a class="btn btn-primary" href="{% url "cont_new" %}">Add Content</a>
+				      <br><br>
+<table  class="table table-hover" >
+<tbody>
+    <colgroup>
+        <col class="col-md-2">
+        <col class="col-md-2">
+        <col class="col-md-6">
+        
+    </colgroup>
+  <tr class="info">
+    <th>Content Type</th>
+    <th>Content</th>
+    <th>Data</th>
+  </tr>
+
+    {% for content_obj in object %}
+        <tr>
+	    <td>{{ content_obj.contenttype }}</td>
+            <td>{{ content_obj.name }}</td>
+            <td>{{ content_obj.data }}</td>
+            
+               
+            {% empty %}
+                No Content yet
+    {% endfor %}
+    </tr>
+    </tbody>
+</table>

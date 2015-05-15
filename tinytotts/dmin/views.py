@@ -263,6 +263,27 @@ def content_delete(request, pk, template_name='dmin/content_form_delete.html'):
         return redirect('cont_list')
     return render(request, template_name, {'object':content})
 
+def getcontentfromcontettype(request, template_name='dmin/content.html'):
+    #contenttype = ContentType.objects.all()
+    content_typ = ContentType.objects.all()
+    data = {}
+    data['contenttype_object_list'] = content_typ
+    
+    return render(request, template_name, data)
+
+def get_content(request,ctype_id):
+    if request.method == 'GET':
+	try:
+            ctype_id = int(ctype_id)
+        except ValueError:
+            raise Http404()
+    
+    content_obj = Content.objects.filter(contenttype=ctype_id)
+
+    return render(request, 'dmin/subpart_content.html', { 'object': content_obj})
+
+
+
 ######################################
 # Test Set for Admin
 ######################################
@@ -310,6 +331,25 @@ def testsetline_create(request, template_name='dmin/testsetline_form.html'):
         return redirect('testq')
     return render(request, template_name, {'form':form})
 
+def gettestsetlinefromtestset(request, template_name='dmin/testsetline_list.html'):
+    #contenttype = ContentType.objects.all()
+    test_set = TestSet.objects.all()
+    data = {}
+    data['test_object_list'] = test_set
+    
+    return render(request, template_name, data)
+
+def get_testsetline(request,testid):
+    if request.method == 'GET':
+	try:
+            testid = int(testid)
+        except ValueError:
+            raise Http404()
+    
+    testsetline_obj = TestSetLine.objects.filter(testset=testid)
+
+    return render(request, 'dmin/subpart_testsetline.html', { 'object': testsetline_obj})
+
 def report_marks(request, template_name='dmin/mark_list.html'):
     answer = Answer.objects.all()
     data = {}
@@ -326,22 +366,19 @@ def report_userwisemarks(request, template_name='dmin/user_report.html'):
     
     return render(request, template_name, data)
 
-def pageObjects(request):
-    if request.method == 'POST':
-	name = request.POST.get('userSelect')
-	t_set = request.POST.get('testsetSelect')
-	#print '--name--',name
-	#print '--t_set--',t_set
-	
-	testsetline_obj = TestSetLine.objects.filter(testset=t_set)
-	marks_obj = Answer.objects.filter(user=name,question=testsetline_obj)
-	#testsetline_obj = TestSetLine.objects.filter(filename=f_name,testset=t_set)	
-	#print '-----mark object------',marks_obj
-	#print '-----mark object------',testsetline_obj
-	return render(request, 'dmin/user_report.html', {'object':marks_obj})
-    else:
-	form = AnswerForm()
+def get_scorecard(request,usrid,testid):
+    #print '---in function---'
+    if request.method == 'GET':
+	try:
+	    usrid = int(usrid)
+            testid = int(testid)
+        except ValueError:
+            raise Http404()
+    
+    testsetline_obj = TestSetLine.objects.filter(testset=testid)
+    marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
 
-    return render(request, 'dmin/user_report.html',{'form':form})
+    return render(request, 'dmin/score_card.html', { 'object': marks_obj})
+
 
 

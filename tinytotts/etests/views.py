@@ -69,9 +69,12 @@ def testlist(request):
     context = RequestContext(request)
     testlist = []
     
-    #current_date = date.today()
+    current_date = date.today()
+    #print '--current date--',current_date
+
     if request.method == 'GET':
-        testlist = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False)
+        testlist = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False,startdate__lte=current_date,enddate__gte=current_date)
+	
         
     return render_to_response('etests/testlist.html', {'testlist': testlist }, context)
 
@@ -82,6 +85,7 @@ def etest(request, testset):
     request.session['testno'] = testset
     request.session['qno'] = 0
     request.session['no_ans'] = testset_obj.no_ans
+   
     return render(request, 'etests/etest.html', { 'testset': testset_obj })
     
     

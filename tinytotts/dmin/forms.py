@@ -137,6 +137,9 @@ class TestSetLineForm(forms.ModelForm):
 class AnswerForm(forms.Form):
 	user = forms.CharField(label='User',required=True)
 	tests = forms.CharField(label='TestSet')
+
+class TestSetChoiceForm(forms.Form):
+	testset = forms.CharField(label='TestSet')
 	
 	
 
