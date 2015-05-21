@@ -10,7 +10,7 @@
        
     {% block this_that_test %}
             <div class="col-sm-2">
-            <img src={% static "img/hut.jpg" %} width=250px height=240px/></div>
+            <img src={% static "img/Jar.jpg" %} width=250px height=240px/></div>
                                   
 	    <div id="zblank1" class="zblank col-sm-2"></div>	    
             <div id="ztext" class="col-sm-4">is a jar</div>
@@ -32,7 +32,7 @@
 	{% block this_that_test_header %}  
 	    <script type="text/javascript">
 		 
-		 localStorage.setItem("pos1",2);
+		 localStorage.setItem("pos1",1);
 		 
 	      </script>
         {% endblock %}

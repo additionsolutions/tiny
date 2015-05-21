@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, RequestContext, render_to_response
-from etests.models import TestSet, TestSetLine, Answer
+from etests.models import TestSet, TestSetLine, Answer, Option,TestQuestion
 from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from django.db.models import Q, Max, Min
 from contents.models import User
@@ -100,11 +100,16 @@ def etestsr(request, action):
     record = "normal"   
     # # Find a First and Last questions
     Record_obj = TestSetLine.objects.filter(testset=request.session['testno'])
+    
     # # Calculates the maximum and minimum out of the already-retrieved objects
     last = Record_obj.aggregate(Max('srno'))
     first = Record_obj.aggregate(Min('srno'))   
-	
+    
+    #print 'last---',last
+    #print 'first---',first
+
     obj_testset = TestSet.objects.get(id=request.session['testno'])           
+    
  
     if action == 2: # Next
         sr = request.session['qno'] + 1
@@ -121,11 +126,9 @@ def etestsr(request, action):
 	obj_testset.save()
         return redirect('submit')
 	#return render(request,'base/profile.html')
-	
-        
-    testsetline = "etests/" + str(TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno'])))
-    request.session['qno'] = sr
-    
+
+
+
     # find out if first or last record
     if sr == last['srno__max']:
         record = "last"
@@ -133,7 +136,35 @@ def etestsr(request, action):
     if sr == first['srno__min']:
         record = "first"
     
-    return render(request, 'etests/test_area.html', { 'testsetline': testsetline,'record': record})
+    if last['srno__max'] == first['srno__min']:
+	record = "final"
+    
+    request.session['qno'] = sr
+
+    file_name = str((TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno']))).filename)
+    #print '----file name-----',f_name
+    if file_name != '':
+    	testsetline = "etests/" + file_name
+        return render(request, 'etests/test_area.html', {'testsetline':testsetline,'record':record})
+    
+    else:
+	q_obj = TestSetLine.objects.filter(testset=request.session['testno'],srno=sr)
+    
+	for obj in q_obj:
+		question_list = TestQuestion.objects.get(test_question=obj)
+		#print '---question_list---',question_list
+		option_obj = Option.objects.filter(t_question=question_list)
+		#print '---question_list---',option_obj
+		return render(request, 'dmin/radio_test.html', { 'option_obj': option_obj,'question_list':question_list,'record':record})
+
+	#print '-----testsetline-----',testsetline
+	return render(request, 'etests/test_area.html', {'testsetline':testsetline,'record':record})
+
+   
+    
+    
+    
+    
 
 
 ## Evaluate and give marks

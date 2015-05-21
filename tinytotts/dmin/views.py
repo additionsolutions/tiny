@@ -10,9 +10,9 @@ from django.contrib.auth import authenticate, login
 from base.models import UserProfile
 #from base.forms import UserForm, UserProfileForm
 from contents.models import Content, ContentType
-from etests.models import TestSet, TestSetLine, Answer
+from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option
 from django.views.generic.list import ListView
-from .forms import GroupForm, TestSetForm, TestSetLineForm, AnswerForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm
+from .forms import GroupForm, TestSetForm, TestSetLineForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm, CategoryForm, TestQuestionForm, OptionForm
 from django.db.models import ProtectedError
 
 
@@ -243,7 +243,7 @@ def content_create(request, template_name='dmin/content_form.html'):
     form.fields['createdby'] = ModelChoiceField(label="", widget=HiddenInput(attrs={'value':request.user}), queryset=User.objects.all())
     if form.is_valid():
         form.save()
-        return redirect('cont_list')
+        return redirect('getcontentfromcontettype')
     return render(request, template_name, {'form':form})
 
 
@@ -252,7 +252,7 @@ def content_update(request, pk, template_name='dmin/content_form.html'):
     form = ContentForm(request.POST or None, instance=content)
     if form.is_valid():
         form.save()
-        return redirect('cont_list')
+        return redirect('getcontentfromcontettype')
     return render(request, template_name, {'form':form})
 
 
@@ -260,7 +260,7 @@ def content_delete(request, pk, template_name='dmin/content_form_delete.html'):
     content = get_object_or_404(Content, pk=pk)
     if request.method=='POST':        
 	content.delete()
-        return redirect('cont_list')
+        return redirect('getcontentfromcontettype')
     return render(request, template_name, {'object':content})
 
 def getcontentfromcontettype(request, template_name='dmin/content.html'):
@@ -275,11 +275,13 @@ def get_content(request,ctype_id):
     if request.method == 'GET':
 	try:
             ctype_id = int(ctype_id)
+	    print'---ctype---',ctype_id
         except ValueError:
             raise Http404()
     
     content_obj = Content.objects.filter(contenttype=ctype_id)
-
+    print '---content_obj----',content_obj
+	
     return render(request, 'dmin/subpart_content.html', { 'object': content_obj})
 
 
@@ -328,8 +330,18 @@ def testsetline_create(request, template_name='dmin/testsetline_form.html'):
     form = TestSetLineForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('testq')
+        return redirect('gettestsetlinefromtestset')
     return render(request, template_name, {'form':form})
+
+
+def testsetline_update(request, pk, template_name='dmin/testsetline_form.html'):
+    testsetline = get_object_or_404(TestSetLine, pk=pk)
+    form = TestSetLineForm(request.POST or None, instance=testsetline)
+    if form.is_valid():
+        form.save()
+        return redirect('gettestsetlinefromtestset')
+    return render(request, template_name, {'form':form})
+
 
 def gettestsetlinefromtestset(request, template_name='dmin/testsetline_list.html'):
     #contenttype = ContentType.objects.all()
@@ -343,6 +355,7 @@ def get_testsetline(request,testid):
     if request.method == 'GET':
 	try:
             testid = int(testid)
+	    
         except ValueError:
             raise Http404()
     
@@ -381,4 +394,95 @@ def get_scorecard(request,usrid,testid):
     return render(request, 'dmin/score_card.html', { 'object': marks_obj})
 
 
+
+def category_list(request, template_name='dmin/category_list.html'):
+    categorylist = Category.objects.all()   
+    data = {}
+    data['object_list'] = categorylist
+    return render(request, template_name, data)
+
+def category_create(request, template_name='dmin/category_form.html'):
+    form = CategoryForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('category_list')
+    return render(request, template_name, {'form':form})
+
+def category_update(request, pk, template_name='dmin/category_form.html'):
+    categorylist = get_object_or_404(Category, pk=pk)
+    form = CategoryForm(request.POST or None, instance=categorylist)
+    if form.is_valid():
+        form.save()
+        return redirect('category_list')
+    return render(request, template_name, {'form':form})
+
+
+def question_list(request, template_name='dmin/question_list.html'):
+    questionlist = TestQuestion.objects.all()   
+    data = {}
+    data['object_list'] = questionlist
+    return render(request, template_name, data)
+
+def question_create(request, template_name='dmin/question_form.html'):
+    form = TestQuestionForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('question_list')
+    return render(request, template_name, {'form':form})
+
+def question_update(request, pk, template_name='dmin/question_form.html'):
+    questionlist = get_object_or_404(TestQuestion, pk=pk)
+    form = TestQuestionForm(request.POST or None, instance=questionlist)
+    if form.is_valid():
+        form.save()
+        return redirect('question_list')
+    return render(request, template_name, {'form':form})
+
+
+def option_list(request, template_name='dmin/option_list.html'):
+    questionlist = TestQuestion.objects.all()
+    data = {}
+    data['question_object_list'] = questionlist   
+    return render(request, template_name, data)
+
+def radio_test(request,template_name='dmin/radio_test.html'):
+    questionlist = TestQuestion.objects.all()
+    optionlist = Option.objects.all()
+    data = {}
+    data['object_list'] = optionlist
+    data['object'] = questionlist
+    return render(request, template_name,data)
+
+def get_option(request,question_id):
+    if request.method == 'GET':
+	try:
+            question_id = int(question_id)
+        except ValueError:
+            raise Http404()
+    
+    option_obj = Option.objects.filter(t_question=question_id)
+
+    return render(request, 'dmin/subpart_option.html', { 'object': option_obj})
+
+def option_create(request, template_name='dmin/option_form.html'):
+    form = OptionForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('option_list')
+    return render(request, template_name, {'form':form})
+
+def option_update(request, pk, template_name='dmin/option_form.html'):
+    optionlist = get_object_or_404(Option, pk=pk)
+    form = OptionForm(request.POST or None, instance=optionlist)
+    if form.is_valid():
+        form.save()
+        return redirect('option_list')
+    return render(request, template_name, {'form':form})
+
+def option_delete(request, pk, template_name='dmin/option_form_delete.html'):
+    option = get_object_or_404(Option, pk=pk)
+    if request.method=='POST':
+        option.delete()
+        return redirect('option_list')
+    return render(request, template_name, {'object':option})
 

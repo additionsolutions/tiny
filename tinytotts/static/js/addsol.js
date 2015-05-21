@@ -11,8 +11,9 @@ $(document).ready(function(){
         var test_action;
 	
         action = $(this).attr("test-action");
+	// alert(action);
         $.get('/t/etest/sr/' + action, function(data){
-                   // alert(data);
+                    // alert(data);
                    $('#test_area').html(data);
                    $('#start').hide();
                });

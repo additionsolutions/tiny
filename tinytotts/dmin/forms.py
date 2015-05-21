@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User, Group
 from base.models import User, UserProfile
 from django.core.exceptions import ValidationError
-from etests.models import TestSet, TestSetLine ,Answer
+from etests.models import TestSet, TestSetLine ,Answer,Category,TestQuestion,Option
 from contents.models import Content, ContentType
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
@@ -77,6 +77,73 @@ class UserProfileForm(forms.ModelForm):
 		model = UserProfile
 		fields = ('website', 'picture')
 
+class CategoryForm(forms.ModelForm):
+	helper = FormHelper()
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
+	helper.label_class = 'col-sm-4'
+	helper.field_class = 'col-sm-8'
+	helper.layout = Layout(
+       			Field('name',css_class='input-sm' ),
+       			Field('description',css_class='input-sm' ), 
+        		FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+
+    			)
+    	class Meta:
+        	model = Category
+        	fields = ('name',
+          		'description')
+
+class TestQuestionForm(forms.ModelForm):
+	helper = FormHelper()
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
+	helper.label_class = 'col-sm-5'
+	helper.field_class = 'col-sm-7'
+	helper.layout = Layout(
+			Field('preamble', ),
+			Field('test_question', ),
+			Field('duration',),
+			Field('category'),
+			Field('url',),
+			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+			)
+
+    	class Meta:
+        	model = TestQuestion
+		fields = ('preamble',
+                  	'test_question',
+		  	'duration',
+			'category',
+		  	'url')
+
+class OptionForm(forms.ModelForm):
+	helper = FormHelper()
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
+	helper.label_class = 'col-sm-5'
+	helper.field_class = 'col-sm-7'
+	helper.layout = Layout(
+			Field('option', ),
+			Field('t_question', ),
+			Field('SrNo',),
+			Field('mark'),
+			Field('url',),
+			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+			)
+
+    	class Meta:
+        	model = Option
+		fields = ('option',
+                  	't_question',
+		  	'SrNo',
+			'mark',
+		  	'url')
+    
+
 
 class TestSetForm(forms.ModelForm):
 	helper = FormHelper()
@@ -120,6 +187,7 @@ class TestSetLineForm(forms.ModelForm):
 			Field('filename', ),
 			Field('testset', ),
 			Field('srno', ),
+                        Field('question', ),
 			Field('name', ),
 			Field('description', ),     
 			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
@@ -130,17 +198,9 @@ class TestSetLineForm(forms.ModelForm):
 		fields = ('filename',
           		'testset',
 	  		'srno',
+			'question',
 	  		'name',
-          		'description', )
-
-
-class AnswerForm(forms.Form):
-	user = forms.CharField(label='User',required=True)
-	tests = forms.CharField(label='TestSet')
-
-class TestSetChoiceForm(forms.Form):
-	testset = forms.CharField(label='TestSet')
-	
+          		'description', )	
 	
 
 class ContentTypeForm(forms.ModelForm):

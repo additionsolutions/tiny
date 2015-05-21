@@ -80,6 +80,9 @@
 	    <a href="/a/dmin/testsetline_testset">Test Set Lines</a>  <br/>
 	    <a href="/a/dmin/markreport">Marks Report</a>  <br/>
 	    <a href="/a/dmin/userreport"> User Report</a><br/>
+	    <a href="/a/dmin/category"> Category</a><br/>
+	    <a href="/a/dmin/question"> Question</a><br/>
+	    <a href="/a/dmin/option"> Option</a><br/>
         </a>
       </li>
 
