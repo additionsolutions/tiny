@@ -78,6 +78,9 @@ class Option(models.Model):
         unique_together = (('t_question', 'SrNo'),)
 
     def __unicode__(self):
-	return self.option
+	if self.option == '':
+		return self.url
+	else:
+		return self.option
      
     
