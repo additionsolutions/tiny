@@ -10,19 +10,18 @@
        
     {% block circle_test %}
             <div class="col-sm-3">
-            <img src={% static "img/fish.jpg" %} width=250px height=240px/></div>
+            <img src={% static "img/cap.png" %} width=250px height=240px/></div>
             
             <div class="circle col-sm-3" >
-            <button class="circle" onclick="marks(0)";>dish</button></div>
+            <button class="circle" onclick="marks(0)";>map</button></div>
             <div class="circle col-sm-3" >
-            <button class="circle" onclick="marks(1)";>fish</button></div>
+            <button class="circle" onclick="marks(0)";>cab</button></div>
             <div class="circle col-sm-3">
-            <button class="circle" onclick="marks(0)";>wish</button></div>
+            <button class="circle" onclick="marks(1)";>cap</button></div>
             
-            <div class="col-sm-12" >.</div>
-            <div class="col-sm-12" >.</div>
+            
             <div class="col-sm-3" ></div>
-            <div id="ans_area" class="col-sm-3" h3>
+            <div id="ans_area" class="col-sm-3">
 
             </div>     
     {% endblock %}

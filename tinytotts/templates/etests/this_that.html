@@ -80,6 +80,10 @@
           text-align: right;
         }
         
+	#zblank1 {
+	  float: left;
+	  margin-left: 120px;
+	}
         .zblank {
           font-size: 700%;
           float: left;
@@ -124,16 +128,17 @@
         }         
         
         .parent{
-            width:1360px;
-            height:550px;
+	    background:url({% static "img/this_background.png" %});
+            width:100%;
+            min-height:550px;
             position:relative;
             border:1px solid black;
         }
         .parent:after{
             content:'';
-            background:url({% static "img/bg_english.png" %});
-            width:1360px;
-            height:550px;
+            
+            width:100%;
+            min-height:550px;
             position:absolute;
             top:0;
             left:0;

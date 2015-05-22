@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, RequestContext
 from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from contents.models import User, Content, ContentType
 from django.http import HttpResponse, HttpResponseRedirect
+from datetime import date
 
 ######################################
 # Content Type
@@ -100,8 +101,10 @@ def content_delete(request, pk, template_name='contents/content_confirm_delete.h
 def notice(request):
     context = RequestContext(request)
     notices = []
+    current_date = date.today()
     if request.method == 'GET':
-        notices = Content.objects.filter(groups=request.user.groups.all())
+	
+        notices = Content.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
         
     return render_to_response('contents/notice.html', {'notices': notices }, context)
 

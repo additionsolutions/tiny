@@ -42,7 +42,7 @@ class Content(models.Model):
     enddate = models.DateField( blank=False, null=False)
     picture = models.ImageField(upload_to='profile_images', blank=True)
     video = models.URLField(blank=True)
-    contenttype = models.ForeignKey(ContentType)
+    contenttype = models.ForeignKey(ContentType,on_delete=models.PROTECT)
     groups = models.ManyToManyField(Group)
 
     # Override the __unicode__() method to return out something meaningful!

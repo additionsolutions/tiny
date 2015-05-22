@@ -10,7 +10,7 @@
        
     {% block missing_alphabets_test %}
             <div class="col-sm-2">
-            <img src={% static "img/hut.jpg" %} width=250px height=240px/></div>
+            <img src={% static "img/nut.png" %} width=250px height=240px/></div>
             
             <div id="ztext_right" class="col-sm-2">nu</div>	    
             <div id="zblank1" class="zblank col-sm-2"></div>

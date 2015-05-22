@@ -9,9 +9,11 @@ $(document).ready(function(){
     
     $('#start').click(function(){
         var test_action;
+	
         action = $(this).attr("test-action");
+	// alert(action);
         $.get('/t/etest/sr/' + action, function(data){
-                   // alert(data);
+                    // alert(data);
                    $('#test_area').html(data);
                    $('#start').hide();
                });
@@ -22,7 +24,10 @@ $(document).ready(function(){
 
 function navigate(test_action)
 {
-    
+    if(test_action == 0)
+    {
+	alert("Test Submitted Successfully");
+    }
     var scriptUrl = "/t/etest/sr/" + test_action;
     var msg=getURL(scriptUrl);
     $('#test_area').html(msg);

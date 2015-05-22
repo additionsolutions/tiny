@@ -9,7 +9,7 @@
     {% block mainbody_block %}
         {% block heading_block %}
             <div id="aheader">
-                <h3>Add Content</h3>
+                <h3>Edit Content</h3>
             </div>
         {% endblock %}
         <div class="col-sm-2" style="background-color:#eee; height:550px">
@@ -19,7 +19,7 @@
                 
                 <div id="resultsarea" class =col-sm-10">
 			<div id="asection">
-			    <a class="btn btn-primary" href="{% url "cont_list" %}">Back to Content</a>
+			    <a class="btn btn-primary" href="{% url "getcontentfromcontettype" %}">Back to Content</a>
 				      <br><br>
 			    
 			{% include "dmin/form_snippet.html" %}

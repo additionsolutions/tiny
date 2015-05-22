@@ -1,0 +1,31 @@
+
+<h2> Marks of selected user</h2>
+			    
+<table  class="table table-hover" >
+<tbody>
+    <colgroup>
+	<col class="col-md-2">
+	<col class="col-md-2">
+	<col class="col-md-2">
+
+    </colgroup>
+  <tr class="info">
+    <th>User</th>
+    <th>Question</th>
+    <th>Marks</th>
+
+  </tr>
+    {% for marks_obj in object %}
+	{% if marks_obj.user != 0 %}
+	  <tr>
+	    <td>{{ marks_obj.user }}</td>
+	    <td>{{ marks_obj.question }}</td>
+	    <td>{{ marks_obj.marks }}</td>
+	{% endif %}
+      {% empty %}
+	<td>No users selected yet</td>
+      </tr>
+    {% endfor %}
+</tbody>
+</table>
+							    
