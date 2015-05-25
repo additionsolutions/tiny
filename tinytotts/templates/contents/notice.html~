@@ -1,8 +1,0 @@
-{% if notices.count > 0 %}  
-    {% for notice in notices %}
-        <li class="list-group-item">  {{ notice.name }}<br/>
-        {{ notice.data }}</li>
-    {% endfor %}
-{% else %}
-    <li class="list-group-item"> No data to show</li>
-{% endif %}
