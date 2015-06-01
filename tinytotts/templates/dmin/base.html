@@ -18,7 +18,10 @@
     
     <script src="{% static "js/jquery-1.11.1.min.js" %}"></script>
     <script src="{% static "js/addsol_admin.js" %}"></script>
-
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/jquery-ui.min.js" %}"></script>
+    
+    <script src="{% static "js/vertical-responsive-menu.min.js" %}"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -35,11 +38,11 @@
         <div class="col-sm-4" style="text-align:center; font-size:15px; padding:10px; ">
             <b>Admin Screen</b>
         </div>
-        <div class="col-sm-4" style="text-align:right; padding:10px; ">
+        <div class="col-sm-4" style="text-align:right; padding:0px; ">
             {% if user.is_authenticated %}
              	<H5> Welcome Admin : <i>{{ user.first_name }} </i></H5><a class="getApp" href="/a/dmin/logout">Logout</a>
             {% else %}
-             	<a class="getApp" href="dmin/login">Login</a>
+             	<a class="getApp" href="/a/dmin/login">Login</a>
             {% endif %}
         </div>
     </div>
@@ -74,10 +77,7 @@
     </div>
 </div>
 
-    <script src="{% static "js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/jquery-ui.min.js" %}"></script>
     
-    <script src="{% static "js/vertical-responsive-menu.min.js" %}"></script>
 
 
 </body>
