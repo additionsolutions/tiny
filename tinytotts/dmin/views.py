@@ -54,14 +54,22 @@ def register(request):
                                                      'registered': registered}, context_instance=RequestContext(request))
 
 
-class UserListView(ListView):
+#class UserListView(ListView):
 
-    model = User
-    template_name = 'dmin/userlist.html'
+    #model = User
+    #template_name = 'dmin/userlist.html'
+    
+    #def get_context_data(self, **kwargs):
+        #context = super(UserListView, self).get_context_data(**kwargs)
+        #return context
 
-    def get_context_data(self, **kwargs):
-        context = super(UserListView, self).get_context_data(**kwargs)
-        return context
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
+def user_list(request, template_name='dmin/userlist.html'):
+    userlist = User.objects.all()   
+    data = {}
+    data['object_list'] = userlist    
+    return render(request, template_name, data)
 
 def user_update(request, pk, template_name='dmin/user_form.html'):
     usr = get_object_or_404(User, pk=pk)
@@ -147,7 +155,8 @@ def profile(request):
     else:
         return render_to_response('base/profile.html', context_dict, context)
 
-
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def group_list(request, template_name='dmin/group_list.html'):
     grouplist = Group.objects.all()   
     data = {}
@@ -189,7 +198,8 @@ def group_delete(request, pk, template_name='dmin/group_form_delete.html'):
 #        fields = ('name',
 #          'description')
 
-
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def contenttype_list(request, template_name='dmin/contenttype_list.html'):
     contenttype = ContentType.objects.all()
     data = {}
@@ -232,6 +242,8 @@ def contenttype_delete(request, pk, template_name='dmin/contenttype_form_delete.
 #        model = Content
 #	exclude = ('video',)
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def content_list(request, template_name='dmin/content_list.html'):
     content = Content.objects.all()
     data = {}
@@ -290,6 +302,8 @@ def get_content(request,ctype_id):
 # Test Set for Admin
 ######################################
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def testset(request, template_name='dmin/testset_list.html'):
     testset = TestSet.objects.all()
     data = {}
@@ -318,7 +332,8 @@ def testset_delete(request, pk, template_name='dmin/testset_form_delete.html'):
         return redirect('testset')
     return render(request, template_name, {'object':testset})
 
-    
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')    
 def testq(request, template_name='dmin/testquestion_list.html'):
     testset_obj = TestSet.objects.all()
     testsetline = TestSetLine.objects.filter(testset=testset_obj)
@@ -342,7 +357,8 @@ def testsetline_update(request, pk, template_name='dmin/testsetline_form.html'):
         return redirect('gettestsetlinefromtestset')
     return render(request, template_name, {'form':form})
 
-
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def gettestsetlinefromtestset(request, template_name='dmin/testsetline_list.html'):
     #contenttype = ContentType.objects.all()
     test_set = TestSet.objects.all()
@@ -369,6 +385,8 @@ def report_marks(request, template_name='dmin/mark_list.html'):
     data['object_list'] = answer
     return render(request, template_name, data)
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def report_userwisemarks(request, template_name='dmin/user_report.html'):
     #contenttype = ContentType.objects.all()
     usr = User.objects.all()
@@ -394,7 +412,8 @@ def get_scorecard(request,usrid,testid):
     return render(request, 'dmin/score_card.html', { 'object': marks_obj})
 
 
-
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def category_list(request, template_name='dmin/category_list.html'):
     categorylist = Category.objects.all()   
     data = {}
@@ -417,6 +436,8 @@ def category_update(request, pk, template_name='dmin/category_form.html'):
     return render(request, template_name, {'form':form})
 
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def question_list(request, template_name='dmin/question_list.html'):
     questionlist = TestQuestion.objects.all()   
     data = {}
@@ -439,11 +460,14 @@ def question_update(request, pk, template_name='dmin/question_form.html'):
     return render(request, template_name, {'form':form})
 
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def option_list(request, template_name='dmin/option_list.html'):
     questionlist = TestQuestion.objects.all()
     data = {}
     data['question_object_list'] = questionlist   
     return render(request, template_name, data)
+
 
 def radio_test(request,template_name='dmin/radio_test.html'):
     questionlist = TestQuestion.objects.all()
