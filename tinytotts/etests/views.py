@@ -5,6 +5,7 @@ from django.db.models import Q, Max, Min
 from contents.models import User
 from .forms import TestSetForm, TestSetLineForm
 from datetime import date
+from django.contrib.auth.decorators import login_required
 
 ######################################
 # Test Set for Admin
@@ -79,6 +80,8 @@ def testlist(request):
     return render_to_response('etests/testlist.html', {'testlist': testlist }, context)
 
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 ## Start with first question  
 def etest(request, testset):
     testset_obj = TestSet.objects.get(id=testset)
@@ -124,7 +127,7 @@ def etestsr(request, action):
 	#print '---default flag----',obj_testset.submit_flag
 	obj_testset.submit_flag = True
 	obj_testset.save()
-        return redirect('submit')
+        return redirect('/base/profile')
 	#return render(request,'base/profile.html')
 
 
@@ -142,7 +145,7 @@ def etestsr(request, action):
     request.session['qno'] = sr
 
     file_name = str((TestSetLine.objects.get(Q(srno=sr), Q(testset=request.session['testno']))).filename)
-    #print '----file name-----',f_name
+    #print '----file name-----',file_name
     if file_name != '':
     	testsetline = "etests/" + file_name
         return render(request, 'etests/test_area.html', {'testsetline':testsetline,'record':record})
