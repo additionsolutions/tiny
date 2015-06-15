@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'etests',
 )
 
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -59,6 +60,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.contrib.sessions.serializers.JSONSerializer',
+    'tinytotts.middleware.AutoLogout',
 )
 
 ROOT_URLCONF = 'tinytotts.urls'
@@ -66,6 +69,8 @@ ROOT_URLCONF = 'tinytotts.urls'
 WSGI_APPLICATION = 'tinytotts.wsgi.application'
 
 SITE_ID = 1
+
+AUTO_LOGOUT_DELAY=1
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
