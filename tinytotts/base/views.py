@@ -171,13 +171,13 @@ def englishtest2(request):
         return render_to_response('base/english_test2.html', context_dict, context) 
         
         
-def tinytotts(request):
+def qna(request):
     context = RequestContext(request)
     context_dict = {'message': 'Tiny Totts'}
     if request.user.is_authenticated():
-        return render_to_response('base/tinytotts.html', context_dict, context)
+        return render_to_response('base/qna.html', context_dict, context)
     else:
-        return render_to_response('base/tinytottsguest.html', context_dict, context)
+        return render_to_response('base/qnaguest.html', context_dict, context)
 
 
 class UserListView(ListView):

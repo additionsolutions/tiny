@@ -50,3 +50,5 @@ Temporary Items
 
 # HTML Backup files
 *.html~
+
+settings.py
