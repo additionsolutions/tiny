@@ -37,7 +37,7 @@
 				          <tr class="info">
 				              <th>Group</th>				         
 				              <th>Edit</th>
-				              
+				              <th>Delete</th>
 				          </tr>
 
 				            {% for grouplist in object_list %}
@@ -48,6 +48,8 @@
 				                        <a href="{% url "groups_edit" grouplist.id %}" class="btn btn-primary inverse btn-sm">
 				                            <img src="{% static "img/edit.png" %}" height="15" width="15" alt="Edit"></a>
 				                    </td>
+						    <td><a href="{% url "groups_delete" grouplist.id %}" class="btn btn-primary inverse btn-sm">
+                                            <img src="{% static "img/delete.png" %}" height="15" width="15" alt="Delete"></a></td>
 				                    
 				                    {% empty %}
 				                        No Group yet

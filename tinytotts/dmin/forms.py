@@ -42,11 +42,12 @@ class UserForm(forms.ModelForm):
 			Field('email', css_class='input-sm'),
 			Field('password', css_class='password'),
 			Field('confirm_password', css_class='password'),
+			Field('groups'),
 			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
 			)
 	class Meta:
 		model = User
-		fields = ('username', 'first_name', 'last_name', 'email', 'password')
+		fields = ('username', 'first_name', 'last_name', 'email', 'password','groups')
 
 	def clean(self):
 
