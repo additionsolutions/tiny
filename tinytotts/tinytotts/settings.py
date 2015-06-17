@@ -70,7 +70,7 @@ WSGI_APPLICATION = 'tinytotts.wsgi.application'
 
 SITE_ID = 1
 
-AUTO_LOGOUT_DELAY=1
+AUTO_LOGOUT_DELAY=10
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
