@@ -4,29 +4,19 @@
 <table  class="table table-hover" >
 <tbody>
     <colgroup>
-	<col class="col-md-2">
-	<col class="col-md-2">
+	<col class="col-md-4">
 	<col class="col-md-2">
 
     </colgroup>
   <tr class="info">
-    <th>User</th>
     <th>Testset</th>
     <th>Total</th>
 
   </tr>
-    {% for marks_obj in object %}
-	{% if marks_obj.user != 0 %}
+    {% for obj in testset_objs %}
 	  <tr>
-	    <td>{{ marks_obj.user }}</td>
-	    {% for testset_obj in set_obj %} 
-	    	<td>{{ testset_obj.testname }}</td>
-	    {% endfor %}
-	   <td> {{ total }} </td>
-	{% endif %}
-      {% empty %}
-	
-	<td>Test not attempted yet</td>
+	    <td>{{ obj.testname }}</td>
+        <td> {{ obj.total }} </td>
       </tr>
     {% endfor %}
 </tbody>

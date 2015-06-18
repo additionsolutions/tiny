@@ -412,21 +412,28 @@ def report_userwisemarks(request, template_name='dmin/user_report.html'):
 
 def get_scorecard(request,usrid,testid):
     #print '---in function---'
+
     if request.method == 'GET':
-	try:
-	    usrid = int(usrid)
+        try:
+            usrid = int(usrid)
             testid = int(testid)
         except ValueError:
             raise Http404()
     
+    user_obj = User.objects.get(pk=usrid)
+    username = user_obj.get_full_name()
+    testset_obj = TestSet.objects.get(pk=testid)
+    testset = testset_obj
+    print testset_obj
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
     marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
-
-    for obj in marks_obj:
-	    score = obj.marks
-	    total = total+score 
     
-    return render(request, 'dmin/score_card.html', { 'object': marks_obj,'total':total})
+    total = 0
+    for obj in marks_obj:
+        score = obj.marks
+        total = total + score 
+
+    return render(request, 'dmin/score_card.html', {'user_name':username,'testset_name':testset,'object': marks_obj,'total':total})
 
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
@@ -540,25 +547,20 @@ def userwise_summaryreport(request, template_name='dmin/marks_summary_report.htm
 
 def get_summaryreport(request,usrid):
     #print '---in function---'
-    total=0
     if request.method == 'GET':
 	try:
 	    usrid = int(usrid)
         except ValueError:
             raise Http404()
-   
-    #testsetline_obj = TestSetLine.objects.filter(testset=testid)
-    answer_obj = Answer.objects.filter(user=usrid)
-    #print 'question_obj----',answer_obj
-    for ans_obj in answer_obj:
-    	testsetline_obj = TestSetLine.objects.filter(question=ans_obj.question)
-	#print '--in q_obj---',testsetline_obj
-	
-
-    for obj in marks_obj:
-	    score = obj.marks
-	    total = total+score 
     
-    return render(request, 'dmin/subpart_summary_report.html', { 'object': marks_obj,'set_obj':testset_obj,'total':total})
+    #testsetline_obj = TestSetLine.objects.filter(testset=testid)
+    answer_objs = Answer.objects.filter(user=usrid)
+    #print 'question_obj----',answer_obj
+    for ans_obj in answer_objs:
+        print ans_obj
+    #testsetline_objs = answer_obj.question   
+    testset_objs = TestSet.objects.filter()
+
+    return render(request, 'dmin/subpart_summary_report.html', {'testset_objs':testset_objs})
 
 
