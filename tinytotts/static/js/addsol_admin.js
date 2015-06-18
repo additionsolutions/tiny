@@ -25,7 +25,17 @@ function admin_nav(action)
     alert(action);
 }
 
+// Code for Summary report
+function getSummary()
+{
+	var usrid = document.getElementById("usrSelect").value;
+	alert (usrid);
+	$.get('/a/dmin/summary/'+ usrid, function(data){
+		$('#summaryreport').html(data);
+	});
+}
 
+// Code for User report
 function getResult()
 {
 	var usrid = document.getElementById("usrSelect").value;
@@ -37,6 +47,7 @@ function getResult()
            });
 }
 
+// Code for list of Tessetline
 function gettestsetLine()
 {
 	var testid = document.getElementById("testSelect").value;
@@ -46,6 +57,7 @@ function gettestsetLine()
            });
 }
 
+// Code for list of Content
 function getContentlist()
 {
 	var ctype_id = document.getElementById("contentTypeSelect").value;

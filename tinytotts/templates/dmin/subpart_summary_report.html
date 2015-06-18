@@ -1,5 +1,5 @@
 
-<h2> Marks of selected user</h2>
+<h2> Summary Of Selected User</h2>
 			    
 <table  class="table table-hover" >
 <tbody>
@@ -11,23 +11,24 @@
     </colgroup>
   <tr class="info">
     <th>User</th>
-    <th>Question</th>
-    <th>Marks</th>
+    <th>Testset</th>
+    <th>Total</th>
 
   </tr>
     {% for marks_obj in object %}
 	{% if marks_obj.user != 0 %}
 	  <tr>
 	    <td>{{ marks_obj.user }}</td>
-	    <td>{{ marks_obj.question }}</td>
-	    <td>{{ marks_obj.marks }}</td>
-	  </tr>
+	    {% for testset_obj in set_obj %} 
+	    	<td>{{ testset_obj.testname }}</td>
+	    {% endfor %}
+	   <td> {{ total }} </td>
 	{% endif %}
       {% empty %}
-	<tr>
+	
 	<td>Test not attempted yet</td>
       </tr>
     {% endfor %}
 </tbody>
 </table>
-<h2> Total marks are: {{ total }} </h2>
+

@@ -300,12 +300,12 @@ def get_content(request,ctype_id):
     if request.method == 'GET':
 	try:
             ctype_id = int(ctype_id)
-	    print'---ctype---',ctype_id
+	    
         except ValueError:
             raise Http404()
     
     content_obj = Content.objects.filter(contenttype=ctype_id)
-    print '---content_obj----',content_obj
+    
 	
     return render(request, 'dmin/subpart_content.html', { 'object': content_obj})
 
@@ -422,7 +422,11 @@ def get_scorecard(request,usrid,testid):
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
     marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
 
-    return render(request, 'dmin/score_card.html', { 'object': marks_obj})
+    for obj in marks_obj:
+	    score = obj.marks
+	    total = total+score 
+    
+    return render(request, 'dmin/score_card.html', { 'object': marks_obj,'total':total})
 
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
@@ -522,4 +526,39 @@ def option_delete(request, pk, template_name='dmin/option_form_delete.html'):
         option.delete()
         return redirect('option_list')
     return render(request, template_name, {'object':option})
+
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
+def userwise_summaryreport(request, template_name='dmin/marks_summary_report.html'):
+    #contenttype = ContentType.objects.all()
+    usr = User.objects.all()
+    data = {}
+    data['object_list'] = usr
+    
+    return render(request, template_name, data)
+
+def get_summaryreport(request,usrid):
+    #print '---in function---'
+    total=0
+    if request.method == 'GET':
+	try:
+	    usrid = int(usrid)
+        except ValueError:
+            raise Http404()
+   
+    #testsetline_obj = TestSetLine.objects.filter(testset=testid)
+    answer_obj = Answer.objects.filter(user=usrid)
+    #print 'question_obj----',answer_obj
+    for ans_obj in answer_obj:
+    	testsetline_obj = TestSetLine.objects.filter(question=ans_obj.question)
+	#print '--in q_obj---',testsetline_obj
+	
+
+    for obj in marks_obj:
+	    score = obj.marks
+	    total = total+score 
+    
+    return render(request, 'dmin/subpart_summary_report.html', { 'object': marks_obj,'set_obj':testset_obj,'total':total})
+
 

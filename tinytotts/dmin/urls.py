@@ -50,4 +50,6 @@ urlpatterns = patterns('',
 	url(r'^dmin/option/edit/(?P<pk>\d+)$', views.option_update, name='option_edit'),
         url(r'^dmin/option/delete/(?P<pk>\d+)$', views.option_delete, name='option_delete'),
 	url(r'^dmin/radiotest/$', views.radio_test, name='radio_test'),
+	url(r'^dmin/summaryreport/$', views.userwise_summaryreport, name='userwise_summaryreport'),
+	url(r'^dmin/summary/(\d{1,2})$',views.get_summaryreport, name='get_summaryreport'),
         )
