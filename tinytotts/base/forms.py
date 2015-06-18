@@ -51,6 +51,7 @@ class UserProfileForm(forms.ModelForm):
     helper.layout = Layout(
         Field('website', css_class='url'),
         Field('picture', css_class='file'),
+        Field('mobile', css_class='input-sm'),
         #FormActions(Submit('/base/registration', 'Add User', css_class='btn-primary'))
     )
 

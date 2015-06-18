@@ -17,4 +17,6 @@ urlpatterns = patterns('',
         url(r'^content/edit/(?P<pk>\d+)$', views.content_update, name='content_edit'),
         url(r'^content/delete/(?P<pk>\d+)$',views.content_delete, name='content_delete'),
         url(r'^content/notice$', views.notice, name='notice'),
+        url(r'^content/activities$', views.activities, name='activities'),
+        url(r'^content/portion$', views.portion, name='portion'),
         )

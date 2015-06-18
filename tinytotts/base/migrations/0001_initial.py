@@ -20,8 +20,5 @@ class Migration(migrations.Migration):
                 ('picture', models.ImageField(upload_to=b'profile_images', blank=True)),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
     ]

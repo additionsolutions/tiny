@@ -103,9 +103,33 @@ def notice(request):
     notices = []
     current_date = date.today()
     if request.method == 'GET':
-	
-        notices = Content.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+        notices = Content.objects.filter(contenttype=ContentType.objects.filter(name='Notice'), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
         
     return render_to_response('contents/notice.html', {'notices': notices }, context)
 
+######################################
+# Content Activities
+######################################
+
+def activities(request):
+    context = RequestContext(request)
+    activities = []
+    current_date = date.today()
+    if request.method == 'GET':
+        activities = Content.objects.filter(contenttype=ContentType.objects.filter(name='Activities'), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+        
+    return render_to_response('contents/activities.html', {'activities': activities }, context)
     
+    
+######################################
+# Content Portion
+######################################
+
+def portion(request):
+    context = RequestContext(request)
+    portion = []
+    current_date = date.today()
+    if request.method == 'GET':
+        portion = Content.objects.filter(contenttype=ContentType.objects.filter(name='Portion'),groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+        
+    return render_to_response('contents/portion.html', {'portion': portion }, context)

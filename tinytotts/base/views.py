@@ -54,8 +54,7 @@ def register(request):
     if redirect_url is not None:
         user_form.helper.form_action = reversed('submit_survey') + '?next=' + redirect_url
 
-    return render_to_response('base/register.html', {'user_form': user_form, 'profile_form': profile_form,
-                                                     'registered': registered}, context_instance=RequestContext(request))
+    return render_to_response('base/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}, context_instance=RequestContext(request))
 
     
     

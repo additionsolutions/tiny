@@ -6,6 +6,14 @@ $(document).ready(function(){
     $.get('/t/etest/testlist', function(data){
                $('#tests').html(data);
            });
+           
+    $.get('/c/content/portion', function(data){
+               $('#portion').html(data);
+           });
+    
+    $.get('/c/content/activities', function(data){
+               $('#activities').html(data);
+           });
     
     $('#start').click(function(){
         var test_action;

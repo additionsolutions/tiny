@@ -1,0 +1,8 @@
+{% if portion.count > 0 %}  
+    {% for portione in portion %}
+        <li class="list-group-item"> <b> {{ portione.name }} </b><br/>
+        {{ portione.data }}</li>
+    {% endfor %}
+{% else %}
+    <li class="list-group-item"> No data to show</li>
+{% endif %}

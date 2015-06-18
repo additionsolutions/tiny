@@ -30,18 +30,25 @@ def register(request):
     registered = False
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
-        #profile_form = UserProfileForm(data=request.POST)
-        if user_form.is_valid():
+        profile_form = UserProfileForm(data=request.POST)
+        if user_form.is_valid() and profile_form.is_valid():
              user = user_form.save()
              user.set_password(user.password)
-             user.save()         
+                          
+             UserProfile = profile_form.save(commit=False)
+             UserProfile.user=user
+             if 'picture' in request.FILES:
+                UserProfile.picture = request.FILES['picture']
+
+             #user.save()   
+             UserProfile.save()
              registered = True
         else:
-             print user_form.errors
+             print user_form.errors, profile_form.errors
     else:
         user_form = UserForm()
+        profile_form = UserProfileForm()
 
-        #profile_form = UserProfileForm()
 #     return render(request,
 #             'base/register.html',
 #             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
@@ -50,8 +57,7 @@ def register(request):
     if redirect_url is not None:
         user_form.helper.form_action = reversed('submit_survey') + '?next=' + redirect_url
 
-    return render_to_response('dmin/register.html', {'user_form': user_form, 
-                                                     'registered': registered}, context_instance=RequestContext(request))
+    return render_to_response('dmin/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered}, context_instance=RequestContext(request))
 
 
 #class UserListView(ListView):
@@ -73,12 +79,18 @@ def user_list(request, template_name='dmin/userlist.html'):
 
 def user_update(request, pk, template_name='dmin/user_form.html'):
     usr = get_object_or_404(User, pk=pk)
-    form = UserForm(request.POST or None, instance=usr)
-    #profile_form = UserProfileForm(data=request.POST)
-    if form.is_valid():
-        form.save()
+    usr_profile = get_object_or_404(UserProfile, user=pk)
+    user_form = UserForm(request.POST or None, request.FILES or None, instance=usr)
+    profile_form = UserProfileForm(request.POST or None, request.FILES or None, instance=usr_profile)
+    if user_form.is_valid() and profile_form.is_valid():
+        user = user_form.save()
+        userprofile = profile_form.save(commit=False)
+        userprofile.picture = request.FILES['picture']
+        #UserProfile.user=user
+        #user.set_password(user.password)
+        userprofile.save()
         return redirect('userlist')
-    return render(request, template_name, {'form':form})
+    return render(request, template_name, {'user_form':user_form, 'profile_form':profile_form})
 
 def user_delete(request, pk, template_name='dmin/user_form_delete.html'):
     usr = get_object_or_404(User, pk=pk)
@@ -146,10 +158,11 @@ def profile(request):
     flag = False
     group = Group.objects.get(name='site_admin')
     users = group.user_set.all()
+    userprofile = UserProfile.objects.get(user=request.user)
     for muser in users:
         if muser == request.user:
             flag = True
-    context_dict = {'user': request.user, 'admin': flag}
+    context_dict = {'user': request.user, 'userprofile': userprofile, 'admin': flag}
     if flag:
         return render_to_response('dmin/profile_admin.html', context_dict, context)
     else:

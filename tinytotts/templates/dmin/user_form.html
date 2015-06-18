@@ -24,7 +24,13 @@
 			    
 				
 				    {% load crispy_forms_tags %}
-				    {% crispy form %}
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% crispy user_form %}
+                        {% crispy profile_form %}
+                        <p>.</p>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </form>
 				   
 				    
 				

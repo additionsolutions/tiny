@@ -1,0 +1,8 @@
+{% if activities.count > 0 %}  
+    {% for activity in activities %}
+        <li class="list-group-item">  <b>{{ activity.name }} </b><br/>
+        {{ activity.data }}</li>
+    {% endfor %}
+{% else %}
+    <li class="list-group-item"> No data to show</li>
+{% endif %}

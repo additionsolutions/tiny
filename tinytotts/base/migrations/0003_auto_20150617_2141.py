@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('etests', '0020_auto_20150519_0737'),
+        ('base', '0002_userprofile_mobile'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='option',
-            name='option',
-            field=models.CharField(max_length=200, null=True, blank=True),
+            model_name='userprofile',
+            name='picture',
+            field=models.ImageField(default=b'no_image.png', upload_to=b'profile_images'),
         ),
     ]

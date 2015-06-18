@@ -589,6 +589,7 @@ section::after {
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
+
 form .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -600,11 +601,16 @@ form .form-control {
   border-radius: 5em;
   height: 40px;
   line-height: 40px;
-  padding: 10px;
-  color: #cfcfcf;
+  padding-top: 2px;
+  padding-right: 0px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: #666666;
   border: 2px solid #cccccc;
-  font-weight: 300;
+  font-weight: 500;
 }
+
 form textarea.form-control {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -1068,7 +1074,7 @@ footer .rights a {
 }
 form .form-control:focus {
   border-color: #66cdcc;
-  color: #999999;
+  color: #222222;
 }
 @media screen and (max-width: 640px) {
   header .navbar-default .navbar-toggle:hover,

@@ -30,7 +30,7 @@ class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
 	confirm_password = forms.CharField(widget=forms.PasswordInput())
 	helper = FormHelper()
-	helper.form_tag = True
+	helper.form_tag = False
 	helper.form_method = 'POST'
 	helper.form_class = 'form-horizontal'
 	helper.label_class = 'col-sm-2'
@@ -42,8 +42,8 @@ class UserForm(forms.ModelForm):
 			Field('email', css_class='input-sm'),
 			Field('password', css_class='password'),
 			Field('confirm_password', css_class='password'),
-			Field('groups'),
-			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+			Field('groups', css_class='input-sm'),
+			#FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
 			)
 	class Meta:
 		model = User
@@ -63,20 +63,23 @@ class UserForm(forms.ModelForm):
 
 class UserProfileForm(forms.ModelForm):
 	helper = FormHelper()
-	helper.form_tag = True
+	helper.form_tag = False
 	helper.form_method = 'POST'
 	helper.form_class = 'form-horizontal'
 	helper.label_class = 'col-sm-2'
 	helper.field_class = 'col-sm-4'
 	helper.layout = Layout(
-			Field('website', css_class='url'),
-			Field('picture', css_class='file'),
+			Field('mother_name', css_class='input-sm'),
+			Field('father_name', css_class='input-sm'),
+			Field('mobile', css_class='input-sm'),
+			Div('picture', css_class='input-sm'),
+            #FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
 			#FormActions(Submit('/base/registration', 'Add User', css_class='btn-primary'))
 			)
 
 	class Meta:
 		model = UserProfile
-		fields = ('website', 'picture')
+		fields = ('mother_name', 'father_name', 'mobile', 'picture')
 
 class CategoryForm(forms.ModelForm):
 	helper = FormHelper()
