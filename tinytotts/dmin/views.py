@@ -132,7 +132,7 @@ def user_login(request):
         else:
             # Bad login details were provided. So we can't log the user in.
             print "Invalid login details: {0}, {1}".format(username, password)
-            return HttpResponse("Invalid login details supplied.")
+            return render(request, 'etests/message.html', { 'message': "Invalid login" })
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
@@ -152,7 +152,8 @@ def user_logout(request):
     return HttpResponseRedirect('/a/dmin/login')
 
 
-
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
 def profile(request):
     context = RequestContext(request)
     flag = False

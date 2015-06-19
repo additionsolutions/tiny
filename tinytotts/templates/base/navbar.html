@@ -14,15 +14,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#features">Programs</a>
-                            </li>
-                            <li><a href="#reviews">Parents</a>
-                            </li>
-                            <li><a href="#screens">Photos</a>
-                            </li>
-                            <li><a href="#demo">Know More</a>
-                            </li>
+                        <ul class="nav navbar-nav navbar-right">                            
                             <li>
                                 {% if user.is_authenticated %}
                                     <a class="getApp" href="/base/logout">Logout</a>
@@ -30,8 +22,7 @@
                                     <a class="getApp" href="/base/login">Login</a>
                                 {% endif %}
                             </li>
-                            <li><a href="#support">Contact</a>
-                            </li>
+                            
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
