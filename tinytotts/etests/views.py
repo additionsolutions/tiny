@@ -88,8 +88,10 @@ def etest(request, testset):
     request.session['testno'] = testset
     request.session['qno'] = 0
     request.session['no_ans'] = testset_obj.no_ans
-   
-    return render(request, 'etests/etest.html', { 'testset': testset_obj })
+    if testset_obj.submit_flag:
+        return render(request, 'etests/message.html', { 'message': "Test is already submitted" })
+    else:
+        return render(request, 'etests/etest.html', { 'testset': testset_obj })
     
     
 ## Navigate   
