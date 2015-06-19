@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'base',
     'contents',
     'etests',
+    'messaging',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
