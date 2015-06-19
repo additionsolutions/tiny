@@ -2,6 +2,18 @@
 {% extends "base/aboutus.html" %}
 {% load staticfiles %}
 <html>
+
+<script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+    newwindow=window.open(url,'{{title}}','height=200,width=150');
+    if (window.focus) {newwindow.focus()}
+    return false;
+}
+
+// -->
+</script>
+
     <head>
 
         <title>Tiny Totts</title>
@@ -149,8 +161,14 @@
                     <div class="col-sm-4 ">
 
                         <div class="panel panel-default panel-primary">
-                          <div class="panel-heading">
+                          <div class="panel-heading col-sm-12">
+                            <div class="col-sm-8">
                             <h3 class="panel-title">Messaging</h3>
+                            </div>
+                            <div class="col-sm-4">
+                            {% url 'new_message' as the_url %}
+                            <a class="btn-sm btn-danger" href="{{ the_url }}">N e w</a>
+                            </div>
                           </div>
                           <div class="panel-body">                  
                                 <ul id="messages" class="list-group">

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, RequestContext, render_to_response
+from datetime import datetime, timedelta
 from messaging.models import Message
 from .forms import NewMessageForm
 
@@ -10,8 +11,9 @@ def messages(request):
     context = RequestContext(request)
     messages = []
     user = request.user
+    current_date = datetime.today() - timedelta(days=7)
     if request.method == 'GET':
-        messages = Message.objects.filter(to_user=user)
+        messages = Message.objects.filter(to_user=user, created__gte=current_date)
         #groups=request.user.groups.all()
     return render_to_response('messaging/messages.html', {'messages': messages }, context)
     
