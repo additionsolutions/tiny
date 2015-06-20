@@ -29,7 +29,7 @@ function admin_nav(action)
 function getSummary()
 {
 	var usrid = document.getElementById("usrSelect").value;
-	alert (usrid);
+	// alert (usrid);
 	$.get('/a/dmin/summary/'+ usrid, function(data){
 		$('#summaryreport').html(data);
 	});

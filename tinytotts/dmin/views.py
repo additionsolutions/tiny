@@ -14,6 +14,7 @@ from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, 
 from django.views.generic.list import ListView
 from .forms import GroupForm, TestSetForm, TestSetLineForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm, CategoryForm, TestQuestionForm, OptionForm
 from django.db.models import ProtectedError
+from django.db.models import Count, Sum, Avg
 
 
 # Create your views here.
@@ -425,7 +426,7 @@ def get_scorecard(request,usrid,testid):
     username = user_obj.get_full_name()
     testset_obj = TestSet.objects.get(pk=testid)
     testset = testset_obj
-    print testset_obj
+    #print testset_obj
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
     marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
     
@@ -547,21 +548,17 @@ def userwise_summaryreport(request, template_name='dmin/marks_summary_report.htm
     return render(request, template_name, data)
 
 def get_summaryreport(request,usrid):
-    #print '---in function---'
+    
     if request.method == 'GET':
-	try:
-	    usrid = int(usrid)
+        try:
+            usrid = int(usrid)
         except ValueError:
             raise Http404()
-    
-    #testsetline_obj = TestSetLine.objects.filter(testset=testid)
-    answer_objs = Answer.objects.filter(user=usrid)
-    #print 'question_obj----',answer_obj
-    for ans_obj in answer_objs:
-        print ans_obj
-    #testsetline_objs = answer_obj.question   
-    testset_objs = TestSet.objects.filter()
-
-    return render(request, 'dmin/subpart_summary_report.html', {'testset_objs':testset_objs})
+            
+    user_obj = User.objects.get(pk=usrid)
+    username = user_obj.get_full_name()
+    group_objs = Group.objects.filter(user=User.objects.filter(pk=usrid))
+    marks_objs = TestSet.objects.filter(groups=group_objs).annotate(marks_total=Sum('testsetline__answer__marks')).order_by('-startdate')
+    return render(request, 'dmin/subpart_summary_report.html', {'user_name':username,'testset_objs':marks_objs})
 
 

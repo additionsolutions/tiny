@@ -13,7 +13,7 @@ def messages(request):
     user = request.user
     current_date = datetime.today() - timedelta(days=7)
     if request.method == 'GET':
-        messages = Message.objects.filter(to_user=user, created__gte=current_date)
+        messages = Message.objects.filter(to_user=user, created__gte=current_date).order_by('-created')
         #groups=request.user.groups.all()
     return render_to_response('messaging/messages.html', {'messages': messages }, context)
     

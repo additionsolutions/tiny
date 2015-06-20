@@ -1,5 +1,5 @@
 
-<h2> Summary Of Selected User</h2>
+<h2> Total marks of <b>{{ user_name }} </b>per Test</h2>
 			    
 <table  class="table table-hover" >
 <tbody>
@@ -16,7 +16,7 @@
     {% for obj in testset_objs %}
 	  <tr>
 	    <td>{{ obj.testname }}</td>
-        <td> {{ obj.total }} </td>
+        <td> {{ obj.marks_total }} </td>
       </tr>
     {% endfor %}
 </tbody>
