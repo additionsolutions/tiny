@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ {% extends 'etests/l1_eng_circleproperpic.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l1_eng_circleproperpic_test %}
+            <div class="col-sm-12">
+             <div id="ztext_right" class="col-sm-2">D</div>
+            
+            
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";><img src={% static "img/baby.jpeg" %} width=100px height=100px/></button></div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";><img src={% static "img/aeroplane.png" %} width=100px height=100px/></button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(1)";><img src={% static "img/dog.jpg" %} width=150px height=100px/></button></div>
+            
+            <div class="col-sm-2" ></div>
+            <button class="circle" onclick="marks(0)";><img src={% static "img/cake.png" %} width=150px height=130px/></button></div>
+            
+            <div class="col-sm-2" ></div>
+
+            
+            <div id="ans_area" class="col-sm-2" h3>
+
+            </div>       
+    {% endblock %}
+
+</body>
+
+</html>
