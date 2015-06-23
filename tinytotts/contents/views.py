@@ -96,7 +96,7 @@ def content_delete(request, pk, template_name='contents/content_confirm_delete.h
 
 
 ######################################
-# Content Notice
+# Content 
 ######################################
 
 def content(request):
