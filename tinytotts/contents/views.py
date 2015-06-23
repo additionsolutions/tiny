@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, RequestContext
 from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from contents.models import User, Content, ContentType
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import resolve
 from datetime import date
 
 ######################################
@@ -54,7 +55,7 @@ class ContentForm(ModelForm):
 
     class Meta:
         model = Content
-	exclude = ('video',)
+    exclude = ('video',)
         
                   
     #def __init__(self, *args, **kwargs):
@@ -98,38 +99,27 @@ def content_delete(request, pk, template_name='contents/content_confirm_delete.h
 # Content Notice
 ######################################
 
-def notice(request):
+def content(request):
     context = RequestContext(request)
-    notices = []
+    current_url = resolve(request.path_info).url_name
+    contents = []
     current_date = date.today()
     if request.method == 'GET':
-        notices = Content.objects.filter(contenttype=ContentType.objects.filter(name='Notice'), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
-        
-    return render_to_response('contents/notice.html', {'notices': notices }, context)
+        notices = Content.objects.filter(contenttype=ContentType.objects.filter(name=current_url), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+        url_data = "content_data" 
+      
+    return render_to_response('contents/content.html', {'contents': notices, 'url_data': url_data }, context)
 
+   
 ######################################
-# Content Activities
+# Content Data
 ######################################
 
-def activities(request):
+def content_data(request, content):
     context = RequestContext(request)
-    activities = []
-    current_date = date.today()
-    if request.method == 'GET':
-        activities = Content.objects.filter(contenttype=ContentType.objects.filter(name='Activities'), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
-        
-    return render_to_response('contents/activities.html', {'activities': activities }, context)
+   
+    content_obj = Content.objects.get(id=content)
+    return render(request, 'contents/content_data.html', { 'contents': content_obj })
+      
     
     
-######################################
-# Content Portion
-######################################
-
-def portion(request):
-    context = RequestContext(request)
-    portion = []
-    current_date = date.today()
-    if request.method == 'GET':
-        portion = Content.objects.filter(contenttype=ContentType.objects.filter(name='Portion'),groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
-        
-    return render_to_response('contents/portion.html', {'portion': portion }, context)
