@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+ {% extends 'etests/l1_maths_002_drawball.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l1_maths_002_drawball_test %}
+     <div class="col-sm-12">
+            <div id="ztext_right" class="col-sm-2">3</div>
+            <div id="zblank1" class="zblank col-sm-2"></div> 
+            <div class="col-sm-12" ><hr/></div>
+         
+            <div id="zans0" class="zans col-sm-2"><p><img src={% static "img/Basket_ball_4.png" %} width=120px height=96px /></p></div>
+            <div id="ztext_right" class="col-sm-1">/</div>
+            <div id="zans1" class="zans col-sm-2"><p><img src={% static "img/Basket_ball_3.png" %} width=120px height=96px /></p></div>
+            <div id="ztext_right" class="col-sm-1">/</div>
+            <div id="zans2" class="zans col-sm-2"><p><img src={% static "img/Basket_ball_5.png" %} width=120px height=96px /></p></div>
+       </div>
+            <div id="ans_area" class="col-sm-1" h3></div>
+            
+    {% endblock %}
+
+</body>
+	{% block l1_maths_002_drawball_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",2);
+		 
+	      </script>
+    	{% endblock %}
+
+
+</html>
