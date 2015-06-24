@@ -347,6 +347,11 @@ def testset_delete(request, pk, template_name='dmin/testset_form_delete.html'):
         return redirect('testset')
     return render(request, template_name, {'object':testset})
 
+
+######################################
+# Test Set Line for Admin
+######################################
+
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')    
 def testq(request, template_name='dmin/testquestion_list.html'):
@@ -363,7 +368,6 @@ def testsetline_create(request, template_name='dmin/testsetline_form.html'):
         return redirect('gettestsetlinefromtestset')
     return render(request, template_name, {'form':form})
 
-
 def testsetline_update(request, pk, template_name='dmin/testsetline_form.html'):
     testsetline = get_object_or_404(TestSetLine, pk=pk)
     form = TestSetLineForm(request.POST or None, instance=testsetline)
@@ -371,6 +375,13 @@ def testsetline_update(request, pk, template_name='dmin/testsetline_form.html'):
         form.save()
         return redirect('gettestsetlinefromtestset')
     return render(request, template_name, {'form':form})
+
+def testsetline_delete(request, pk, template_name='dmin/testsetline_form_delete.html'):
+    testsetline = get_object_or_404(TestSetLine, pk=pk)
+    if request.method=='POST':
+        testsetline.delete()
+        return redirect('gettestsetlinefromtestset')
+    return render(request, template_name, {'object':testsetline})
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')
@@ -413,7 +424,6 @@ def report_userwisemarks(request, template_name='dmin/user_report.html'):
     return render(request, template_name, data)
 
 def get_scorecard(request,usrid,testid):
-    #print '---in function---'
 
     if request.method == 'GET':
         try:
@@ -426,7 +436,6 @@ def get_scorecard(request,usrid,testid):
     username = user_obj.get_full_name()
     testset_obj = TestSet.objects.get(pk=testid)
     testset = testset_obj
-    #print testset_obj
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
     marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
     
