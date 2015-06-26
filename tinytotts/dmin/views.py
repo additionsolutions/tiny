@@ -269,18 +269,26 @@ def content_create(request, template_name='dmin/content_form.html'):
     form = ContentForm(request.POST or None, initial={'createdby': request.user})
     form.fields['createdby'] = ModelChoiceField(label="", widget=HiddenInput(attrs={'value':request.user}), queryset=User.objects.all())
     if form.is_valid():
-        form.save()
+        content = form.save(commit=False)
+        if 'picture' in request.FILES:
+                content.picture = request.FILES['picture']
+   
+        content.save()
         return redirect('getcontentfromcontettype')
     return render(request, template_name, {'form':form})
 
 
 def content_update(request, pk, template_name='dmin/content_form.html'):
     content = get_object_or_404(Content, pk=pk)
-    form = ContentForm(request.POST or None, instance=content)
-    if form.is_valid():
-        form.save()
+    content_form = ContentForm(request.POST or None, request.FILES or None, instance=content)
+    if content_form.is_valid():
+        content_pic = content_form.save(commit=False)
+        if 'picture' in request.FILES:
+                content_pic.picture = request.FILES['picture']
+   
+        content_pic.save()
         return redirect('getcontentfromcontettype')
-    return render(request, template_name, {'form':form})
+    return render(request, template_name, {'form':content_form})
 
 
 def content_delete(request, pk, template_name='dmin/content_form_delete.html'):

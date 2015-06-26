@@ -14,6 +14,10 @@ $(document).ready(function(){
     $.get('/c/content/activities', function(data){
                $('#activities').html(data);
            });
+		   
+	$.get('/c/content/photo', function(data){
+               $('#photo_gallary').html(data);
+           });
            
     $.get('/m/messaging/messaging', function(data){
                $('#messages').html(data);
