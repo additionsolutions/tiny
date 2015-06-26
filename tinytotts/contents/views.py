@@ -105,10 +105,10 @@ def content(request):
     contents = []
     current_date = date.today()
     if request.method == 'GET':
-        notices = Content.objects.filter(contenttype=ContentType.objects.filter(name=current_url), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+        contents = Content.objects.filter(contenttype=ContentType.objects.filter(name=current_url), groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
         url_data = "content_data" 
       
-    return render_to_response('contents/content.html', {'contents': notices, 'url_data': url_data }, context)
+    return render_to_response('contents/content.html', {'contents': contents, 'url_data': url_data }, context)
 
 def content_photo(request):
     context = RequestContext(request)
