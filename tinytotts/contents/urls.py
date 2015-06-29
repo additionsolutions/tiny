@@ -20,5 +20,5 @@ urlpatterns = patterns('',
         url(r'^content/notice$', views.content, name='Notice'),
         url(r'^content/activities$', views.content, name='Activities'),
         url(r'^content/portion$', views.content, name='Portion'),
-		url(r'^content/photo$', views.content_photo, name='Photo'),
+        url(r'^content/photo$', views.content_photo, name='Photo'),
         )

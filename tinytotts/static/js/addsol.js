@@ -14,8 +14,8 @@ $(document).ready(function(){
     $.get('/c/content/activities', function(data){
                $('#activities').html(data);
            });
-		   
-	$.get('/c/content/photo', function(data){
+        
+    $.get('/c/content/photo', function(data){
                $('#photo_gallary').html(data);
            });
            
