@@ -52,7 +52,7 @@ LOGGING = {
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',
+            'level': 'ERROR',
             'class': 'logging.FileHandler',
             'filename': 'tinytotts.log',
             'formatter': 'verbose'
@@ -62,11 +62,11 @@ LOGGING = {
         'django': {
             'handlers':['file'],
             'propagate': True,
-            'level':'DEBUG',
+            'level':'ERROR',
         },
         'tinytotts': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'ERROR',
         },
     }
 }
