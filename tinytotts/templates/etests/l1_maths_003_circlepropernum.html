@@ -35,13 +35,15 @@
     
     .parent{
 	background:url({% static "img/circle_background.png" %});
-        width:105%;
-	min-height:500px;
+        width:1360px;
+	    height:600px;
         position:relative;
         border:1px solid black;
     }
     .parent:after{
         content:'';
+        width:1360px;
+	    height:600px;
         position:absolute;
         top:0;
         left:0;
@@ -57,7 +59,7 @@
 
 <body >
        
-    <audio id="success" src="{% static "audio/applause.mp3" %}" preload="auto" autobuffer>
+    <audio id="success" src="{% static "audio/answer.wav" %}" preload="auto" autobuffer>
     </audio>
     <audio id="wrong" src="{% static "audio/error.mp3" %}" preload="auto" autobuffer>
     </audio>
