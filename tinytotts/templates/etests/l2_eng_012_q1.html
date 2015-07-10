@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_eng_012_match3.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l2_eng_012_match3_test %}
+            <div class="col-sm-12" > 
+                <div class="col-sm-3">.</div>      
+            	<div id="zans0" class="zans col-sm-4"><p>T</p></div>
+		        <div id="ztext_right" class="col-sm-3">j</div>
+	    	    <div id="zblank1" class="zblank col-sm-2"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" >
+                <div class="col-sm-3">.</div>       
+            	<div id="zans1" class="zans col-sm-4"><p>F</p></div>
+		        <div id="ztext_right" class="col-sm-3">n</div>
+	    	    <div id="zblank2" class="zblank col-sm-2"></div>	
+	    </div>  
+	   
+            <div class="col-sm-12" > 
+                <div class="col-sm-3">.</div>  
+            	<div id="zans2" class="zans col-sm-4"><p>D</p></div>
+		        <div id="ztext_right" class="col-sm-3">m</div>
+	    	    <div id="zblank3" class="zblank col-sm-2"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" >  
+                <div class="col-sm-3">.</div>     
+            	<div id="zans3" class="zans col-sm-4"><p>J</p></div>
+		        <div id="ztext_right" class="col-sm-3">l</div>
+	    	    <div id="zblank4" class="zblank col-sm-2"></div>	
+	    </div>    
+	    
+	    <div class="col-sm-12" >
+                <div class="col-sm-3">.</div>       
+            	<div id="zans4" class="zans col-sm-4"><p>M</p></div>
+		        <div id="ztext_right" class="col-sm-3">t</div>
+	    	    <div id="zblank5" class="zblank col-sm-2"></div>	
+	    </div>
+	    
+            <div class="col-sm-12" > 
+                <div class="col-sm-3">.</div>      
+            	<div id="zans5" class="zans col-sm-4"><p>N</p></div>
+		        <div id="ztext_right" class="col-sm-3">f</div>
+	    	    <div id="zblank6" class="zblank col-sm-2"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" >  
+                <div class="col-sm-3">.</div>     
+            	<div id="zans6" class="zans col-sm-4"><p>L</p></div>
+		        <div id="ztext_right" class="col-sm-3">d</div>
+	    	    <div id="zblank7" class="zblank col-sm-2"></div>	
+	    </div>  
+            
+            <div class="col-sm-12" ><hr/></div>
+           
+            <div id="ans_area" class="col-sm-3" h3></div>
+            
+    {% endblock %}
+
+</body>
+    {% block l2_eng_012_match3_header %}  
+	   <script type="text/javascript">
+	         localStorage.setItem("pos1",4);
+	         localStorage.setItem("pos2",6);
+             localStorage.setItem("pos3",5);
+             localStorage.setItem("pos4",7);	     
+             localStorage.setItem("pos5",1);
+             localStorage.setItem("pos6",2);
+             localStorage.setItem("pos7",3);
+         </script>
+    {% endblock %}
+</html>

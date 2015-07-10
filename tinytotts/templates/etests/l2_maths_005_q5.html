@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_maths_005_circlesmallnum.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+   {% block l2_maths_005_circlesmallnum_test %}
+       <div class="col-sm-12">
+            <div id="blank_dot" class="col-sm-2">.</div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>7</button></div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>6</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";>4</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(1)";>3</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";>5</button></div>
+            
+       </div>
+
+    <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12"><hr/></div>
+    <div class="col-sm-12" >
+        <div id="blank_dot" class="col-sm-2">.</div>
+        <div id="ans_area" class="col-sm-2" h3>
+
+        </div>      
+    </div>        
+    {% endblock %}
+
+</body>
+
+</html>

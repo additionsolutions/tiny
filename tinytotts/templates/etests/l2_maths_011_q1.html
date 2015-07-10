@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_maths_011_match.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l2_maths_011_match_test %}
+            <div class="col-sm-12" >
+             <div class="col-sm-3">.</div>       
+            	<div id="zans0" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_5.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+                    <img src={% static "img/Level2/MTest11/star_2.png" %} width=90px height=90px/></div>
+                <div id="zblank1" class="zblank col-sm-2"></div>
+		    </div>    
+            <div class="col-sm-12" >
+             <div class="col-sm-3">.</div>       
+            	<div id="zans1" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_7.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+            	    <img src={% static "img/Level2/MTest11/star_3.png" %} width=105px height=90px/></div>
+                <div id="zblank2" class="zblank col-sm-2"></div>
+		    </div>
+            <div class="col-sm-12" > 
+             <div class="col-sm-3">.</div>      
+                <div id="zans2" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_2.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+            		<img src={% static "img/Level2/MTest11/star_4.png" %} width=110px height=90px/></div>
+                <div id="zblank3" class="zblank col-sm-2"></div>
+		</div>  
+            <div class="col-sm-12" > 
+             <div class="col-sm-3">.</div>      
+            	<div id="zans3" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_3.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+            		<img src={% static "img/Level2/MTest11/star_5.png" %} width=115px height=90px/></div>
+	    	    <div id="zblank4" class="zblank col-sm-2"></div>	
+	    </div>    
+	        <div class="col-sm-12" >
+             <div class="col-sm-3">.</div>       
+            	<div id="zans4" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_4.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+                    <img src={% static "img/Level2/MTest11/star_6.png" %} width=120px height=90px/></div>          
+	    	<div id="zblank5" class="zblank col-sm-2"></div>	
+	    </div>    
+            <div class="col-sm-12" > 
+             <div class="col-sm-3">.</div> 
+                <div id="zans5" class="zans col-sm-4"><p><img src={% static "img/Level2/MTest11/Basket_ball_8.png" %} width=90px height=95px/></p></div>
+                <div class="col-sm-3">
+                    <img src={% static "img/Level2/MTest11/star_7.png" %} width=200px height=90px/></div>    
+	    	<div id="zblank6" class="zblank col-sm-2"></div>	
+	    </div>
+             <div class="col-sm-12" >
+             <div class="col-sm-3">.</div>       
+            	<div id="zans6" class="zans col-sm-2"><p><img src={% static "img/Level2/MTest11/Basket_ball_6.png" %} width=90px height=95px/></p></div>
+		        <div class="col-sm-3">
+            		<img src={% static "img/Level2/MTest11/star_8.png" %} width=210px height=90px/></div>
+	    	<div id="zblank7" class="zblank col-sm-2"></div>	
+	    </div>
+            <div class="col-sm-12" ><hr/></div>
+           
+            <div id="ans_area" class="col-sm-3" h3></div>
+            
+    {% endblock %}
+
+</body>
+     {% block l2_maths_011_match_header %}  
+	   <script type="text/javascript">
+	         localStorage.setItem("pos1",3);
+	         localStorage.setItem("pos2",4);
+             localStorage.setItem("pos3",5);
+             localStorage.setItem("pos4",1);	     
+             localStorage.setItem("pos5",7);
+             localStorage.setItem("pos6",2);
+             localStorage.setItem("pos7",6);
+         </script>
+    
+    {% endblock %}
+</html>

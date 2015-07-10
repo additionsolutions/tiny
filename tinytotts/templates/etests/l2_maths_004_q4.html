@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_maths_004_circlebignum.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+   {% block l2_maths_004_circlebignum_test %}
+       <div class="col-sm-12">
+            <div id="blank_dot" class="col-sm-2">.</div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>3</button></div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>8</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(1)";>9</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";>4</button></div>
+            
+       </div>
+
+       <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12">.</div>
+    <div id="blank_dot" class="col-sm-12"><hr/></div>
+    <div class="col-sm-12" >
+        <div id="blank_dot" class="col-sm-2">.</div>
+        <div id="ans_area" class="col-sm-2" h3>
+
+        </div>      
+    </div>        
+    {% endblock %}
+
+</body>
+
+</html>

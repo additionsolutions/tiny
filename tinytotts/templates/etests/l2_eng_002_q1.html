@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_eng_002_circleproperalphabet.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+   {% block l2_eng_002_circleproperalphabet_test %}
+       <div class="col-sm-12">
+            
+            <div id="ztext_right" class="col-sm-2">H</div>	
+            
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>a</button></div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";>b</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(1)";>h</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";>i</button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";>d</button></div>
+
+      </div> 
+       <div id="blank_dot" class="col-sm-12">.</div>
+       <div id="blank_dot" class="col-sm-12">.</div>
+        <div id="blank_dot" class="col-sm-12">.</div>
+       <div class="col-sm-12"><hr/></div>
+       <div class="col-sm-12">     
+            <div id="ans_area" class="col-sm-3" h3>
+           
+            </div>      
+      </div>
+    {% endblock %}
+
+</body>
+
+</html>

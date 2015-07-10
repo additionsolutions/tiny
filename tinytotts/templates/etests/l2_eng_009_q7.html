@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_eng_009_oddoneout.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l2_eng_009_oddoneout_test %}
+        <div class="col-sm-12">
+            <div id="blank_dot" class="col-sm-2" >.</div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/ETest9/lamp.gif" %} width=120px height=120px/></button></div>           
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/ETest9/log.png" %} width=120px height=120px/></button></div>
+            <div class="circle col-sm-2" >
+            <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/ETest9/lion.jpeg" %} width=120px height=120px/></button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(1)";><img src={% static "img/Level2/ETest9/apple.jpeg" %} width=120px height=120px/></button></div>
+            <div class="circle col-sm-2">
+            <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/ETest9/lock.jpeg" %} width=120px height=120px/></button></div>
+ 
+        </div>           
+            <div id="blank_dot" class="col-sm-12">.</div>
+            <div id="blank_dot" class="col-sm-12">.</div>
+            <div id="blank_dot" class="col-sm-12">.</div>
+            <div id="blank_dot" class="col-sm-12">.</div>
+            <div class="col-sm-12" ><hr/></div>
+       <div class="col-sm-12">
+            <div id="blank_dot" class="col-sm-2" >.</div>
+            <div id="ans_area" class="col-sm-3" h3>
+
+            </div> 
+       </div>     
+    {% endblock %}
+
+</body>
+
+</html>

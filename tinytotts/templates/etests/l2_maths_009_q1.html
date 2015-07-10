@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ {% extends 'etests/l2_maths_009_maxarticle.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l2_maths_009_maxarticle_test %}
+            <div class="col-sm-12">
+                <div id="blank_dot" class="col-sm-2">.</div>  
+                <div class="circle col-sm-2" >
+                    <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/MTest9/Basket_ball_1.png" %} width=120px height=120px/></button>
+                </div>
+                <div class="circle col-sm-2" >
+                    <button class="circle" onclick="marks(1)";><img src={% static "img/Level2/MTest9/Basket_ball_6.png" %} width=120px height=120px/></button>
+                </div>
+                <div class="circle col-sm-2">
+                    <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/MTest9/Basket_ball_2.png" %} width=120px height=120px/></button>
+                </div>
+                <div class="circle col-sm-2" >
+                    <button class="circle" onclick="marks(0)";><img src={% static "img/Level2/MTest9/Basket_ball_5.png" %} width=120px height=120px/></button>
+                </div>
+                       
+            </div>
+            <div id="blank_dot" class="col-sm-12">.</div>
+            <div id="blank_dot" class="col-sm-2">.</div>
+            <div class="col-sm-12" >
+                <div id="blank_dot" class="col-sm-2">.</div>
+                <div id="ans_area" class="col-sm-2" h3>
+
+                </div>      
+            </div>           
+    {% endblock %}
+
+</body>
+
+</html>
