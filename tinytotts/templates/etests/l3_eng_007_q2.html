@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+ {% extends 'etests/l3_eng_007_this_that.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body>
+       
+    {% block l3_eng_007_this_that_test %}
+           <div class="col-sm-12">
+                <div id="blank_dot" class="col-sm-1">.</div>
+                <div class="col-sm-3"><img src={% static "img/Level3/ETest7/pan.png" %} width=150px height=150px/></div> 
+                <div id="zblank1" class="zblank col-sm-1"></div>
+                <div id="ztext" class="col-sm-3">is a pan</div>
+            </div>
+            <div class="col-sm-12"><hr/></div>
+            <div class="col-sm-12">
+                <div id="blank_dot" class="col-sm-3">.</div>
+                <div id="zans0" class="zans col-sm-2"><p>This</p></div>
+                <div id="ztext_right" class="col-sm-1">/</div>
+                <div id="zans1" class="zans col-sm-2"><p>That</p></div>
+            </div>
+            <div id="ans_area" class="col-sm-3" h3></div>
+            
+    {% endblock %}
+
+</body>
+	{% block l3_eng_007_this_that_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",1);
+		 
+	      </script>
+        {% endblock %}
+
+</html>

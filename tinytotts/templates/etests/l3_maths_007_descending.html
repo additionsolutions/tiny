@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block l3_maths_007_descending_test_header %}  
+	                                    
+
+    {% endblock %} 
+    <script>
+        $( init );
+ 
+        function init() {
+        var pos1= localStorage.getItem("pos1")
+        var pos2= localStorage.getItem("pos2")
+        var pos3= localStorage.getItem("pos3")
+        var pos4= localStorage.getItem("pos4")
+
+         $('#zans3').draggable({
+            containment: '#testarea',
+            stack: '#zans3',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans3').data( 'number', 4 )
+
+         $('#zans2').draggable({
+            containment: '#testarea',
+            stack: '#zans2',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans2').data( 'number', 3 )
+          
+          $('#zans1').draggable({
+            containment: '#testarea',
+            stack: '#zans1',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans1').data( 'number', 2 )
+          
+          $('#zans0').draggable({
+            containment: '#testarea',
+            stack: '#zans0',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans0').data( 'number', 1 )
+          
+          $('#zblank1').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans2, #zans1, #zans0',
+            drop: handleAnsDrop
+            });
+          $('#zblank1').data( 'blank_number', pos1 )
+          $('#zblank2').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans2, #zans1, #zans0',
+            drop: handleAnsDrop
+            });
+          $('#zblank2').data( 'blank_number', pos2 )
+          $('#zblank3').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans2, #zans1, #zans0',
+            drop: handleAnsDrop
+            });
+          $('#zblank3').data( 'blank_number', pos3 )
+          $('#zblank4').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans2, #zans1, #zans0',
+            drop: handleAnsDrop
+            });
+          $('#zblank4').data( 'blank_number', pos4 )
+        }
+     
+        function handleAnsDrop( event, ui ) {
+            var ansMarks = ui.draggable.data( 'number' );
+	    var ansBlank = $(this).data('blank_number');
+            ui.draggable.draggable( 'disable' );
+            $(this).droppable( 'disable' );
+            ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+            ui.draggable.draggable( 'option', 'revert', false );
+            if( ansMarks == ansBlank)
+	    {	  
+		var flag =1;
+            	marks(flag);
+	    }
+	    else
+	    {
+		var flag =0;
+		marks(flag);
+	    }
+        }
+        
+    </script> 
+    
+    <style>   
+        #ztext {
+          font-size: 500%;
+	  margin-top: -23px;
+        }
+        
+        #ztext_right {
+          font-size: 500%;
+	      margin-top:-20px;
+        }
+
+        #zblank2 {
+          margin-left: 40px;
+        }
+        #zblank3 {
+          margin-left: 40px;
+        }
+        #zblank4 {
+          margin-left: 40px;
+        }
+        
+        .zblank {
+          font-size: 400%;
+          float: left;
+          width: 90px;
+          height: 67px;
+          padding: 10px;
+          padding-top: 2px;
+          padding-bottom: 0;
+          border: 2px dashed #333;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          margin: 10px 0 0 15px;
+          background: #fff;
+        }
+        
+        .hovered {
+          background: #aaa;
+        }
+        
+        .zans {
+          font-size: 400%;
+          text-align : center;
+          vertical-align: middle;
+          color : blue;
+          float: left;
+          width: 90px;
+          height: 67px;
+          padding: 1px;
+          padding-top: 2px;
+          padding-bottom: 0;
+          border: 2px solid #333;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          margin: 0 0 0 15px;
+          background: #ccc;
+        }
+        
+        .zans p {
+            margin-top: -11px;
+        }         
+        
+        .parent{
+            width:1360px;
+            height:650px;
+            position:relative;
+            border:1px solid black;
+        }
+        .parent:after{
+            content:'';
+            background:url({% static "img/alphabets_background.png" %});
+            width:1360px;
+            height:650px;
+            position:absolute;
+            top:0;
+            left:0;
+            opacity:0.7;
+        }
+        .child{
+            position:relative;
+            z-index:1;
+        }
+        #blank_dot{ color:transparent }
+    </style>
+</head>
+
+<body >   
+    
+    <div id="testarea" class="parent">  
+
+            <div class="child rows">
+                    <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
+                    <div class="col-sm-4" ><p1 style="font-size:40px; color:purple;">Descending Order</p1></div>
+                    <div class="col-sm-4" ><p1 style="font-size:30px; color:red;"></div>
+                    <div class="col-sm-12" ><hr/></div>
+                    <div id="blank_dot" class="col-sm-12" >.</div>
+                    
+                    {% block l3_maths_007_descending_test %}
+                        
+                           Descending Order test
+                        
+                    {% endblock %}
+                   
+            </div>
+    </div>    
+
+</body>
+
+</html>

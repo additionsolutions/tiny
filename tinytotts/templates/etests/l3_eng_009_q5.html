@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ {% extends 'etests/l3_eng_009_jumbledwords.html' %}
+
+<head>
+    {% load staticfiles %}
+   
+</head>
+
+<body >
+       
+    {% block l3_eng_009_jumbledwords_test %}
+            <div class="col-sm-12">
+                <div id="blank_dot" class="col-sm-2">.</div>
+                <div class="col-sm-2"><img src={% static "img/Level3/ETest9/boy.jpeg" %} width=120px height=120px/></div>           
+                <div id="zblank1" class="zblank col-sm-2"></div>	    
+                <div id="zblank2" class="zblank col-sm-2"></div>
+                <div id="zblank3" class="zblank col-sm-2"></div>
+            </div>
+        
+            <div class="col-sm-12" ><hr/></div>
+            <div id="blank_dot" class="col-sm-12">.</div>
+             <div class="col-sm-12">
+                <div id="blank_dot" class="col-sm-3">.</div>
+                <div id="zans0" class="zans col-sm-2"><p>y</p></div>
+                <div id="ztext_right" class="col-sm-1">/</div>
+                <div id="zans1" class="zans col-sm-2"><p>b</p></div>
+	            <div id="ztext_right" class="col-sm-1">/</div>
+                <div id="zans2" class="zans col-sm-2"><p>o</p></div>
+            </div>
+            <div id="ans_area" class="col-sm-1" h3></div>
+            
+    {% endblock %}
+
+</body>
+       {% block l3_eng_009_jumbledwords_test_header %}  
+	    <script type="text/javascript">
+		 
+		 localStorage.setItem("pos1",2);
+		 localStorage.setItem("pos2",3);
+		 localStorage.setItem("pos3",1);
+
+	      </script>
+      {% endblock %}
+</html>

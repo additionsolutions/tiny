@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ {% extends 'etests/l3_eng_010_match.html' %}
+
+<head>
+    {% load staticfiles %}
+    
+</head>
+
+<body >
+       
+    {% block l3_eng_010_match_test %}
+            <div class="col-sm-12" > 
+                <div class="col-sm-3">.</div>         
+            	<div id="zans0" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/fish.jpg" %} width=90 height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">bell</div>
+	    	<div id="zblank1" class="zblank col-sm-3"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" > 
+                <div class="col-sm-3">.</div>       
+            	<div id="zans1" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/ball.jpeg" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">dish</div>
+	    	<div id="zblank2" class="zblank col-sm-3"></div>	
+	    </div>  
+	   
+            <div class="col-sm-12" >
+            <div class="col-sm-3">.</div>        
+            	<div id="zans2" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/book.jpeg" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">hill</div>
+	    	<div id="zblank3" class="zblank col-sm-3"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" > 
+            <div class="col-sm-3">.</div>       
+            	<div id="zans3" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/bell.jpeg" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">tent</div>
+	    	<div id="zblank4" class="zblank col-sm-3"></div>	
+	    </div>    
+	    
+	    <div class="col-sm-12" > 
+            <div class="col-sm-3">.</div>       
+            	<div id="zans4" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/hill.gif" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">book</div>
+	    	<div id="zblank5" class="zblank col-sm-3"></div>	
+	    </div>
+	    
+            <div class="col-sm-12" > 
+            <div class="col-sm-3">.</div>       
+            	<div id="zans5" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/dish.png" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">ball</div>
+	    	<div id="zblank6" class="zblank col-sm-3"></div>	
+	    </div>    
+	    
+            <div class="col-sm-12" >
+            <div class="col-sm-3">.</div>  
+            	<div id="zans6" class="zans col-sm-2"><p><img src={% static "img/Level3/ETest10/tent.jpeg" %} width=90px height=70px /></p></div>
+		        <div id="ztext_right" class="col-sm-2">fish</div>
+	    	<div id="zblank7" class="zblank col-sm-3"></div>	
+	    </div>  
+            
+            <div class="col-sm-12" ><hr/></div>
+           
+            <div id="ans_area" class="col-sm-4" h3></div>
+            
+    {% endblock %}
+
+</body>
+    {% block l3_eng_010_match_header %}  
+	   <script type="text/javascript">
+	     localStorage.setItem("pos1",4);
+	     localStorage.setItem("pos2",6);
+         localStorage.setItem("pos3",5);
+         localStorage.setItem("pos4",7);	     
+         localStorage.setItem("pos5",3);
+         localStorage.setItem("pos6",2);
+         localStorage.setItem("pos7",1);
+         </script>
+    {% endblock %}
+</html>
