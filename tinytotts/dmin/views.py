@@ -297,7 +297,7 @@ def content_update(request, pk, template_name='dmin/content_form.html'):
 def content_delete(request, pk, template_name='dmin/content_form_delete.html'):
     content = get_object_or_404(Content, pk=pk)
     if request.method=='POST':
-    content.delete()
+        content.delete()
         return redirect('getcontentfromcontettype')
     return render(request, template_name, {'object':content})
 
@@ -311,7 +311,7 @@ def getcontentfromcontettype(request, template_name='dmin/content.html'):
 
 def get_content(request,ctype_id):
     if request.method == 'GET':
-    try:
+        try:
             ctype_id = int(ctype_id)
 
         except ValueError:
@@ -406,7 +406,7 @@ def gettestsetlinefromtestset(request, template_name='dmin/testsetline_list.html
 
 def get_testsetline(request,testid):
     if request.method == 'GET':
-    try:
+        try:
             testid = int(testid)
 
         except ValueError:
@@ -525,7 +525,7 @@ def radio_test(request,template_name='dmin/radio_test.html'):
 
 def get_option(request,question_id):
     if request.method == 'GET':
-    try:
+        try:
             question_id = int(question_id)
         except ValueError:
             raise Http404()

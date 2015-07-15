@@ -22,9 +22,9 @@ class Category(models.Model):
     description = models.CharField(max_length=250, blank=True, null=True)
 
     def __unicode__(self):
-	return self.name
+        return self.name
 
-# Define Question 
+# Define Question
 class TestQuestion(models.Model):
     preamble = models.CharField(max_length=200, blank=True, null=True)
     test_question = models.CharField(max_length=500, blank=False, null=False)
@@ -33,7 +33,7 @@ class TestQuestion(models.Model):
     url = models.URLField(blank=True, null=True)
 
     def __unicode__(self):
-	return self.test_question
+        return self.test_question
 
 
 # Defines Test Sets Lines => filename for the test
@@ -44,18 +44,18 @@ class TestSetLine(models.Model):
     question = models.ForeignKey(TestQuestion, on_delete=models.PROTECT, blank=True, null=True)
     name = models.CharField(max_length=50, blank=True, null=True)
     description = models.CharField(max_length=200, blank=True, null=True)
-    
+
     class Meta:
         unique_together = (('srno', 'testset'),)
-	# unique_together = (('filename', 'testset'), ('srno', 'testset'),)
+    # unique_together = (('filename', 'testset'), ('srno', 'testset'),)
 
     def __unicode__(self):
         # return self.testset.code + " - " + self.filename
-	if self.filename == '' :
-		return self.question.test_question
-	else:
-        	return self.filename 
-        
+        if self.filename == '' :
+            return self.question.test_question
+        else:
+            return self.filename
+
 # Records answers to Questions in Test Sets Lines
 class Answer(models.Model):
     marks = models.IntegerField()
@@ -69,6 +69,7 @@ class TestSetUser(models.Model):
     testset = models.ForeignKey(TestSet, on_delete=models.PROTECT)
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     submit_flag = models.BooleanField(default=False, blank=False, null=False)
+    submit_datetime = models.DateTimeField(blank=True, null=True)
 
     def __unicode__(self):
         return unicode(self.testset)
@@ -85,9 +86,9 @@ class Option(models.Model):
         unique_together = (('t_question', 'SrNo'),)
 
     def __unicode__(self):
-	if self.option == '':
-		return self.url
-	else:
-		return self.option
-     
-    
+        if self.option == '':
+            return self.url
+        else:
+            return self.option
+
+

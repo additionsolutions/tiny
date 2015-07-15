@@ -81,6 +81,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('submit_flag', models.BooleanField(default=False)),
+                ('submit_datetime', models.DateTimeField(null=True, blank=True)),
                 ('testset', models.ForeignKey(to='etests.TestSet', on_delete=django.db.models.deletion.PROTECT)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=django.db.models.deletion.PROTECT)),
             ],

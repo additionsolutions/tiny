@@ -74,14 +74,21 @@ def testlist(request):
     #print '--current date--',current_date
 
     # Testset User object
-    # testsetuser_obj = TestSetUser.objects.filter(user=request.user,submit_flag=False)
-    # Print "----" , testsetuser_obj
+    try:
+        testsetuser_obj = TestSetUser.objects.filter(user=request.user,submit_flag=True)
+    except TestSetUser.DoesNotExist:
+        testsetuser_obj = None
+
+    print "-------****************--------" , testsetuser_obj
 
     if request.method == 'GET':
-        testlist = TestSet.objects.get(Q(TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)) |
-        Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
-        )
-    print "------------" , testlist
+        if testsetuser_obj.exists():
+            testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(id__in = [x.id for x in testsetuser_obj])
+            print "-------I'm not empty--------"
+        else:
+            testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+            print "-------I'm empty--------"
+    #print "------******------" , testlist
     return render_to_response('etests/testlist.html', {'testlist': testlist }, context)
 
 

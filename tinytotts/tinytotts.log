@@ -249,3 +249,1259 @@ Traceback (most recent call last):
   File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
     Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
 AttributeError: 'QuerySet' object has no attribute 'testset'
+[15/Jul/2015 20:07:09] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 300
+    content.delete()
+          ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:07:10] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 300
+    content.delete()
+          ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:07:10] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 300
+    content.delete()
+          ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:15] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 314
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:15] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 314
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:25] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 409
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:26] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 409
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:35] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 528
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:35] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 19, in <module>
+    url(r'^a/', include('dmin.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\urls.py", line 2, in <module>
+    from dmin import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\dmin\views.py", line 528
+    try:
+      ^
+IndentationError: expected an indented block
+[15/Jul/2015 20:09:51] ERROR [django.request:256] Internal Server Error: /m/messaging/messaging
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\messaging\views.py", line 16, in messages
+    messages = Message.objects.filter(to_user=user, created__gte=current_date).order_by('-created')
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 20:09:51] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
+    Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 20:09:59] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
+    Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
+AttributeError: 'QuerySet' object has no attribute 'testset'
+[15/Jul/2015 20:15:48] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
+    Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
+AttributeError: 'QuerySet' object has no attribute 'testset'
+[15/Jul/2015 20:16:54] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82
+    )
+    ^
+SyntaxError: invalid syntax
+[15/Jul/2015 20:16:55] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82
+    )
+    ^
+SyntaxError: invalid syntax
+[15/Jul/2015 20:17:29] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.get(Q(TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)) )
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1326, in _add_q
+    current_negated, allow_joins, split_subq)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1141, in build_filter
+    arg, value = filter_expr
+ValueError: too many values to unpack
+[15/Jul/2015 20:18:33] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.get(TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date) )
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1141, in build_filter
+    arg, value = filter_expr
+ValueError: too many values to unpack
+[15/Jul/2015 20:29:47] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(id__in = [x.id for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 162, in __iter__
+    self._fetch_all()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\sqlite3\base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: etests_testsetuser
+[15/Jul/2015 20:30:54] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 162, in __iter__
+    self._fetch_all()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\sqlite3\base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: etests_testsetuser
+[15/Jul/2015 20:35:24] ERROR [django.request:256] Internal Server Error: /addsol/etests/testsetuser/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 177, in get_results
+    result_count = paginator.count
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\paginator.py", line 72, in _get_count
+    self._count = self.object_list.count()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 318, in count
+    return self.query.get_count(using=self.db)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 464, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 445, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\sqlite3\base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: etests_testsetuser
+[15/Jul/2015 20:37:23] ERROR [django.request:256] Internal Server Error: /addsol/etests/testsetuser/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 177, in get_results
+    result_count = paginator.count
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\paginator.py", line 72, in _get_count
+    self._count = self.object_list.count()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 318, in count
+    return self.query.get_count(using=self.db)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 464, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 445, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\sqlite3\base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: etests_testsetuser
+[15/Jul/2015 20:45:14] ERROR [django.request:256] Internal Server Error: /addsol/etests/testsetuser/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 1548, in changelist_view
+    self.list_max_show_all, self.list_editable, self)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 82, in __init__
+    self.get_results(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\views\main.py", line 177, in get_results
+    result_count = paginator.count
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\paginator.py", line 72, in _get_count
+    self._count = self.object_list.count()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 318, in count
+    return self.query.get_count(using=self.db)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 464, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 445, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\backends\sqlite3\base.py", line 318, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: etests_testsetuser
+[15/Jul/2015 21:23:40] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 77, in testlist
+    testsetuser_obj = TestSetUser.objects.filter(user=request.user,submit_flag=False)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 21:23:40] ERROR [django.request:256] Internal Server Error: /m/messaging/messaging
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\messaging\views.py", line 16, in messages
+    messages = Message.objects.filter(to_user=user, created__gte=current_date).order_by('-created')
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 21:23:46] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:25:01] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:26:11] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:27:13] ERROR [django.request:256] Internal Server Error: /addsol/etests/testsetline/add/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 1470, in changeform_view
+    self.log_addition(request, new_object)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\contrib\admin\options.py", line 810, in log_addition
+    object_repr=force_text(object),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\utils\encoding.py", line 92, in force_text
+    s = six.text_type(s)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\models.py", line 55, in __unicode__
+    return self.question.test_question
+AttributeError: 'NoneType' object has no attribute 'test_question'
+[15/Jul/2015 21:27:59] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:29:57] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 83
+    else
+       ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:30:15] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 83
+    else
+       ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:30:56] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81, in testlist
+    if testsetuser_obj is Null:
+NameError: global name 'Null' is not defined
+[15/Jul/2015 21:31:41] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 81
+    if testsetuser_obj = '':
+                       ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:33:27] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 78
+    Print "-------################--------" , testsetuser_obj
+                                          ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:33:57] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 78
+    Print "-------****************--------" , testsetuser_obj
+                                          ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:35:54] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 84, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:36:07] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 84, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:36:12] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 84, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:37:22] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 85, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:37:59] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 85, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:38:40] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 85, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:41:07] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 89, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:41:42] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 89, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:42:04] ERROR [django.request:256] Internal Server Error: /a/dmin/profile/
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 85
+    if testsetuser_obj = None:
+                       ^
+SyntaxError: invalid syntax
+[15/Jul/2015 21:43:43] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 86, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:44:22] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 87, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:45:17] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 86, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset =  testsetuser_obj)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:46:23] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 86, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(testset = [x for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1144, in build_filter
+    lookups, parts, reffed_aggregate = self.solve_lookup_type(arg)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1030, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1391, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+FieldError: Cannot resolve keyword 'testset' into field. Choices are: code, description, enddate, groups, id, no_ans, startdate, submit_flag, testname, testsetline, testsetuser
+[15/Jul/2015 21:47:10] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 86, in testlist
+    testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(id__in = [x.testset for x in testsetuser_obj])
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 686, in exclude
+    return self._filter_or_exclude(True, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 695, in _filter_or_exclude
+    clone.query.add_q(~Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1203, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1096, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 729, in get_prep_lookup
+    return [self.get_prep_value(v) for v in value]
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'TestSet'
+[15/Jul/2015 21:50:48] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 78, in testlist
+    testsetuser_obj = TestSetUser.objects.filter(user=request.user,submit_flag=True)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 21:50:48] ERROR [django.request:256] Internal Server Error: /m/messaging/messaging
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\messaging\views.py", line 16, in messages
+    messages = Message.objects.filter(to_user=user, created__gte=current_date).order_by('-created')
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
