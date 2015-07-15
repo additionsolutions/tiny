@@ -24,7 +24,7 @@ def basic(request, template_name='dmin/basic.html'):
     data = {}
     data['object_list'] = " " #contenttype
     return render(request, template_name, data)
-    
+
 
 def register(request):
     redirect_url = request.GET.get('next')
@@ -35,13 +35,13 @@ def register(request):
         if user_form.is_valid() and profile_form.is_valid():
              user = user_form.save()
              user.set_password(user.password)
-                          
+
              UserProfile = profile_form.save(commit=False)
              UserProfile.user=user
              if 'picture' in request.FILES:
                 UserProfile.picture = request.FILES['picture']
 
-             #user.save()   
+             #user.save()
              UserProfile.save()
              registered = True
         else:
@@ -65,7 +65,7 @@ def register(request):
 
     #model = User
     #template_name = 'dmin/userlist.html'
-    
+
     #def get_context_data(self, **kwargs):
         #context = super(UserListView, self).get_context_data(**kwargs)
         #return context
@@ -73,9 +73,9 @@ def register(request):
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')
 def user_list(request, template_name='dmin/userlist.html'):
-    userlist = User.objects.all()   
+    userlist = User.objects.all()
     data = {}
-    data['object_list'] = userlist    
+    data['object_list'] = userlist
     return render(request, template_name, data)
 
 def user_update(request, pk, template_name='dmin/user_form.html'):
@@ -174,9 +174,9 @@ def profile(request):
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')
 def group_list(request, template_name='dmin/group_list.html'):
-    grouplist = Group.objects.all()   
+    grouplist = Group.objects.all()
     data = {}
-    data['object_list'] = grouplist    
+    data['object_list'] = grouplist
     return render(request, template_name, data)
 
 def group_create(request, template_name='dmin/group_form.html'):
@@ -274,7 +274,7 @@ def content_create(request, template_name='dmin/content_form.html'):
         content = form.save(commit=False)
         if 'picture' in request.FILES:
                 content.picture = request.FILES['picture']
-   
+
         content.save()
         return redirect('getcontentfromcontettype')
     return render(request, template_name, {'form':form})
@@ -288,7 +288,7 @@ def content_update(request, pk, template_name='dmin/content_form.html'):
         content_pic = content_form.save(commit=False)
         if 'picture' in request.FILES:
                 content_pic.picture = request.FILES['picture']
-   
+
         content_pic.save()
         return redirect('getcontentfromcontettype')
     return render(request, template_name, {'form':content_form})
@@ -296,8 +296,8 @@ def content_update(request, pk, template_name='dmin/content_form.html'):
 
 def content_delete(request, pk, template_name='dmin/content_form_delete.html'):
     content = get_object_or_404(Content, pk=pk)
-    if request.method=='POST':        
-	content.delete()
+    if request.method=='POST':
+    content.delete()
         return redirect('getcontentfromcontettype')
     return render(request, template_name, {'object':content})
 
@@ -306,20 +306,20 @@ def getcontentfromcontettype(request, template_name='dmin/content.html'):
     content_typ = ContentType.objects.all()
     data = {}
     data['contenttype_object_list'] = content_typ
-    
+
     return render(request, template_name, data)
 
 def get_content(request,ctype_id):
     if request.method == 'GET':
-	try:
+    try:
             ctype_id = int(ctype_id)
-	    
+
         except ValueError:
             raise Http404()
-    
+
     content_obj = Content.objects.filter(contenttype=ctype_id)
-    
-	
+
+
     return render(request, 'dmin/subpart_content.html', { 'object': content_obj})
 
 
@@ -364,7 +364,7 @@ def testset_delete(request, pk, template_name='dmin/testset_form_delete.html'):
 ######################################
 
 # Use the login_required() decorator to ensure only those logged in can access the view.
-@login_required(login_url='/a/dmin/login')    
+@login_required(login_url='/a/dmin/login')
 def testq(request, template_name='dmin/testquestion_list.html'):
     testset_obj = TestSet.objects.all()
     testsetline = TestSetLine.objects.filter(testset=testset_obj)
@@ -401,17 +401,17 @@ def gettestsetlinefromtestset(request, template_name='dmin/testsetline_list.html
     test_set = TestSet.objects.all()
     data = {}
     data['test_object_list'] = test_set
-    
+
     return render(request, template_name, data)
 
 def get_testsetline(request,testid):
     if request.method == 'GET':
-	try:
+    try:
             testid = int(testid)
-	    
+
         except ValueError:
             raise Http404()
-    
+
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
 
     return render(request, 'dmin/subpart_testsetline.html', { 'object': testsetline_obj})
@@ -431,7 +431,7 @@ def report_userwisemarks(request, template_name='dmin/user_report.html'):
     data = {}
     data['object_list'] = usr
     data['test_object_list'] = test_set
-    
+
     return render(request, template_name, data)
 
 def get_scorecard(request,usrid,testid):
@@ -442,18 +442,18 @@ def get_scorecard(request,usrid,testid):
             testid = int(testid)
         except ValueError:
             raise Http404()
-    
+
     user_obj = User.objects.get(pk=usrid)
     username = user_obj.get_full_name()
     testset_obj = TestSet.objects.get(pk=testid)
     testset = testset_obj
     testsetline_obj = TestSetLine.objects.filter(testset=testid)
     marks_obj = Answer.objects.filter(user=usrid,question=testsetline_obj)
-    
+
     total = 0
     for obj in marks_obj:
         score = obj.marks
-        total = total + score 
+        total = total + score
 
     return render(request, 'dmin/score_card.html', {'user_name':username,'testset_name':testset,'object': marks_obj,'total':total})
 
@@ -461,7 +461,7 @@ def get_scorecard(request,usrid,testid):
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')
 def category_list(request, template_name='dmin/category_list.html'):
-    categorylist = Category.objects.all()   
+    categorylist = Category.objects.all()
     data = {}
     data['object_list'] = categorylist
     return render(request, template_name, data)
@@ -485,7 +485,7 @@ def category_update(request, pk, template_name='dmin/category_form.html'):
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required(login_url='/a/dmin/login')
 def question_list(request, template_name='dmin/question_list.html'):
-    questionlist = TestQuestion.objects.all()   
+    questionlist = TestQuestion.objects.all()
     data = {}
     data['object_list'] = questionlist
     return render(request, template_name, data)
@@ -511,7 +511,7 @@ def question_update(request, pk, template_name='dmin/question_form.html'):
 def option_list(request, template_name='dmin/option_list.html'):
     questionlist = TestQuestion.objects.all()
     data = {}
-    data['question_object_list'] = questionlist   
+    data['question_object_list'] = questionlist
     return render(request, template_name, data)
 
 
@@ -525,11 +525,11 @@ def radio_test(request,template_name='dmin/radio_test.html'):
 
 def get_option(request,question_id):
     if request.method == 'GET':
-	try:
+    try:
             question_id = int(question_id)
         except ValueError:
             raise Http404()
-    
+
     option_obj = Option.objects.filter(t_question=question_id)
 
     return render(request, 'dmin/subpart_option.html', { 'object': option_obj})
@@ -564,17 +564,17 @@ def userwise_summaryreport(request, template_name='dmin/marks_summary_report.htm
     usr = User.objects.all()
     data = {}
     data['object_list'] = usr
-    
+
     return render(request, template_name, data)
 
 def get_summaryreport(request,usrid):
-    
+
     if request.method == 'GET':
         try:
             usrid = int(usrid)
         except ValueError:
             raise Http404()
-            
+
     user_obj = User.objects.get(pk=usrid)
     username = user_obj.get_full_name()
     group_objs = Group.objects.filter(user=User.objects.filter(pk=usrid))

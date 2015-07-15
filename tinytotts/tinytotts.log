@@ -1,0 +1,251 @@
+[15/Jul/2015 15:52:20] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 157
+    record = "final"
+         ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:52:20] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 157
+    record = "final"
+         ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:52:21] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 157
+    record = "final"
+         ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:52:54] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 168
+    q_obj = TestSetLine.objects.filter(testset=request.session['testno'],srno=sr)
+        ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:52:54] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 168
+    q_obj = TestSetLine.objects.filter(testset=request.session['testno'],srno=sr)
+        ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:53:04] ERROR [django.request:256] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 205
+    ansr = Answer.objects.get(question=q)
+       ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:53:04] ERROR [django.request:256] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 647, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 522, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\tinytotts\urls.py", line 16, in <module>
+    url(r'^t/', include('etests.urls')),
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\Lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\urls.py", line 2, in <module>
+    from etests import views
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 205
+    ansr = Answer.objects.get(question=q)
+       ^
+IndentationError: expected an indented block
+[15/Jul/2015 15:54:00] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
+    Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 15:54:00] ERROR [django.request:256] Internal Server Error: /m/messaging/messaging
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\messaging\views.py", line 16, in messages
+    messages = Message.objects.filter(to_user=user, created__gte=current_date).order_by('-created')
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1304, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1332, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\sql\query.py", line 1194, in build_filter
+    lookups, value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\related.py", line 1740, in get_lookup_constraint
+    lookup_class(target.get_col(alias, source), val), AND)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 96, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\lookups.py", line 134, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string or a number, not 'SimpleLazyObject'
+[15/Jul/2015 15:54:08] ERROR [django.request:256] Internal Server Error: /t/etest/testlist
+Traceback (most recent call last):
+  File "C:\GitHub\QnA\qna\lib\site-packages\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\GitHub\QnA\qna\tiny\tinytotts\etests\views.py", line 82, in testlist
+    Q(TestSetUser.objects.filter(user=request.user,submit_flag=False).testset)
+AttributeError: 'QuerySet' object has no attribute 'testset'
