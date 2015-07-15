@@ -53,4 +53,5 @@ urlpatterns = patterns('',
 	url(r'^dmin/radiotest/$', views.radio_test, name='radio_test'),
 	url(r'^dmin/summaryreport/$', views.userwise_summaryreport, name='userwise_summaryreport'),
 	url(r'^dmin/summary/(\d{1,2})$',views.get_summaryreport, name='get_summaryreport'),
+    url(r'^dmin/testsetuser_flag/$', views.testsetuser_flag, name='user_flag'),
         )

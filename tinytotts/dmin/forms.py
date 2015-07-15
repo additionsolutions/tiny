@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User, Group
 from base.models import User, UserProfile
 from django.core.exceptions import ValidationError
-from etests.models import TestSet, TestSetLine ,Answer,Category,TestQuestion,Option
+from etests.models import TestSet, TestSetLine ,Answer,Category,TestQuestion,Option,TestSetUser
 from contents.models import Content, ContentType
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
@@ -192,6 +192,27 @@ class TestSetLineForm(forms.ModelForm):
 	  		'name',
           		'description', )	
 	
+
+class TestSetUserForm(forms.ModelForm):
+    helper = FormHelper()
+    helper.form_tag = True
+    helper.form_method = 'POST'
+    helper.form_class = 'form-horizontal'
+    helper.label_class = 'col-sm-4'
+    helper.field_class = 'col-sm-8'
+    helper.layout = Layout(
+		    Field('testset', ),
+		    Field('user', ),
+		    Field('submit_flag', ),
+	        FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+		    )
+
+    class Meta:
+	    model = TestSetUser
+	    fields = ('testset',
+  		          'user',
+      		      'submit_flag',)
+
 
 class ContentTypeForm(forms.ModelForm):
 	helper = FormHelper()

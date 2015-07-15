@@ -65,6 +65,13 @@ class Answer(models.Model):
     def __unicode__(self):
         return unicode(self.question)
 
+class TestSetUser(models.Model):
+    testset = models.ForeignKey(TestSet, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    submit_flag = models.BooleanField(default=False, blank=False, null=False)
+
+    def __unicode__(self):
+        return unicode(self.testset)
 
 # Define Options for each questions
 class Option(models.Model):

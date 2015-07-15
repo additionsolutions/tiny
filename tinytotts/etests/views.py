@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, RequestContext, render_to_response
-from etests.models import TestSet, TestSetLine, Answer, Option,TestQuestion
+from etests.models import TestSet, TestSetLine, Answer, Option,TestQuestion, TestSetUser
 from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from django.db.models import Q, Max, Min
 from contents.models import User
@@ -88,10 +88,18 @@ def etest(request, testset):
     request.session['testno'] = testset
     request.session['qno'] = 0
     request.session['no_ans'] = testset_obj.no_ans
-    if testset_obj.submit_flag:
-        return render(request, 'etests/message.html', { 'message': "Test is already submitted" })
+    try:
+		testsetuser_obj = TestSetUser.objects.get(user=request.user,testset=testset)
+		print '------if block------',testsetuser_obj
+    except TestSetUser.DoesNotExist:
+		testsetuser_obj = TestSetUser.objects.create(testset=testset_obj,user=request.user)
+    
+    if testsetuser_obj.user == request.user:
+        if testsetuser_obj.submit_flag == True:
+            return render(request, 'etests/message.html', { 'message': "Test is already submitted" })
     else:
         return render(request, 'etests/etest.html', { 'testset': testset_obj })
+    return render(request, 'etests/etest.html', { 'testset': testset_obj })
     
     
 ## Navigate   
@@ -125,10 +133,9 @@ def etestsr(request, action):
 	request.session['no_ans'] = obj_testset.no_ans
     if action == 0: # Submit
 	#print '----inside submit condition----'
-	obj_testset = TestSet.objects.get(id=request.session['testno'])
-	#print '---default flag----',obj_testset.submit_flag
-	obj_testset.submit_flag = True
-	obj_testset.save()
+	    obj_testsetuser = TestSetUser.objects.get(testset=request.session['testno'], user=request.user)
+        obj_testsetuser.submit_flag = True
+        obj_testsetuser.save()           
         return redirect('/base/profile')
 	#return render(request,'base/profile.html')
 

@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate, login
 from base.models import UserProfile
 #from base.forms import UserForm, UserProfileForm
 from contents.models import Content, ContentType
-from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option
+from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option, TestSetUser
 from django.views.generic.list import ListView
 from .forms import GroupForm, TestSetForm, TestSetLineForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm, CategoryForm, TestQuestionForm, OptionForm
 from django.db.models import ProtectedError
@@ -581,4 +581,8 @@ def get_summaryreport(request,usrid):
     marks_objs = TestSet.objects.filter(groups=group_objs).annotate(marks_total=Sum('testsetline__answer__marks')).order_by('-startdate')
     return render(request, 'dmin/subpart_summary_report.html', {'user_name':username,'testset_objs':marks_objs})
 
-
+def testsetuser_flag(request, template_name='dmin/testsetuser_flag.html'):
+    testsetuser = TestSetUser.objects.all()
+    data = {}
+    data['object_list'] = testsetuser
+    return render(request, template_name, data)
