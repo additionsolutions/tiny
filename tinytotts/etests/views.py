@@ -79,16 +79,14 @@ def testlist(request):
     except TestSetUser.DoesNotExist:
         testsetuser_obj = None
 
-    print "-------****************--------" , testsetuser_obj
 
     if request.method == 'GET':
         if testsetuser_obj.exists():
-            testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(id__in = [x.id for x in testsetuser_obj])
-            print "-------I'm not empty--------"
+            testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date).exclude(id__in = [x.testset.id for x in testsetuser_obj])
+
         else:
             testlist = TestSet.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
-            print "-------I'm empty--------"
-    #print "------******------" , testlist
+
     return render_to_response('etests/testlist.html', {'testlist': testlist }, context)
 
 
