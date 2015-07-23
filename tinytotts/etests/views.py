@@ -100,7 +100,6 @@ def etest(request, testset):
     request.session['no_ans'] = testset_obj.no_ans
     try:
         testsetuser_obj = TestSetUser.objects.get(user=request.user,testset=testset)
-        print '------if block------',testsetuser_obj
     except TestSetUser.DoesNotExist:
         testsetuser_obj = TestSetUser.objects.create(testset=testset_obj,user=request.user)
 
@@ -207,7 +206,7 @@ def etestans(request, ans):
     if request.session['no_ans'] == 0:
 
         try:
-            ansr = Answer.objects.get(question=q)
+            ansr = Answer.objects.get(question=q,user=request.user)
         #print '------if block------',ansr
         except Answer.DoesNotExist:
             ansr = Answer.objects.create(marks=ans, question=q, user=request.user)
