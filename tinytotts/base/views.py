@@ -138,7 +138,17 @@ def phonetics(request):
     if flag:
         return render_to_response('base/profile_admin.html', context_dict, context)
     else:
-        return render_to_response('base/phonetics.html', context_dict, context)        
+        grp = request.user.groups.all()
+        print '---group-----',grp; 
+        user_obj = User.objects.filter(groups=grp) 
+        print 'user----->',user_obj
+        return render_to_response('base/show_phonetics.html', context)  
+
+def phonetics_display(request):
+    context = RequestContext(request)
+    context_dict = {'message': 'move to phonetics'}
+    #print '----in base view-----'
+    return render_to_response('base/phonetics.html', context_dict, context)   
     
 
 def english(request):

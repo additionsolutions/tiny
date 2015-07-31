@@ -2,6 +2,11 @@ $(document).ready(function(){
     $.get('/c/content/notice', function(data){
                $('#notice').html(data);
            });
+
+    $.get('/base/phonetics', function(data){
+                //alert(data);
+               $('#phonetics').html(data);
+           });   
            
     $.get('/t/etest/testlist', function(data){
                $('#tests').html(data);
