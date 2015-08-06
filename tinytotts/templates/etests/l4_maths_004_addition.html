@@ -10,7 +10,7 @@
 <head>
     {% load staticfiles %}
      
-    {% block l3_maths_001_addition_test_header %}  
+    {% block l4_maths_004_addition_test_header %}  
 
     {% endblock %}
     <script>
@@ -20,10 +20,28 @@
 
 	var pos1= localStorage.getItem("pos1");
 	var pos2= localStorage.getItem("pos2");
-	var pos3= localStorage.getItem("pos3");
-	var pos4= localStorage.getItem("pos4");
-	
-     
+    var pos3= localStorage.getItem("pos3");
+    var pos4= localStorage.getItem("pos4");
+    var pos5= localStorage.getItem("pos5");
+    var pos6= localStorage.getItem("pos6");
+
+	     $('#zans5').draggable({
+            containment: '#testarea',
+            stack: '#zans5',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans5').data( 'number', 6 )
+
+	     $('#zans4').draggable({
+            containment: '#testarea',
+            stack: '#zans4',
+            cursor: 'move',
+            helper: 'clone',
+            revert: true
+            });
+          $('#zans4').data( 'number', 5 )
 	     $('#zans3').draggable({
             containment: '#testarea',
             stack: '#zans3',
@@ -32,7 +50,6 @@
             revert: true
             });
           $('#zans3').data( 'number', 4 )
-      
      
 	     $('#zans2').draggable({
             containment: '#testarea',
@@ -79,22 +96,36 @@
             });
 	      $('#zblank2').data( 'blank_number', pos2)
 
-	      $('#zblank3').droppable({
+          $('#zblank3').droppable({
             tolerance: "touch",
             hoverClass: "hovered",
-            accept: '#zans2,#zans3',
+            accept: '#zans2',
             drop: handleAnsDrop
             });
 	      $('#zblank3').data( 'blank_number', pos3)
 
-	      $('#zblank4').droppable({
+           $('#zblank4').droppable({
             tolerance: "touch",
             hoverClass: "hovered",
-            accept: '#zans2,#zans3',
+            accept: '#zans3,#zans4,#zans5',
             drop: handleAnsDrop
             });
 	      $('#zblank4').data( 'blank_number', pos4)
-      
+          $('#zblank5').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans4,#zans5',
+            drop: handleAnsDrop
+            });
+	      $('#zblank5').data( 'blank_number', pos5)
+            $('#zblank6').droppable({
+            tolerance: "touch",
+            hoverClass: "hovered",
+            accept: '#zans3,#zans4,#zans5',
+            drop: handleAnsDrop
+            });
+	      $('#zblank6').data( 'blank_number', pos6)
+	      
       
         }
      
@@ -121,29 +152,20 @@
     </script> 
     
     <style>   
-      
+       .col-sm-2 {
+            width: 40.667%;
+        }
         #ztext {
-          font-size: 500%;
-          margin-left: 32px;
+          font-size: 600%;
         }
         
         #ztext_right {
-          font-size: 500%;
-          margin-left: 12px;
+          font-size: 400%;
+           
         }
-
-        #zblank2 {
-          margin-left: 66px;
-        }
-
         #zblank3{
-            margin-left: 20px;
+            margin-left: 100px;
         }
-
-        #zblank4 {
-          margin-left: 10px;
-        }
-
         #zblank1{
             margin-left: 200px;
 	    
@@ -151,18 +173,18 @@
         
 	
         .zblank {
-          font-size: 450%;
+          font-size: 400%;
           float: left;
-          width: 70px;
-          height: 63px;
+          width: 53px;
+          height: 58px;
           padding: 10px;
-          padding-top: 2px;
+          padding-top: 7px;
           padding-bottom: 0;
           border: 2px dashed #333;
           -moz-border-radius: 10px;
           -webkit-border-radius: 10px;
           border-radius: 10px;
-          margin: 12px 8px 0 0;
+          margin: 11px 8px 0 0;
           background: #fff;
         }
         
@@ -171,31 +193,31 @@
         }
         
         .zans {
-          font-size: 450%;
+          font-size: 400%;
           text-align : center;
           vertical-align: middle;
           color : blue;
           float: left;
-          width: 70px;
-          height: 63px;
+          width: 53px;
+          height: 58px;
           padding: 1px;
-          padding-top: 0px;
+          padding-top: 7px;
           padding-bottom: 0;
           border: 2px solid #333;
           -moz-border-radius: 10px;
           -webkit-border-radius: 10px;
           border-radius: 10px;
-          margin: 12px 0 0 2px;
+          margin: 11px 0 0 2px;
           background: #ccc;
         }
         
         .zans p {
-            margin-top: -15px;
+            margin-top: -22px;
         }         
         
         .parent{
             width:1360px;
-            min-height:650px;
+            min-height:700px;
             position:relative;
             border:1px solid black;
         }
@@ -203,7 +225,7 @@
             content:'';
             background:url({% static "img/bg_english.png" %});
             width:1360px;
-            height:650px;
+            height:700px;
             position:absolute;
             top:0;
             left:0;
@@ -228,7 +250,7 @@
                     <div class="col-sm-12" ><hr/></div>
                     
                     
-                    {% block l3_maths_001_addition_test %}
+                    {% block l4_maths_004_addition_test %}
                         
                             Addition Test
                         
