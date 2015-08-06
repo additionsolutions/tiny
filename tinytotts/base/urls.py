@@ -18,4 +18,5 @@ urlpatterns = patterns('',
         url(r'^$', views.index, name='index'),
 	    url(r'^submit/$', views.submit_click, name='submit'),
         url(r'^phonetics_display/$', views.phonetics_display, name='show_phonetics'),
+        url(r'^results/$', views.student_result, name='student_result'),
         )

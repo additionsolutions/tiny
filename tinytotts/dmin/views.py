@@ -162,10 +162,15 @@ def profile(request):
     group = Group.objects.get(name='site_admin')
     users = group.user_set.all()
     userprofile = UserProfile.objects.get(user=request.user)
+    e_grp = Group.objects.filter(name__in=['Level 0','Level 1'])
+    excel = User.objects.filter(username=request.user,groups__in=e_grp)
+    v_grp = Group.objects.filter(name__in=['Level 2','Level 3','Level 4'])
+    victory = User.objects.filter(username=request.user,groups__in=v_grp)
+    
     for muser in users:
         if muser == request.user:
             flag = True
-    context_dict = {'user': request.user, 'userprofile': userprofile, 'admin': flag}
+    context_dict = {'user': request.user, 'userprofile': userprofile, 'admin': flag, 'Excelencia': excel, 'Victory': victory}
     if flag:
         return render_to_response('dmin/profile_admin.html', context_dict, context)
     else:

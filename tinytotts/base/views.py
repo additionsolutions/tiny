@@ -7,7 +7,8 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.generic.list import ListView
-
+from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option, TestSetUser
+from datetime import date
 
 def index(request):
     context = RequestContext(request)
@@ -220,3 +221,13 @@ def submit_click(request):
     context_dict = {'message': 'move to homepage'}
     #print '----in base view-----'
     return render_to_response('base/profile.html', context_dict, context)
+    
+def student_result(request):
+    context = RequestContext(request)
+    current_date = date.today()
+
+    test_set = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False,startdate__lte=current_date,enddate__gte=current_date)
+
+    print ' test_set-------',test_set
+
+    return render_to_response('base/results.html' , {'object_list':test_set}, context )

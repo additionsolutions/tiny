@@ -71,7 +71,9 @@ function popitup(url) {
                                     Father: <i>{{ userprofile.father_name }}</i><br/>
                                     Mobile: <i>{{ userprofile.mobile }} </i>
                                     <br/>                                  
-									<a href="/accounts/password_change">Change Password</a>                                                                                  
+									<a href="/accounts/password_change">Change Password</a>                                  
+									<br/>
+									<a href="/base/results">See Results</a>                                                  
 							
                                 </div>
                             </div>
@@ -99,9 +101,16 @@ function popitup(url) {
                             <div class="container">
 
                                 <div class="section-heading scrollpoint sp-effect3">
-                                    <h1>Excelencia</h1>
-                                    <div class="divider"></div>
-                                    <p>Excel in every field of life with right start</p>
+                                    {% if Excelencia %}
+                                        <h1>Excelencia </h1>
+                                        <div class="divider"></div>
+                                        <p>Excel in every field of life with right start</p>
+                                    {% else %}   
+                                        <h1>Victory </h1>
+                                        <div class="divider"></div>
+                                        <p>Excel in every field of life with right start</p>
+                                    
+                                    {% endif %}
                                 </div>
 
                                 <div class="row">
