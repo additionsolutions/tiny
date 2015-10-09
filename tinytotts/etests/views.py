@@ -6,6 +6,7 @@ from contents.models import User
 from .forms import TestSetForm, TestSetLineForm
 from datetime import date
 from django.contrib.auth.decorators import login_required
+from base.models import Phonetics,PhoneticsLine
 
 ######################################
 # Test Set for Admin
@@ -244,3 +245,43 @@ def add_testset(request):
         tsform = TestSetForm(instance=TestSet())
         tslforms = [TestSetLineForm(prefix=str(x), instance=TestSetLine()) for x in range(0,3)]
     return render_to_response('etests/add_testset.html', {'p_form': tsform, 'c_forms': tslforms})
+
+######################################
+# Phonetics List for selected group
+######################################
+def phoneticslist(request):
+    context = RequestContext(request)
+    phoneticslist = []
+    
+    current_date = date.today()
+    #print '--current date--',current_date
+
+    if request.method == 'GET':
+        grp = request.user.groups.all()
+        print 'group---->',grp
+        phoneticslist = Phonetics.objects.filter(groups=request.user.groups.all(),startdate__lte=current_date,enddate__gte=current_date)
+    
+    print 'phonetics list---->',phoneticslist
+        
+    return render_to_response('dmin/phoneticslist.html', {'phoneticslist': phoneticslist }, context)
+
+#def phonetics_display(request):
+#    context = RequestContext(request)
+#    context_dict = {'message': 'move to phonetics'}
+#    #print '----in base view-----'
+#    return render_to_response('dmin/phonetics1.html', context_dict, context)
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
+## Start with first question  
+def phonetics(request, p_id):
+    phonetics_obj = Phonetics.objects.get(id=p_id)
+
+    request.session['testno'] = p_id
+    #request.session['qno'] = 0
+    #request.session['no_ans'] = testset_obj.no_ans
+    file_name = str((PhoneticsLine.objects.get(Q(phonetics=request.session['testno']))).filename)
+    template_name = "phonetics/" + file_name
+    print '----template_name-----',template_name
+
+    return render(request, template_name)

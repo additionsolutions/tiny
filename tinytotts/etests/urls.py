@@ -15,4 +15,7 @@ urlpatterns = patterns('',
         url(r'^etest/sr/(\d{1,2})/$', views.etestsr, name='etestsr'),
         url(r'^etest/ans/(\d{1,2})/$', views.etestans, name='etestans'),
         url(r'^etest/add/$', views.add_testset, name='add_testset'),
+        url(r'^etest/phoneticslist$', views.phoneticslist, name='phoneticslist'),
+        #url(r'^etest/phonetics_display$', views.phonetics_display, name='phonetics_display'),
+        url(r'^etest/phonetics/(\d{1,2})/$', views.phonetics, name='phone'),
         )

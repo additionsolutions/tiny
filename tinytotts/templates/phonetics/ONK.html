@@ -1,0 +1,95 @@
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block base_block %}
+            {% include 'base/base.html' %}
+    {% endblock %}
+    
+    <script>
+        function showText(id,delay){
+        var elem=document.getElementById(id);
+        setTimeout(function(){elem.style.visibility='visible';},delay*500)
+        }
+        window.onload=function(){
+        showText('delayedText0',3);
+        showText('delayedText1',4);
+        showText('delayedText2',5);
+        showText('delayedText3',7);
+        
+        showText('delayedText4',18);
+        showText('delayedText5',20);
+        showText('delayedText6',22);
+        showText('delayedText7',24);
+        showText('delayedText8',32);
+        
+        showText('delayedText9',38);
+        showText('delayedText10',40);
+        showText('delayedText11',42);
+        showText('delayedText12',44);
+        showText('delayedText13',52);
+        }
+    </script>   
+    
+</head>
+
+<body >
+   
+    <header>
+
+        {% block navbar_block %}
+             <a class="btn btn-primary" href="/a/dmin/profile">Profile Page</a>
+        {% endblock %}
+
+    </header>
+
+    <div style="background-image: url({% static "img/bg.jpg" %}); height: 620px; width: 1348px; border: 1px solid black;" >   
+        <div class="rows">
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-4" ></div>
+            <div id="delayedText1" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">O</p1></div>
+            <div id="delayedText2" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">N</p1></div>
+            <div id="delayedText3" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">K</p1></div>
+   <hr/>
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText4" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">M</p1></div>
+            <div id="delayedText5" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText6" style="visibility:hidden" class="col-sm-2"><p1 style="font-size:60px; color:red;">ONK</p1></div>
+            <div id="delayedText7" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText8" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">MONK</p1></div>
+            
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText9" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">H</p1></div>
+            <div id="delayedText10" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText11" style="visibility:hidden" class="col-sm-2"><p1 style="font-size:60px; color:red;">ONK</p1></div>
+            <div id="delayedText12" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText13" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">HONK</p1></div>
+            
+            
+        </div>
+    </div>
+    
+    <audio autoplay>
+          <source src="{% static "audio/ONK SOUNDING WORDS.mp3" %}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <footer>
+        {% block footer_block %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+    </footer>
+
+    {% block basefoot_block %}
+        {% include 'base/basefoot.html' %}
+    {% endblock %}
+
+</body>
+
+</html>

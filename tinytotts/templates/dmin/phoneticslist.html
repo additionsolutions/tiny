@@ -1,0 +1,8 @@
+{% if phoneticslist.count > 0 %}  
+    {% for test in phoneticslist %}
+        
+        <li class="list-group-item"> <a href='/t/etest/phonetics/{{ test.id }}'>{{ test.code }} {{ test.phoneticsname }}        		<br/>{{test.startdate}} to {{test.enddate}} </a></li>
+    {% endfor %}
+{% else %}
+    <li class="list-group-item"> No data to show</li>
+{% endif %}

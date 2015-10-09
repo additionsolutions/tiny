@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 from django.contrib.auth.models import User, Group
+from base.models import User, UserProfile, Phonetics,PhoneticsLine
 from base.models import User, UserProfile
 from django.core.exceptions import ValidationError
 from etests.models import TestSet, TestSetLine ,Answer,Category,TestQuestion,Option,TestSetUser
@@ -261,3 +262,55 @@ class ContentForm(forms.ModelForm):
 			'picture',
 			'contenttype',
 			'groups',)
+
+class PhoneticsForm(forms.ModelForm):
+	helper = FormHelper()
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
+	helper.label_class = 'col-sm-5'
+	helper.field_class = 'col-sm-7'
+	helper.layout = Layout(
+			Field('code', ),
+			Field('phoneticsname', css_class='input-sm'),
+			Field('description', css_class='input-sm'),
+			Field('startdate', css_class='datepicker'),
+			Field('enddate', css_class='datepicker'),
+			Field('groups', ),
+			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+			)
+
+    	class Meta:
+            model = Phonetics
+            fields = ('code',
+                  	'phoneticsname',
+		  	        'description',
+		  	        'startdate',
+                  	'enddate',
+		  	        'groups', )
+    
+    
+
+class PhoneticsLineForm(forms.ModelForm):
+	helper = FormHelper()
+	helper.form_tag = True
+	helper.form_method = 'POST'
+	helper.form_class = 'form-horizontal'
+	helper.label_class = 'col-sm-4'
+	helper.field_class = 'col-sm-8'
+	helper.layout = Layout(
+			Field('filename', ),
+			Field('phonetics', ),
+			Field('srno', ),
+			Field('name', ),
+			Field('description', ),     
+			FormActions(Submit('Submit', 'Submit', css_class='btn-primary'))
+			)
+
+        class Meta:
+		    model = PhoneticsLine
+		    fields = ('filename',
+              		'phonetics',
+          		    'srno',
+          		    'name',
+              		'description', )	

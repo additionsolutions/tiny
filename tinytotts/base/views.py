@@ -126,30 +126,7 @@ def profile(request):
     else:
         return render_to_response('base/profile.html', context_dict, context)
 
-        
-def phonetics(request):
-    context = RequestContext(request)
-    flag = False
-    group = Group.objects.get(name='site_admin')
-    users = group.user_set.all()
-    for muser in users:
-        if muser == request.user:
-            flag = True
-    context_dict = {'user': request.user, 'admin': flag}
-    if flag:
-        return render_to_response('base/profile_admin.html', context_dict, context)
-    else:
-        grp = request.user.groups.all()
-        print '---group-----',grp; 
-        user_obj = User.objects.filter(groups=grp) 
-        print 'user----->',user_obj
-        return render_to_response('base/show_phonetics.html', context)  
-
-def phonetics_display(request):
-    context = RequestContext(request)
-    context_dict = {'message': 'move to phonetics'}
-    #print '----in base view-----'
-    return render_to_response('base/phonetics.html', context_dict, context)   
+ 
     
 
 def english(request):

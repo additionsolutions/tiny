@@ -3,11 +3,12 @@ $(document).ready(function(){
                $('#notice').html(data);
            });
 
-    $.get('/base/phonetics', function(data){
-                //alert(data);
+   
+     $.get('/t/etest/phoneticslist', function(data){
+               //alert(data);
                $('#phonetics').html(data);
-           });   
-           
+           });
+  
     $.get('/t/etest/testlist', function(data){
                $('#tests').html(data);
            });

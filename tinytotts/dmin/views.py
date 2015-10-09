@@ -7,12 +7,12 @@ from django.forms import ModelForm, ModelChoiceField, HiddenInput
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
-from base.models import UserProfile
+from base.models import UserProfile, Phonetics,PhoneticsLine
 #from base.forms import UserForm, UserProfileForm
 from contents.models import Content, ContentType
 from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option, TestSetUser
 from django.views.generic.list import ListView
-from .forms import GroupForm, TestSetForm, TestSetLineForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm, CategoryForm, TestQuestionForm, OptionForm
+from .forms import GroupForm, TestSetForm, TestSetLineForm, ContentTypeForm, ContentForm, UserForm, UserProfileForm, CategoryForm, TestQuestionForm, OptionForm,  PhoneticsForm, PhoneticsLineForm
 from django.db.models import ProtectedError
 from django.db.models import Count, Sum, Avg
 
@@ -591,3 +591,70 @@ def testsetuser_flag(request, template_name='dmin/testsetuser_flag.html'):
     data = {}
     data['object_list'] = testsetuser
     return render(request, template_name, data)
+
+######################################
+# Phonetics for Admin
+######################################
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
+def phonetics_list(request, template_name='dmin/phonetics_list.html'):
+    phonetics = Phonetics.objects.all()
+    data = {}
+    data['object_list'] = phonetics
+    return render(request, template_name, data)
+
+def phonetics_create(request, template_name='dmin/phonetics_form.html'):
+    form = PhoneticsForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('phonetics_list')
+    return render(request, template_name, {'form':form})
+
+def phonetics_update(request, pk, template_name='dmin/phonetics_form.html'):
+    phonetics = get_object_or_404(Phonetics, pk=pk)
+    form = PhoneticsForm(request.POST or None, instance=phonetics)
+    if form.is_valid():
+        form.save()
+        return redirect('phonetics_list')
+    return render(request, template_name, {'form':form})
+
+def phonetics_delete(request, pk, template_name='dmin/phonetics_form_delete.html'):
+    phonetics = get_object_or_404(Phonetics, pk=pk)
+    if request.method=='POST':
+        phonetics.delete()
+        return redirect('phonetics_list')
+    return render(request, template_name, {'object':phonetics})
+
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')    
+def phonetics_line(request, template_name='dmin/phoneticsline_list.html'):
+    phonetics_obj = Phonetics.objects.all()
+    phoneticsline = PhoneticsLine.objects.filter(phonetics=phonetics_obj)
+    data = {}
+    data['object_list'] = phoneticsline
+    return render(request, template_name, data)
+
+def phoneticsline_create(request, template_name='dmin/phoneticsline_form.html'):
+    form = PhoneticsLineForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('phonetics_line')
+    return render(request, template_name, {'form':form})
+
+def phoneticsline_update(request, pk, template_name='dmin/phoneticsline_form.html'):
+    phonetics = get_object_or_404(PhoneticsLine, pk=pk)
+    print 
+    form = PhoneticsLineForm(request.POST or None, instance=phonetics)
+    if form.is_valid():
+        form.save()
+        return redirect('phonetics_line')
+    return render(request, template_name, {'form':form})
+
+def phoneticsline_delete(request, pk, template_name='dmin/phoneticsline_form_delete.html'):
+    phonetics = get_object_or_404(PhoneticsLine, pk=pk)
+    if request.method=='POST':
+        phonetics.delete()
+        return redirect('phonetics_line')
+    return render(request, template_name, {'object':phonetics})
+

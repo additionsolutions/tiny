@@ -1,0 +1,215 @@
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block base_block %}
+            {% include 'base/base.html' %}
+    {% endblock %}
+    
+    <script>
+        function showText(id,delay){
+        var elem=document.getElementById(id);
+        setTimeout(function(){elem.style.visibility='visible';},delay*500)
+        }
+        window.onload=function(){
+        showText('delayedText0',1);
+        showText('delayedText1',7);
+        showText('delayedText2',8);
+        showText('delayedText3',9);  
+  
+        showText('delayedText4',16);
+        showText('delayedText5',17);
+        showText('delayedText6',18);
+        showText('delayedText7',19);
+        showText('delayedText8',20);      
+        showText('delayedText9',24);
+        showText('delayedText10',27);
+
+        showText('delayedText11',32);
+        showText('delayedText12',33);
+        showText('delayedText13',34);      
+        showText('delayedText14',35);
+        showText('delayedText15',36);
+        showText('delayedText16',40);
+        showText('delayedText17',46);
+
+        showText('delayedText18',50);
+        showText('delayedText19',51);
+        showText('delayedText20',52);
+        showText('delayedText21',53);
+        showText('delayedText22',54);
+        showText('delayedText23',58);
+        showText('delayedText24',62);
+
+        showText('delayedText25',66);
+        showText('delayedText26',67);
+        showText('delayedText27',68);
+        showText('delayedText28',69);
+        showText('delayedText29',70);
+        showText('delayedText30',74);
+        showText('delayedText31',78);
+
+        showText('delayedText32',84);
+        showText('delayedText33',85);
+        showText('delayedText34',86);
+        showText('delayedText35',87);
+        showText('delayedText36',88);
+        showText('delayedText37',92);
+        showText('delayedText38',94);
+
+        showText('delayedText39',0);
+        showText('delayedText40',0);
+        showText('delayedText41',0);
+        showText('delayedText42',0);
+        showText('delayedText43',0);
+        showText('delayedText44',0);
+        showText('delayedText45',0);
+
+        showText('delayedText46',99);
+        showText('delayedText47',100);
+        showText('delayedText48',101);
+        showText('delayedText49',102);
+        showText('delayedText50',103);
+        showText('delayedText51',107);
+        showText('delayedText52',111);
+
+        showText('delayedText53',115);
+        showText('delayedText54',116);
+        showText('delayedText55',117);
+        showText('delayedText56',118);
+        showText('delayedText57',119);
+        showText('delayedText58',123);      
+        showText('delayedText59',127);
+
+        showText('delayedText60',133);
+        showText('delayedText61',134);
+        showText('delayedText62',135);
+        showText('delayedText63',136);
+        showText('delayedText64',137);       
+        showText('delayedText65',140);
+        showText('delayedText66',145);
+        
+        }
+    </script>   
+    
+</head>
+
+<body >
+   
+    <header>
+
+        {% block navbar_block %}
+             <a class="btn btn-primary" href="/a/dmin/profile">Profile Page</a>
+        {% endblock %}
+
+    </header>
+
+    <div style="background-image: url({% static "img/bg.jpg" %}); height: 620px; width: 1348px; border: 1px solid black;" >   
+        <div class="rows">
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-5" ></div>
+            <div id="delayedText1" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">O</p1></div>
+            <div id="delayedText2" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">A</p1></div>
+            <div id="delayedText3" style="visibility:hidden" ><p1 style="font-size:60px; color:red;"></p1></div>
+   <hr/>
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText4" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">B</p1></div>
+            <div id="delayedText5" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText6" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText7" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText8" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">T</p1></div>
+            <div id="delayedText9" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText10" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">BOAT</p1></div>
+            
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText11" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">C</p1></div>
+            <div id="delayedText12" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText13" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText14" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText15" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">T</p1></div>
+            <div id="delayedText16" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText17" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">COAT</p1></div>
+            
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText18" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">R</p1></div>
+            <div id="delayedText19" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText20" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText21" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText22" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">D</p1></div>
+            <div id="delayedText23" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText24" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">ROAD</p1></div>
+            
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText25" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">G</p1></div>
+            <div id="delayedText26" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText27" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText28" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText29" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">T</p1></div>
+            <div id="delayedText30" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText31" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">GOAT</p1></div>
+
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText32" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">G</p1></div>
+            <div id="delayedText33" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText34" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText35" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText36" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">L</p1></div>
+            <div id="delayedText37" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText38" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">GOAL</p1></div>
+            
+
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText46" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">S</p1></div>
+            <div id="delayedText47" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText48" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText49" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText50" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">P</p1></div>
+            <div id="delayedText51" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText52" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SOAP</p1></div>
+        
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText53" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">T</p1></div>
+            <div id="delayedText54" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText55" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText56" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText57" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">ST</p1></div>
+            <div id="delayedText58" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText59" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">TOAST</p1></div>
+            
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+            <div id="delayedText60" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">R</p1></div>
+            <div id="delayedText61" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText62" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">OA</p1></div>
+            <div id="delayedText63" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">+</p1></div>
+            <div id="delayedText64" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">ST</p1></div>
+            <div id="delayedText65" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+            <div id="delayedText66" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">ROAST</p1></div>
+
+            
+        </div>
+    </div>
+    
+    <audio autoplay>
+          <source src="{% static "audio/OA SOUNDING WORDS.mp3" %}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <footer>
+        {% block footer_block %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+    </footer>
+
+    {% block basefoot_block %}
+        {% include 'base/basefoot.html' %}
+    {% endblock %}
+
+</body>
+
+</html>
