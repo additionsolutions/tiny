@@ -1,5 +1,5 @@
 
-<h2> Total marks of <b>{{ user_name }} </b>per Test</h2>
+<h2> Marks of [<b>{{ testset }}</b>] per User</h2>
 			    
 <table  class="table table-hover" >
 <tbody>
@@ -9,14 +9,14 @@
 
     </colgroup>
   <tr class="info">
-    <th>Testset</th>
+    <th>Student</th>
     <th>Total</th>
   </tr>
     {% for obj in ans_objs %}
 	  <tr>
-        {% for tobj in testset_objs %}
-            {% if obj.question__testset == tobj.id %}
-                <td> {{ tobj}}</td>
+        {% for uobj in user_objs %}
+            {% if obj.user_id == uobj.id %}
+                <td> {{ uobj.username }}</td>
             {% endif %}
         {% endfor %} 
         <td> {{ obj.marks }} </td>

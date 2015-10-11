@@ -35,6 +35,18 @@ function getSummary()
 	});
 }
 
+
+// Code for TestSummary report
+function getTestSummary()
+{
+	var testid = document.getElementById("testSelect").value;
+	// alert (usrid);
+	$.get('/a/dmin/testsummary/'+ testid, function(data){
+		$('#testsummaryreport').html(data);
+	});     
+}
+
+
 // Code for User report
 function getResult()
 {

@@ -569,11 +569,9 @@ def userwise_summaryreport(request, template_name='dmin/marks_summary_report.htm
     usr = User.objects.all()
     data = {}
     data['object_list'] = usr
-
     return render(request, template_name, data)
 
 def get_summaryreport(request,usrid):
-
     if request.method == 'GET':
         try:
             usrid = int(usrid)
@@ -582,10 +580,34 @@ def get_summaryreport(request,usrid):
 
     user_obj = User.objects.get(pk=usrid)
     username = user_obj.get_full_name()
-    group_objs = Group.objects.filter(user=User.objects.filter(pk=usrid))
-    marks_objs = TestSet.objects.filter(groups=group_objs).annotate(marks_total=Sum('testsetline__answer__marks')).order_by('-startdate')
-    return render(request, 'dmin/subpart_summary_report.html', {'user_name':username,'testset_objs':marks_objs})
+    testset_objs = TestSet.objects.all()
+    ans_objs = (Answer.objects.values('user_id', 'question__testset').annotate(marks=Sum('marks'))).filter(user=user_obj)
+    return render(request, 'dmin/subpart_summary_report.html', {'user_name':username,'testset_objs':testset_objs,'ans_objs':ans_objs})
 
+    
+def get_testsummaryreport(request,testid):
+    if request.method == 'GET':
+        try:
+            testid = int(testid)
+        except ValueError:
+            raise Http404()
+
+    test_obj = TestSet.objects.get(pk=testid)
+    ans_objs = (Answer.objects.values('user_id', 'question__testset').annotate(marks=Sum('marks'))).filter(question__testset=test_obj)
+    user_objs = User.objects.all()
+    return render(request, 'dmin/subpart_testsummary_report.html', {'ans_objs':ans_objs,'user_objs':user_objs,'testset':test_obj})
+    
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required(login_url='/a/dmin/login')
+def testwise_summaryreport(request, template_name='dmin/test_summary_report.html'):
+    #contenttype = ContentType.objects.all()
+    test = TestSet.objects.all()
+    data = {}
+    data['object_list'] = test
+    return render(request, template_name, data)    
+
+    
+    
 def testsetuser_flag(request, template_name='dmin/testsetuser_flag.html'):
     testsetuser = TestSetUser.objects.all()
     data = {}
