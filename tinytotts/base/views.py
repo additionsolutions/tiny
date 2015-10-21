@@ -9,6 +9,7 @@ from django.contrib.auth import logout
 from django.views.generic.list import ListView
 from etests.models import TestSet, TestSetLine, Answer, Category, TestQuestion, Option, TestSetUser
 from datetime import date
+from django.db.models import Count, Sum, Avg
 
 def index(request):
     context = RequestContext(request)
@@ -199,12 +200,12 @@ def submit_click(request):
     #print '----in base view-----'
     return render_to_response('base/profile.html', context_dict, context)
     
-def student_result(request):
-    context = RequestContext(request)
-    current_date = date.today()
+    
 
-    test_set = TestSet.objects.filter(groups=request.user.groups.all(),submit_flag=False,startdate__lte=current_date,enddate__gte=current_date)
+def user_results(request):   
+    user_obj = User.objects.get(pk=request.user.id)
+    username = user_obj.get_full_name()
+    testset_objs = TestSet.objects.all()
+    ans_objs = (Answer.objects.values('user_id', 'question__testset__testname', 'question__testset__startdate', 'question__testset__enddate').annotate(marks=Sum('marks'))).filter(user=user_obj).order_by('question__testset__startdate')
 
-    print ' test_set-------',test_set
-
-    return render_to_response('base/results.html' , {'object_list':test_set}, context )
+    return render(request, 'base/user_results.html', {'user_name':username,'testset_objs':testset_objs,'ans_objs':ans_objs})
