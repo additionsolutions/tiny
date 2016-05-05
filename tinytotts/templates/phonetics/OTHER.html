@@ -1,0 +1,539 @@
+<!doctype html>
+
+<!--[if lt IE 7]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if IE 7]><html lang="en" class="no-js ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    {% load staticfiles %}
+    {% block base_block %}
+            {% include 'base/base.html' %}
+    {% endblock %}
+    
+    <script>
+        function showText(id,delay){
+        var elem=document.getElementById(id);
+        setTimeout(function(){elem.style.visibility='visible';},delay*1000)
+        $("#block1").delay(40000).fadeOut("slow");
+          $("#block2").delay(148000).fadeOut("slow");
+          $("#block3").delay(160200).show("slow");
+        }
+        window.onload=function(){
+        showText('delayedText0',1);
+        showText('delayedText1',7);
+        showText('delayedText2',8);
+        showText('delayedText3',9);
+        showText('delayedText4',10);
+
+        showText('delayedText5',11);
+        showText('delayedText6',12);
+        showText('delayedText7',13);
+        showText('delayedText8',14);
+        showText('delayedText9',15);
+
+        showText('delayedText10',16);
+        showText('delayedText11',17);
+        showText('delayedText12',18);
+        showText('delayedText13',19);
+        showText('delayedText14',20);
+
+        showText('delayedText15',23);
+        showText('delayedText16',24);
+        showText('delayedText17',25);
+        showText('delayedText18',26);
+        showText('delayedText19',27);
+
+        showText('delayedText20',29);
+        showText('delayedText21',30);
+        showText('delayedText22',31);
+        showText('delayedText23',32);
+        showText('delayedText24',33);
+
+        showText('delayedText25',34);
+        showText('delayedText26',34);
+        showText('delayedText27',34);
+        showText('delayedText28',34);
+        showText('delayedText29',34);
+        
+        showText('delayedText30',35);
+        showText('delayedText31',36);
+        showText('delayedText32',37);
+        showText('delayedText33',38);
+        showText('delayedText34',39);
+
+        showText('delayedText35',48);
+        showText('delayedText36',49);
+        showText('delayedText37',50);
+        showText('delayedText38',52);
+        showText('delayedText39',53);
+
+        showText('delayedText40',62);
+        showText('delayedText41',63);
+        showText('delayedText42',64);
+        showText('delayedText43',65);
+        showText('delayedText44',65);
+
+        showText('delayedText45',66);
+        showText('delayedText46',67);
+        showText('delayedText47',68);
+        showText('delayedText48',69);
+        showText('delayedText49',70);
+
+        showText('delayedText45_1',72);
+        showText('delayedText46_1',73);
+        showText('delayedText47_1',74);
+        showText('delayedText48_1',75);
+        showText('delayedText49_1',76);
+        
+        showText('delayedText50',79);
+        showText('delayedText51',80);
+        showText('delayedText52',81);
+        showText('delayedText53',82);
+        showText('delayedText54',83);
+        
+        showText('delayedText55',84);
+        showText('delayedText56',85);
+        showText('delayedText57',86);
+        showText('delayedText58',87);
+        showText('delayedText59',88);
+        
+        
+        showText('delayedText60',89);
+        showText('delayedText61',90);
+        showText('delayedText62',91);
+        showText('delayedText63',92);
+        showText('delayedText64',93);
+
+        showText('delayedText65',110);
+        showText('delayedText66',111);
+        showText('delayedText67',112);
+        showText('delayedText68',113);
+        showText('delayedText69',114);
+
+        showText('delayedText70',120);
+        showText('delayedText71',121);
+        showText('delayedText72',122);
+        showText('delayedText73',123);
+        showText('delayedText74',124);
+
+        showText('delayedText75',131);
+        showText('delayedText76',132);
+        showText('delayedText77',133);
+        showText('delayedText78',134);
+        showText('delayedText79',135);
+
+        showText('delayedText80',149);
+        showText('delayedText81',150);
+        showText('delayedText82',151);
+        showText('delayedText83',152);
+        showText('delayedText84',153);
+
+        showText('delayedText85',155);
+        showText('delayedText86',156);
+        showText('delayedText87',157);
+        showText('delayedText88',158);
+        showText('delayedText89',159);
+
+        showText('delayedText90',161);
+        showText('delayedText91',162);
+        showText('delayedText92',163);
+        showText('delayedText93',164);
+        showText('delayedText94',164);
+
+        showText('delayedText95',165);
+        showText('delayedText96',166);
+        showText('delayedText97',167);
+        showText('delayedText98',168);
+        showText('delayedText99',169);
+
+        showText('delayedText105',172);
+        showText('delayedText106',173);
+        showText('delayedText107',174);
+        showText('delayedText108',175);
+        showText('delayedText109',176);
+
+        showText('delayedText110',180);
+        showText('delayedText111',181);
+        showText('delayedText112',182);
+        showText('delayedText113',183);
+        showText('delayedText114',184);
+
+        showText('delayedText115',187);
+        showText('delayedText116',188);
+        showText('delayedText117',189);
+        showText('delayedText118',190);
+        showText('delayedText119',191);
+
+        showText('delayedText120',194);
+        showText('delayedText121',195);
+        showText('delayedText122',196);
+        showText('delayedText123',197);
+        showText('delayedText124',198);
+
+        showText('delayedText125',205);
+        showText('delayedText126',206);
+        showText('delayedText127',207);
+        showText('delayedText128',208);
+        showText('delayedText129',209);
+
+        showText('delayedText130',220);
+        showText('delayedText131',221);
+        showText('delayedText132',222);
+        showText('delayedText133',223);
+        showText('delayedText134',224);
+
+        showText('delayedText135',231);
+        showText('delayedText136',232);
+        showText('delayedText137',233);
+        showText('delayedText138',234);
+        showText('delayedText139',235);
+
+        showText('delayedText140',243);
+        showText('delayedText141',244);
+        showText('delayedText142',245);
+        showText('delayedText143',246);
+        showText('delayedText144',247);
+
+        showText('delayedText145',254);
+        showText('delayedText146',255);
+        showText('delayedText147',256);
+        showText('delayedText148',257);
+        showText('delayedText149',258);
+
+
+        
+        
+        }
+    </script>   
+    
+</head>
+
+<body >
+   
+    <header>
+
+        {% block navbar_block %}
+            <p2 style="color:white"><a href="/base/profile"><p2 style="color:white">Prosperidad</p2></a> : Phonetics 
+        {% endblock %}
+
+    </header>
+
+    <div style="background-image: url({% static "img/bg.jpg" %}); height: 1440px; width: 1300px;" >   
+        
+        <div id="block1" class="rows">
+             <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                <div id="delayedText0" style="visibility:hidden" class="col-sm-4" ></div>
+                <div id="delayedText1" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">W</p1></div>
+                <div id="delayedText2" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">A</p1></div>
+                <div id="delayedText3" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText4" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WA</p1></div>
+           </div>
+            
+           <hr/>
+             <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText5" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">WA </p1></div>
+                <div id="delayedText6" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText7" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">R</p1></div>
+                <div id="delayedText8" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText9" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WAR</p1></div>
+            </div>
+          </hr> 
+          <div id="delayedText0" style="visibility:hidden" class="col-sm-12" > 
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText10" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">WA</p1></div>
+                <div id="delayedText11" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText12" style="visibility:hidden" class="col-sm-3" ><p1 style="font-size:60px; color:red;">LL</p1></div>
+                <div id="delayedText13" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;"> =</p1></div>
+                <div id="delayedText14" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WALL</p1></div>
+            </div>
+            </hr> 
+          
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText15" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">WA</p1></div>
+                <div id="delayedText16" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText17" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">TCH</p1></div>
+                <div id="delayedText18" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText19" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WATCH</p1></div>
+           </div>
+            
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText20" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">WA</p1></div>
+                <div id="delayedText21" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText22" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">RM</p1></div>
+                <div id="delayedText23" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText24" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WARM</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText25" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">WA</p1></div>
+                <div id="delayedText26" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText27" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">LK</p1></div>
+                <div id="delayedText28" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText29" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">WALK</p1></div>
+           </div>
+           </hr>
+       </div>
+       <div id="block2" class="rows">
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText30" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">C</p1></div>
+                <div id="delayedText31" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText32" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">H</p1></div>
+                <div id="delayedText33" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText34" style="visibility:hidden"><p1 style="font-size:60px; color:red;">CH</p1></div>
+                
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                 
+                <div id="delayedText35" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText36" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText37" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">AT</p1></div>
+                <div id="delayedText38" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText39" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHAT</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText40" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText41" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText42" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">AP</p1></div>
+                <div id="delayedText43" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText44" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHAP</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText45" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText46" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText47" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">IN</p1></div>
+                <div id="delayedText48" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText49" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHIN</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText45_1" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText46_1" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText47_1" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">OP</p1></div>
+                <div id="delayedText48_1" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText49_1" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHOP</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText50" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText51" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText52" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">AIN</p1></div>
+                <div id="delayedText53" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText54" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHAIN</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText55" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText56" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText57" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ILLY</p1></div>
+                <div id="delayedText58" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText59" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHILLY</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText60" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText61" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText62" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">AIR</p1></div>
+                <div id="delayedText63" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText64" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHAIR</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText65" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText66" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText67" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ILL</p1></div>
+                <div id="delayedText68" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText69" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHILL</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText70" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText71" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText72" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ARM</p1></div>
+                <div id="delayedText73" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText74" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHARM</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText75" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CH</p1></div>
+                <div id="delayedText76" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText77" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ANT</p1></div>
+                <div id="delayedText78" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText79" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CHANT</p1></div>
+           </div>
+           </hr>
+      </div>
+      <div id="block3"class="rows" >
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText80" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">S</p1></div>
+                <div id="delayedText81" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText82" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">H</p1></div>
+                <div id="delayedText83" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText84" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText85" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText86" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText87" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">OP</p1></div>
+                <div id="delayedText88" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText89" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHOP</p1></div>
+           </div>
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText90" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText91" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText92" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">UT</p1></div>
+                <div id="delayedText93" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText94" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHUT</p1></div>
+           </div
+           </hr>
+           <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText95" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText96" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText97" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ED</p1></div>
+                <div id="delayedText98" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText99" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHED</p1></div>
+           </div>
+            </hr>  
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText100" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText101" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText102" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ED</p1></div>
+                <div id="delayedText103" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText104" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHED</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText105" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText106" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText107" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">AMPOO</p1></div>
+                <div id="delayedText108" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText109" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHAMPOO</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText110" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText111" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText112" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">ELL</p1></div>
+                <div id="delayedText113" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText114" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHELL</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText115" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText116" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText117" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">RUB</p1></div>
+                <div id="delayedText118" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText119" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">SHRUB</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText120" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">RU</p1></div>
+                <div id="delayedText121" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText122" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText123" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText124" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">RUSH</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText125" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">BU</p1></div>
+                <div id="delayedText126" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText127" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText128" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText129" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">BUSH</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText130" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">DI</p1></div>
+                <div id="delayedText131" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText132" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText133" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText134" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">DISH</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText135" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">FI</p1></div>
+                <div id="delayedText136" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText137" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText138" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText139" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">FISH</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText140" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">BRU</p1></div>
+                <div id="delayedText141" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText142" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText143" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText144" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">BRUSH</p1></div>
+           </div>
+            </hr> 
+            <div id="delayedText0" style="visibility:hidden" class="col-sm-12" >
+                 <div id="delayedText0" style="visibility:hidden" class="col-sm-2" ></div>
+                <div id="delayedText145" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">CRU</p1></div>
+                <div id="delayedText146" style="visibility:hidden" class="col-sm-1" ><p1 style="font-size:60px; color:red;">+</p1></div>
+                <div id="delayedText147" style="visibility:hidden" class="col-sm-3"><p1 style="font-size:60px; color:red;">SH</p1></div>
+                <div id="delayedText148" style="visibility:hidden" class="col-sm-1"><p1 style="font-size:60px; color:red;">=</p1></div>
+                <div id="delayedText149" style="visibility:hidden" ><p1 style="font-size:60px; color:red;">CRUSH</p1></div>
+           </div>
+            </hr>
+       </div>      
+           
+             
+            
+           
+       
+    </div>
+    
+    <audio autoplay>
+          <source src="{% static "audio/OTHER WORDS,WA,CH,SH.mp3"%}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <footer>
+        {% block footer_block %}
+            {% include 'base/footer.html' %}
+        {% endblock %}
+    </footer>
+
+    {% block basefoot_block %}
+        {% include 'base/basefoot.html' %}
+    {% endblock %}
+
+</body>
+
+</html>
